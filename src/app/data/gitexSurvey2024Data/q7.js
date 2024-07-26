@@ -1,4 +1,6 @@
 export const q7 = {
+    gridType:'row',
+    optionSelectType:'single',
     question: "*What do you consider to be the biggest inhibitor to infrastructure modernisation (if any)?",
     answers: [
       "Management buy-in",
@@ -12,3 +14,4 @@ export const q7 = {
       "Other(Please state)"
     ]
 };
+

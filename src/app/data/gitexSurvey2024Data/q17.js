@@ -1,4 +1,6 @@
 export const q17 = {
+  gridType:'row',
+  optionSelectType: 'single',
   question:
     "*What are your top two technology investment areas over the next 12 months?",
   answers: [

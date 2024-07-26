@@ -1,4 +1,6 @@
 export const q16 = {
+    gridType:'row',
+  optionSelectType: 'double',
   question: "*What are the priority areas for automation?",
   answers: [
     "Security",

@@ -1,4 +1,6 @@
 export const q14 = {
+    gridType:'row',
+  optionSelectType: 'single',
   question:
     "*How would you describe your organisation’s readiness to deploy automation solutions?",
   answers: [

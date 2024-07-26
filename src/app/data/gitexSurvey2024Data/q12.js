@@ -1,4 +1,6 @@
 export const q12 = {
+    gridType:'row',
+    optionSelectType: 'single',
   question:
     "*Which security areas are priorities for your organisation in the year ahead?",
   answers: [
