@@ -1,3 +1,17 @@
-task1->we should be able to import all questions data from a single file 
-task2->
+task3-> if answer not in selectedAnswers then disabled ={disable} else disabled={!disable}
+task4-> if (buttons.length ==2){ <div display=flex>
+   if (button=="Next"){
+    <button onClick=handleNext()>
+    Next </button>    
+   }
+   if (button=="Submit")
+   upload button
+
+   if button skip 
+   skip
+ 
+</div>
+}
+
+
 

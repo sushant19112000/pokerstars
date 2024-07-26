@@ -210,7 +210,9 @@ export const Question2 = ({
                 )}
               </div>
 
-              {/* //option */}
+         
+              
+
             </div>
           </div>
         </div>

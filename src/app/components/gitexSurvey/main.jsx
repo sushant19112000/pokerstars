@@ -25,22 +25,17 @@ export const Main = () => {
         }}
       >
         <div>
-        
           <Tab isActive={tabNo === 1}>
             <Home/>
           </Tab>
           <Tab isActive={tabNo===2}>
             <Contact />
-          </Tab>
-
-         
+          </Tab>          
           <Tab isActive={tabNo>2 && tabNo<18}>
               <>
                2 to 17 questions
               </>
-          </Tab>
-
-         
+          </Tab>         
           <Tab isActive={tabNo === 18}>
              <TermsCondition/>
           </Tab>
@@ -49,3 +44,6 @@ export const Main = () => {
     </>
   );
 };
+
+
+

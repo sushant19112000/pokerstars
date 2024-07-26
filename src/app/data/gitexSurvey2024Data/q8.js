@@ -1,4 +1,5 @@
 export const q8 = {
+    questionNumber:8,
     gridType:'row',
     optionSelectType:'double',
     question: "*What are the most important considerations for you when selecting an infrastructure partner?",

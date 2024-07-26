@@ -1,4 +1,5 @@
 export const q2 = {
+    questionNumber:2,
     gridType:'col',
     optionSelectType:'single',
     question: "*What size company are you from?",

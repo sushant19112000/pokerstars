@@ -71,9 +71,6 @@ export const TermsCondition = ({nextTab}) => {
            We use the business contact details collected here for specific activities, where we consider there to be legitimate interest. This can include sending you business communications about similar services and products. You will always have the opportunity to opt out of future communications from us.  <br />{" "}
           
           </h1>
-
-          
-
           {/* {agreeTerms.answers.map((answer, index) => ( */}
             <>
               <div className="col-md-5 mt-3" >

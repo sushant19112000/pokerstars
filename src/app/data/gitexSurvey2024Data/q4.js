@@ -1,4 +1,5 @@
 export const q4 = {
+    questionNumber:4,
     gridType:'row',
     optionSelectType:'double',
     question: "*Which of the following are most important to you in your digitalisation journey?",

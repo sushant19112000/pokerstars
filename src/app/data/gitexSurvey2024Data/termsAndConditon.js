@@ -1,4 +1,5 @@
 export const termAndCondition={
+    questionNumber:18,
     gridType:'row',
     optionSelectType: 'single',
     answers:[

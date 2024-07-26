@@ -1,4 +1,5 @@
 export const q7 = {
+    questionNumber:7,
     gridType:'row',
     optionSelectType:'single',
     question: "*What do you consider to be the biggest inhibitor to infrastructure modernisation (if any)?",

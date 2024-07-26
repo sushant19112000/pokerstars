@@ -1,4 +1,5 @@
 export const q9 = {
+    questionNumber:9,
     gridType:'row',
     optionSelectType:'single',
     question: "*Has your organisation seen a change in the number of attacks over the last 12 months?",

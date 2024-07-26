@@ -1,4 +1,5 @@
 export const q12 = {
+    questionNumber:12,
     gridType:'row',
     optionSelectType: 'single',
   question:
