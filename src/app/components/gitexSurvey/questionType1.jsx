@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useRecoilState } from "recoil";
 import { GitexSurvey2024State } from "@/app/atoms/gitexSurvey2024";
+import { useNext } from "./useNext";
+import { useSaveData } from "./useSaveData";
 const indexToAlphabet = (index) => String.fromCharCode(65 + index); // 65 is the char code for 'A'
 export const QuestionType1 = ({
   qNo,
@@ -12,35 +14,28 @@ export const QuestionType1 = ({
   btn1,
   btn2,
 }) => {
-  const [gitexSurveyState, setGitexSurveyState] =
-    useRecoilState(AfricaSurveyState);
-  const [next, setNext] = useState(false);
+  // const [gitexSurveyState, setGitexSurveyState] =
+  //   useRecoilState(AfricaSurveyState);
+  const next= useNext();
+  const saveData=useSaveData();
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [qnumber,setQnumber]=useState(qNo-1)
 
+  
+
   const handleNext = (e) => {
     setSelectedAnswer(e)
-    const newObj = {
-      question: qNo,
-      answer: e,
-    };
-    setGitexSurveyState([...gitexSurveyState, newObj]);
+    
+    // const newObj = {
+    //   question: qNo,
+    //   answer: e,
+    // };
+    // setGitexSurveyState([...gitexSurveyState, newObj]);
     setTimeout(() => {
       nextTab(parseInt(qNo) + 1);
     }, 1000); // Adjust the delay (in milliseconds) as needed
   };
 
-  const handleSubmit = () => {
-    if (selectedAnswer != "") {
-      const newObj = {
-        question: qNo - 1,
-        answer: e,
-      };
-
-      setGitexSurveyState([...gitexSurveyState, newObj]);
-      nextTab(parseInt(qNo) + 1);
-    }
-  };
 
   const Skip = () => {
     nextTab(parseInt(qNo) + 1);

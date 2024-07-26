@@ -16,7 +16,7 @@ export const Question = ({
     useRecoilState(AfricaSurveyState);
   const [next, setNext] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
-
+  
   const handleNext = (e) => {
     setSelectedAnswer(e)
     const newObj = {
