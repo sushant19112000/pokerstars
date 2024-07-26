@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "gitexsurvey2024" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "data" TEXT NOT NULL
+);
