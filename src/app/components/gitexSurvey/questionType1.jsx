@@ -311,9 +311,6 @@ export const QuestionType1 = ({
                   </div>
                 )
               }
-
-
-
               {/* //option */}
             </div>
           </div>
