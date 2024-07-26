@@ -13,6 +13,7 @@ export const Home = ({ nextTab }) => {
   // const handleNext = () => {
   //   nextTab(2);
   // };
+  const next=useNext()
   return (
     <div
       className="container-fluid d-flex justify-content-center align-items-center"
@@ -62,6 +63,7 @@ export const Home = ({ nextTab }) => {
                 textDecoration: "none",
               }}
               href=""
+              onClick={(()=>next())}
             >
               BEGIN
             </Link>

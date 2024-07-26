@@ -89,7 +89,8 @@ const nonNavbar = [
   "your-invitation-to-attend-the-inaugural-cloud-solutions",
   "cisos-cloud-security-demands-and-influences",
   "africa-ciso-cloud-security-readiness-survey",
-  "survey2"
+  "survey2",
+  "digital-technology-report-at-gitex-2024"
 ];
 
 export default function RootLayout({ children }) {

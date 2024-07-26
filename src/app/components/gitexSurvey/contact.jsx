@@ -4,6 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
+import { useNext } from "./useNext";
 const Contact = ({ nextTab }) => {
   //   const [surveyData, setSurveyData] = useRecoilState(AfricaSurveyState)
   //   const handleNext = () => {
@@ -51,6 +52,8 @@ const Contact = ({ nextTab }) => {
   //       nextTab(9)
   //     }
   //   }
+
+  const next=useNext()
 
   return (
     <div className="row justify-content-center">
@@ -452,6 +455,7 @@ const Contact = ({ nextTab }) => {
                 textDecoration: "none",
               }}
               href=""
+              onClick={(()=>next())}
             >
               NEXT
             </Link>

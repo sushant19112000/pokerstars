@@ -6,6 +6,7 @@ export const useNext = () => {
     //nextTab
     const [tab,setTab]=useRecoilState(GitexSurvey2024StateTab)
     const handleNext = () => {
+        //saveData(data)=>timeout=>next()
         // const newObj = {
         //     question: qNo - 1,
         //     answer: e,

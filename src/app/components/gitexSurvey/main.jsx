@@ -9,8 +9,10 @@ import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
 const Tab = ({ isActive, children }) => (isActive ? <div>{children}</div> : null);
 
 export const Main = () => {
-  
   const [tabNo, setTabNo] = useRecoilState(GitexSurvey2024StateTab);
+  useEffect(()=>{
+
+  },[tabNo])
   return (
     <>
       <div
@@ -19,16 +21,11 @@ export const Main = () => {
           backgroundImage: 'url("/glitex_survey_bgimg.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+          height: "1000px",
         }}
       >
-        {/* <Home /> */}
-        {/* <Contact /> */}
-        {/* <Question/> */}
-        {/* <TermsCondition /> */}
         <div>
-
-          //home
+        
           <Tab isActive={tabNo === 1}>
             <Home/>
           </Tab>
@@ -36,21 +33,19 @@ export const Main = () => {
             <Contact />
           </Tab>
 
-          //questions section
+         
           <Tab isActive={tabNo>2 && tabNo<18}>
               <>
                2 to 17 questions
               </>
           </Tab>
 
-          //last terms and conditions
+         
           <Tab isActive={tabNo === 18}>
              <TermsCondition/>
           </Tab>
         </div>
       </div>
-
-
     </>
   );
 };
