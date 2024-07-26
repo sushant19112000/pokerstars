@@ -1,0 +1,248 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model Users {
+  id        Int      @id @default(autoincrement())
+  is_admin  Boolean 
+  username  String
+  email     String
+  password  String
+  contact_number String
+}
+
+
+//Blogs 
+model Blogs {
+  id        Int        @id @default(autoincrement())
+  date      DateTime
+  title     String
+  content   String
+  author    String
+  paragraph String
+  img       String
+  categoryId Int
+  category   BlogCategories @relation(fields: [categoryId], references: [id])
+}
+
+model BlogCategories{
+  id        Int      @id @default(autoincrement())
+  name      String 
+  blogs     Blogs[]
+}
+
+// Casestudies
+model CaseStudies {
+  id        Int        @id @default(autoincrement())
+  date      DateTime
+  title     String
+  content   String
+  author    String
+  paragraph String
+  img       String
+  categoryId Int
+  category   CaseStudiesCategories @relation(fields: [categoryId], references: [id])
+}
+
+model CaseStudiesCategories{
+  id        Int      @id @default(autoincrement())
+  name      String 
+  casestudies     CaseStudies[]
+}
+
+
+// Research 
+model Research {
+  id        Int        @id @default(autoincrement())
+  date      DateTime
+  title     String
+  content   String
+  author    String
+  paragraph String
+  img       String
+  categoryId Int
+  category   ResearchCategories @relation(fields: [categoryId], references: [id])
+}
+
+model ResearchCategories{
+  id        Int      @id @default(autoincrement())
+  name      String 
+  research    Research[]
+}
+
+
+//Insights
+model Insights {
+  id        Int        @id @default(autoincrement())
+  date      DateTime
+  title     String
+  content   String
+  author    String
+  paragraph String
+  img       String
+  categoryId Int
+ 
+  category   InsightsCategories @relation(fields: [categoryId], references: [id])
+}
+
+model InsightsCategories{
+  id        Int      @id @default(autoincrement())
+  name      String 
+  insights    Insights[]
+}
+
+//Whitepapers
+
+model Whitepapers {
+  id        Int        @id @default(autoincrement())
+  date      DateTime
+  title     String
+  content   String
+  author    String
+  paragraph String
+  img       String
+  categoryId Int
+  category   WhitepapersCategories @relation(fields: [categoryId], references: [id])
+}
+
+model WhitepapersCategories{
+  id        Int      @id @default(autoincrement())
+  name      String 
+  whitepapers   Whitepapers[]
+}
+
+model Contact{
+   id Int  @id @default(autoincrement())
+   fullName  String
+   businessEmail String
+   phoneNumber String
+   companyName String
+   jobTitle String
+   services String
+   country String
+   optIn   String
+}
+
+model Subscribe{
+  id Int  @id @default(autoincrement())
+  email  String 
+  comment  String 
+}
+
+model campaign{
+  id Int  @id @default(autoincrement())
+  name   String 
+  code String @unique
+  landingpages landingpage[]
+  mailers   mailer[]
+  downloadpages downloadpage[]
+}
+
+
+model mailer{
+  id Int  @id @default(autoincrement())
+  url String
+  title String
+  campaignCode String
+  content String @default("Html Content")
+  headerBackgroundColor String @default("#e3653c")
+  imageUrl String   @default("imageUrl")
+  imageHeight String   @default("imageHeight")
+  imageWidth String     @default("imageWidth")
+  campaign   campaign @relation(fields: [campaignCode], references: [code])
+  landingpageurl  String  @default("landingpage url")
+  logoSrc String   @default("imageUrl")
+  logoHeight String   @default("imageHeight")
+  logoWidth String     @default("imageWidth")
+  footer String  @default("561 7th Ave 4th fl, New York NY 10018, United States")
+  unsubscribe String @default("unsubscribe")
+  privacy  String @default("privacy")
+  template String @default("JBW")
+  updateProfile  String  @default("updateProfile")
+  html String @default("<div>Html</div>")
+  button String @default("Download")
+}
+
+model downloadpage{
+  id Int @id @default(autoincrement())
+  url String
+  title String
+  campaignCode String
+  imageUrl String   @default("imageUrl")
+  imageHeight String   @default("imageHeight")
+  imageWidth String     @default("imageWidth")
+  logoSrc String   @default("imageUrl")
+  logoHeight String   @default("imageHeight")
+  logoWidth String     @default("imageWidth")
+  template String @default("temp1")
+  link  String
+  pdfSrc String
+  campaign   campaign @relation(fields: [campaignCode], references: [code])
+  headerBackgroundColor String @default("#059995")
+}
+
+
+model landingpage{
+  id Int @id @default(autoincrement())
+  url String
+  title String
+  headerBackgroundColor String
+  campaignCode String
+  data    String
+  formdata String  @default("formData")
+  downloadpageurl String @default("Download url")
+  content String @default("Html Content")
+  campaign   campaign @relation(fields: [campaignCode], references: [code])
+  logoSrc String   @default("imageUrl")
+  logoHeight String   @default("imageHeight")
+  logoWidth String     @default("imageWidth")
+  template String   @default("JBW")
+  optin String @default("optin")
+  gdpr  Boolean @default(true)
+  formTitle String @default("Please fill out the form below to download.")
+  download String @default("Download")
+}
+
+
+model singlemailer{
+  id Int @id @default(autoincrement())
+  url String @unique
+  title String
+  content String
+}
+
+model mandiant_45362_01{
+  id Int @id @default(autoincrement())
+  fullName String
+  emailAddress String
+  phoneNumber String
+  address String
+  city String
+  state  String 
+  postCode String
+  country String
+  title String
+  company String
+  companySize String
+}
+
+model africasurvey{
+  id Int @id @default(autoincrement())
+  data String 
+}
+
+model survey2{
+  id  Int @id @default(autoincrement())
+    data String 
+}
