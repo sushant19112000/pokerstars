@@ -21,8 +21,6 @@ export const QuestionType1 = ({
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [qnumber,setQnumber]=useState(qNo-1)
 
-  
-
   const handleNext = (e) => {
     setSelectedAnswer(e)
     

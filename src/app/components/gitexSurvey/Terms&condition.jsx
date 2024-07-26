@@ -1,11 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { HiCheck } from "react-icons/hi";
-import "./main.css";
 // import { agreeTerms } from "./data2";
-import { useRecoilState } from "recoil";
-import { useState } from "react";
-import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
 import { FaAngleRight } from "react-icons/fa6";
 const indexToAlphabet = (index) => String.fromCharCode(65 + index); // 65 is the char code for 'A'
 export const TermsCondition = ({nextTab}) => {

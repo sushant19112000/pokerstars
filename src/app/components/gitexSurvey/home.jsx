@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
 import { FaAngleRight } from "react-icons/fa6";
+import { useNext } from "./useNext";
 
 export const Home = ({ nextTab }) => {
   // const [surveyData, setSurveyData] = useRecoilState(AfricaSurveyState);
@@ -12,7 +13,6 @@ export const Home = ({ nextTab }) => {
   // const handleNext = () => {
   //   nextTab(2);
   // };
-
   return (
     <div
       className="container-fluid d-flex justify-content-center align-items-center"
