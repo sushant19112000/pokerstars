@@ -1,35 +1,58 @@
 import Link from "next/link";
-import React from "react";
-import { HiCheck } from "react-icons/hi";
-// import { agreeTerms } from "./data2";
-import { FaAngleRight } from "react-icons/fa6";
+import React, { useState } from "react";
+import { useSaveData } from "./useSaveData";
+import { useNext } from "./useNext";
+import { FaCheck } from "react-icons/fa6";
+import { termAndCondition } from "@/app/data/gitexSurvey2024Data/termsAndConditon";
+import {useUpload} from "./useUpload";
 const indexToAlphabet = (index) => String.fromCharCode(65 + index); // 65 is the char code for 'A'
-export const TermsCondition = ({nextTab}) => {
-//   const [africaSurveystate, setAfricaSurveyState] =
-//     useRecoilState(AfricaSurveyState);
-//   const [next, setNext] = useState(false);
-//   const [selectedAnswer, setSelectedAnswer] = useState("");
-//   const handleNext = (e) => {
-//     setSelectedAnswer(e)
-//     const newObj = {
-//       question: 14,
-//       answer: e,
-//     };
-//     setAfricaSurveyState([...africaSurveystate, newObj]);
-//     setTimeout(() => {
-//       nextTab(16);
-//     }, 1000); // Adjust the delay (in milliseconds) as needed
-//   };
-//   const Skip=()=>{
-//     nextTab(16);
-//   }
+
+export const TermsCondition = () => {
+  // // const handleUpload =()=>{
+  // //   upload()
+  // // }
+  //   console.log(termAndCondition);
+  //   const autoSave = (e) => {
+  //     setSelected(e);
+  //     saveData(termAndCondition.questionNumber, e);
+  //     // setTimeout(() => {
+  //     //   handleUpload()
+  //     //   next();
+  //     // }, 2000);
+
+  //   };
+
+  //   const handleNext = () => {
+  //     autoSave();
+
+  //   };
+
+  const [selected, setSelected] = useState("");
+  const next = useNext();
+  const saveData = useSaveData();
+  const autoUpload = useUpload();
+
+  const autoSave = (e) => {
+    setSelected(e);
+    saveData(termAndCondition.questionNumber, e);
+  };
+
+// auto(qNo,data) 1sec then handleupload 
+
+
+  const handleDataUpload = () => {
+    autoUpload();
+  };
+  const handleNext = () => {
+    autoSave(selected);
+    handleDataUpload()
+    next();
+  };
+
   return (
     <>
-      <div
-        className="row justify-content-center"
-      
-      >
-        <div className=" col-md-8">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
           <h3
             style={{
               color: "gray",
@@ -49,12 +72,12 @@ export const TermsCondition = ({nextTab}) => {
               lineHeight: "40px",
             }}
           >
-            Yes, I authorise Lynchpin Media and associated partners to this report to receive my personal contact details for the purpose of sending information on products, services and/or events. 
-            For more information, please view the Lynchpin Media privacy policy {" "}
+            Yes, I authorise Lynchpin Media and associated partners to this
+            report to receive my personal contact details for the purpose of
+            sending information on products, services and/or events. For more
+            information, please view the Lynchpin Media privacy policy{" "}
             <span>
-              <Link href="https://www.lynchpinmedia.com/privacy-policy/" style={{textDecoration:''}}>
-                    here
-              </Link>
+              <Link href="">here</Link>
             </span>
             .
           </h1>
@@ -68,63 +91,65 @@ export const TermsCondition = ({nextTab}) => {
               marginTop: "20px",
             }}
           >
-           We use the business contact details collected here for specific activities, where we consider there to be legitimate interest. This can include sending you business communications about similar services and products. You will always have the opportunity to opt out of future communications from us.  <br />{" "}
-          
+            We use the business contact details collected here for specific
+            activities, where we consider there to be legitimate interest. This
+            can include sending you business communications about similar
+            services and products. You will always have the opportunity to opt
+            out of future communications from us. <br />{" "}
           </h1>
-          {/* {agreeTerms.answers.map((answer, index) => ( */}
-            <>
-              <div className="col-md-5 mt-3" >
-                <div
-                  className="row choice mb-2 rounded"
-                //   style={{
-
-                //     border: "1px solid grey",
-                //     marginLeft: "2px",
-                //     color:
-                //       selectedAnswer == answer ? "black" : "white",
-                //     backgroundColor:
-                //       selectedAnswer == answer
-                //         ? "#ccd0d4"
-                //         : "transparent",
-                //   }}
-                  onClick={() => handleNext(answer)}
-                >
-                  <div className="d-flex p-2">
-                    <div style={{ width: "95%" }}>Yes I agree to these terms</div>
-                    <div className="w-5 circle">A</div>
-                  </div>
+          {termAndCondition.answers.map((answer, index) => (
+            <div className="col-md-5" key={index}>
+              <div
+                className="row choice mb-2 rounded"
+                style={{
+                  border: "1px solid grey",
+                  marginLeft: "2px",
+                  color: selected == answer ? "black" : "white",
+                  backgroundColor:
+                    selected == answer ? "#ccd0d4" : "transparent",
+                }}
+                onClick={() => autoSave(answer)}
+              >
+                <div className="d-flex p-2">
+                  <div style={{ width: "95%" }}>{answer}</div>
+                  <div className="w-5 circle">{indexToAlphabet(index)}</div>
                 </div>
               </div>
-            </>
-          {/* ))} */}
+            </div>
+          ))}
 
           <div
             className="d-flex"
-            style={{  alignItems:"center", marginTop: "30px" ,gap:"20px"}}
+            style={{ alignItems: "center", marginTop: "30px", gap: "20px" }}
           >
-                 <button
-            className="btn btn-danger"
-            style={{
-              padding: "15px 35px",
-              borderRadius: "50px",
-              fontSize: "15px",
-            }}
-          >
-            <Link
-              className="start-link"
+            <button
+              className="btn btn-danger"
               style={{
-                fontWeight: 900,
-                paddingRight: "10px",
-                color: "white",
-                textDecoration: "none",
+                padding: "15px 35px",
+                borderRadius: "50px",
+                fontSize: "15px",
               }}
-              href=""
+              onClick={handleNext}
             >
-              SUBMIT
-            </Link>
-            <FaAngleRight />
-          </button>
-          <p className="" style={{color:"white" ,fontSize:"small", marginTop:"15px"}}>Press <b>ENTER</b> key to submit</p>
+              <span
+                className="start-link"
+                style={{
+                  fontWeight: 900,
+                  paddingRight: "10px",
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
+                SUBMIT
+              </span>
+              <FaCheck />
+            </button>
+            <p
+              className=""
+              style={{ color: "white", fontSize: "small", marginTop: "15px" }}
+            >
+              Press <b>ENTER</b> key to submit
+            </p>
           </div>
         </div>
       </div>

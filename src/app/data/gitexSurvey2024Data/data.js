@@ -16,5 +16,22 @@ import { q16 } from "./q16";
 import { q17 } from "./q17";
 import { termAndCondition } from "./termsAndConditon";
 
-export const questionsData=[q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17]
-export const termsAndConditionAnswers=termAndCondition;
+export const questionsData = [
+  q2,
+  q3,
+  q4,
+  q5,
+  q6,
+  q7,
+  q8,
+  q9,
+  q10,
+  q11,
+  q12,
+  q13,
+  q14,
+  q15,
+  q16,
+  q17,
+];
+export const termsAndConditionAnswers = termAndCondition;

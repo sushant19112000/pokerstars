@@ -1,7 +1,7 @@
 import React from "react";
 import { Home } from "./home";
 import Contact from "./contact";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { TermsCondition } from "./Terms&condition";
 import { useRecoilValue } from "recoil";
 import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
@@ -11,13 +11,10 @@ const Tab = ({ isActive, children }) =>
 
 export const Main = () => {
   const tabNo = useRecoilValue(GitexSurvey2024StateTab);
-  useEffect(() => {
-    console.log(tabNo);
-  }, [tabNo]);
+  useEffect(() => {}, [tabNo]);
   return (
     <>
       <div
-        className="container-fluid d-flex justify-content-center "
         style={{
           backgroundImage: 'url("/glitex_survey_bgimg.png")',
           backgroundSize: "cover",

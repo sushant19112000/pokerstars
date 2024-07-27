@@ -1,10 +1,12 @@
-import { Main } from '@/app/components/gitexSurvey/main'
-import React from 'react'
+import { Main } from "@/app/components/gitexSurvey/main";
+import React from "react";
 
 const Index = () => {
   return (
-    <div><Main/></div>
-  )
-}
+    <div>
+      <Main />
+    </div>
+  );
+};
 
-export default Index
+export default Index;

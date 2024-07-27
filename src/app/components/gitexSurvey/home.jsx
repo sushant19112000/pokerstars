@@ -1,27 +1,14 @@
 import React, { useEffect } from "react";
-import Link from "next/link";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
 import { FaAngleRight } from "react-icons/fa6";
 import { useNext } from "./useNext";
-import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
 
 export const Home = () => {
-  // const [surveyData, setSurveyData] = useRecoilState(AfricaSurveyState);
-  // useEffect(() => {
-  //   setSurveyData([]);
-  // }, []);
-  // const handleNext = () => {
-  //   nextTab(2);
-  // };
-  const next=useNext()
-  useEffect(()=>{
+  const next = useNext();
+  useEffect(() => {}, [next]);
 
-  },[next])
-
-  const handleNext=()=>{
-    next()
-  }
+  const handleNext = () => {
+    next();
+  };
 
   return (
     <div
@@ -61,13 +48,12 @@ export const Home = () => {
               borderRadius: "50px",
               fontSize: "15px",
               marginTop: "30px",
-              backgroundColor:"#AC1817",
-              color:"white"
-            
+              backgroundColor: "#AC1817",
+              color: "white",
             }}
             onClick={handleNext}
           >
-            <Link
+            <span
               className="start-link"
               style={{
                 fontWeight: 900,
@@ -75,11 +61,9 @@ export const Home = () => {
                 color: "white",
                 textDecoration: "none",
               }}
-              href=""
-             
             >
               BEGIN
-            </Link>
+            </span>
             <FaAngleRight />
           </button>
         </div>

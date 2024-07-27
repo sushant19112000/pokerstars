@@ -4,10 +4,10 @@ import { QuestionOptionSingle } from "./questionOptionSingle";
 import { QuestionOptionDouble } from "./questionOptionDouble";
 
 export const QuestionsMapper = ({ tab }) => {
-  console.log(tab);
+  // console.log(tab);
   useEffect(() => {}, [tab]);
   const question = questionsData.find((q) => q.questionNumber === tab);
-  console.log(questionsData);         
+  // console.log(questionsData);
   return (
     <div>
       {question.optionSelectType == "single" && (
@@ -18,9 +18,6 @@ export const QuestionsMapper = ({ tab }) => {
 
       {question.optionSelectType == "double" && (
         <>
-          <div style={{ fontSize: "2rem", color: "white" }}>
-            {question.questionNumber}
-          </div>
           <QuestionOptionDouble data={question} />
         </>
       )}
