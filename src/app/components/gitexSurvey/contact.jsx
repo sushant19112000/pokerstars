@@ -55,6 +55,10 @@ const Contact = ({ nextTab }) => {
 
   const next=useNext()
 
+  const handleNext=()=>{
+    next()
+  }
+
   return (
     <div className="row justify-content-center">
       <div className=" col-md-8">
@@ -445,6 +449,7 @@ const Contact = ({ nextTab }) => {
               borderRadius: "50px",
               fontSize: "15px",
             }}
+            onClick={handleNext}
           >
             <Link
               className="start-link"
@@ -455,7 +460,7 @@ const Contact = ({ nextTab }) => {
                 textDecoration: "none",
               }}
               href=""
-              onClick={(()=>next())}
+             
             >
               NEXT
             </Link>

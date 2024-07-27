@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
 import { FaAngleRight } from "react-icons/fa6";
 import { useNext } from "./useNext";
+import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
 
-export const Home = ({ nextTab }) => {
+export const Home = () => {
   // const [surveyData, setSurveyData] = useRecoilState(AfricaSurveyState);
   // useEffect(() => {
   //   setSurveyData([]);
@@ -14,6 +15,14 @@ export const Home = ({ nextTab }) => {
   //   nextTab(2);
   // };
   const next=useNext()
+  useEffect(()=>{
+
+  },[next])
+
+  const handleNext=()=>{
+    next()
+  }
+
   return (
     <div
       className="container-fluid d-flex justify-content-center align-items-center"
@@ -52,7 +61,9 @@ export const Home = ({ nextTab }) => {
               borderRadius: "50px",
               fontSize: "15px",
               marginTop: "30px",
+            
             }}
+            onClick={handleNext}
           >
             <Link
               className="start-link"
@@ -63,7 +74,7 @@ export const Home = ({ nextTab }) => {
                 textDecoration: "none",
               }}
               href=""
-              onClick={(()=>next())}
+             
             >
               BEGIN
             </Link>

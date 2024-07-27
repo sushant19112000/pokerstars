@@ -10,7 +10,6 @@ export const q3 = {
       "No",
       "I don't know",
       "We are not planning any digitalisation initaives"
-    ],
-    buttons:['next','skip','submit']
+    ]
 };
   

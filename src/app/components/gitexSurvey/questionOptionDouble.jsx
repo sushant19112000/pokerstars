@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSaveData } from './useSaveData'
-
-export const QuestionOptionDouble = () => {
+import { useNext } from './useNext'
+import { indexToAlphabet } from '@/app/middleware/indexToAlphabet'
+export const QuestionOptionDouble = ({data}) => {
     const [selectedAnswers, setSelectedAnswers] = useState([])
     const [disable, setDisable] = useState(false)
     const next = useNext()
@@ -20,6 +21,14 @@ export const QuestionOptionDouble = () => {
         }
         else {
             setDisable(true)
+            setSelectedAnswers((prevSelectedAnswers) => {
+                const index = prevSelectedAnswers.indexOf(answer);
+                if (index !== -1) {
+                    return prevSelectedAnswers.filter((item) => item !== answer);
+                } else {
+                    return [...prevSelectedAnswers, answer];
+                }
+            });
         }
     };
 
@@ -58,7 +67,7 @@ export const QuestionOptionDouble = () => {
 
     return (
         <div>
-            {answers.map((answer, index) => (
+            {data.answers.map((answer, index) => (
                 <>
                     <div className="col-md-5" aria-disabled={(() => checkDisbaled(answer))} >
                         <div

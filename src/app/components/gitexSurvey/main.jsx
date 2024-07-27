@@ -1,17 +1,17 @@
 import React from "react";
 import { Home } from "./home";
 import Contact from "./contact";
-import { questionsData } from "@/app/data/gitexSurvey2024Data/data";
 import { useState,useEffect } from "react";
 import { TermsCondition } from "./Terms&condition";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
+import { QuestionsMapper } from "./questionsMapper";
 const Tab = ({ isActive, children }) => (isActive ? <div>{children}</div> : null);
 
 export const Main = () => {
-  const [tabNo, setTabNo] = useRecoilState(GitexSurvey2024StateTab);
+  const tabNo = useRecoilValue(GitexSurvey2024StateTab)
   useEffect(()=>{
-
+   console.log(tabNo)
   },[tabNo])
   return (
     <>
@@ -33,7 +33,7 @@ export const Main = () => {
           </Tab>          
           <Tab isActive={tabNo>2 && tabNo<18}>
               <>
-               2 to 17 questions
+              <QuestionsMapper tab={tabNo} />
               </>
           </Tab>         
           <Tab isActive={tabNo === 18}>

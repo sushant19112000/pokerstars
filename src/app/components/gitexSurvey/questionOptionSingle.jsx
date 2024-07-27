@@ -6,14 +6,11 @@ export const QuestionOptionSingle = ({ data }) => {
   const [selected, setSelected] = useState("")
   const next = useNext()
   const saveData = useSaveData()
-
   const autoSave = (e) => {
     setSelected(e)
     saveData(data.questionNumber, e)
     next()
   }
-
-  
   return (
     <>
       <main className="container" style={{ height: "100vh" }}>
@@ -33,9 +30,9 @@ export const QuestionOptionSingle = ({ data }) => {
               <h2
                 style={{ fontSize: "25px", fontWeight: "600", color: "white" }}
                 className="mb-5"
-                dangerouslySetInnerHTML={data.question}
-
-              />
+              >
+                 {data.question}
+              </h2>
               {data.answers.map((answer, index) => (
                 <>
                   <div className="col-md-5">
@@ -69,3 +66,5 @@ export const QuestionOptionSingle = ({ data }) => {
     </>
   )
 }
+
+
