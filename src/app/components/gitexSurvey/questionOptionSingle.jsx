@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { indexToAlphabet } from '@/app/middleware/indexToAlphabet'
-import { useNext } from './useNext'
-import { useSaveData } from './useSaveData'
+import { useNext } from './useNext';
+import { useSaveData } from './useSaveData';
+import './main.css';
 export const QuestionOptionSingle = ({ data }) => {
   const [selected, setSelected] = useState("")
   const next = useNext()
@@ -35,7 +36,7 @@ export const QuestionOptionSingle = ({ data }) => {
               </h2>
               {data.answers.map((answer, index) => (
                 <>
-                  <div className="col-md-5">
+                  <div className="col-md-5" key={index}>
                     <div
                       className="row choice mb-2 rounded"
                       style={{
