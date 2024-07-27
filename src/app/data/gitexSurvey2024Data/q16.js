@@ -1,5 +1,5 @@
 export const q16 = {
-    questionNumber:16,
+    questionNumber:17,
     gridType:'row',
   optionSelectType: 'double',
   question: "*What are the priority areas for automation?",

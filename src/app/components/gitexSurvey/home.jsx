@@ -55,12 +55,14 @@ export const Home = () => {
             Got a moment to share your thoughts?
           </p>
           <button
-            className="btn btn-danger"
+            className="btn "
             style={{
               padding: "15px 35px",
               borderRadius: "50px",
               fontSize: "15px",
               marginTop: "30px",
+              backgroundColor:"#AC1817",
+              color:"white"
             
             }}
             onClick={handleNext}

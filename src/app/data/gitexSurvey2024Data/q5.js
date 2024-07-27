@@ -1,5 +1,5 @@
 export const q5 = {
-    questionNumber:5,
+    questionNumber:6,
     gridType:'col',
     optionSelectType:'single',
     question: "*Which of the following best describes your current infrastructure model?",

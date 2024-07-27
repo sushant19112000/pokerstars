@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { AfricaSurveyState } from "@/app/atoms/africaSurvey";
 import { useNext } from "./useNext";
+import { useSkip } from "./useSkip";
 const Contact = ({ nextTab }) => {
   //   const [surveyData, setSurveyData] = useRecoilState(AfricaSurveyState)
   //   const handleNext = () => {
@@ -54,11 +55,13 @@ const Contact = ({ nextTab }) => {
   //   }
 
   const next=useNext()
-
+const skip = useSkip()
   const handleNext=()=>{
     next()
   }
-
+const handleSkip = ()=>{
+  skip()
+}
   return (
     <div className="row justify-content-center">
       <div className=" col-md-8">
@@ -443,11 +446,15 @@ const Contact = ({ nextTab }) => {
           style={{ justifyContent: "flex-start", marginTop: "30px" }}
         >
           <button
-            className="btn btn-danger"
+            className="btn "
             style={{
               padding: "15px 35px",
               borderRadius: "50px",
               fontSize: "15px",
+             backgroundColor:"#AC1817",
+              color:"white"
+              
+
             }}
             onClick={handleNext}
           >
@@ -476,7 +483,7 @@ const Contact = ({ nextTab }) => {
               fontWeight: "900",
               border: "none",
             }}
-            //   onClick={handleNext}
+              onClick={handleSkip}
           >
             <span>SKIP</span>
           </button>

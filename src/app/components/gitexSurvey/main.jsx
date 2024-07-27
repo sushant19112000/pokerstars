@@ -1,18 +1,19 @@
 import React from "react";
 import { Home } from "./home";
 import Contact from "./contact";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { TermsCondition } from "./Terms&condition";
 import { useRecoilValue } from "recoil";
 import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
 import { QuestionsMapper } from "./questionsMapper";
-const Tab = ({ isActive, children }) => (isActive ? <div>{children}</div> : null);
+const Tab = ({ isActive, children }) =>
+  isActive ? <div>{children}</div> : null;
 
 export const Main = () => {
-  const tabNo = useRecoilValue(GitexSurvey2024StateTab)
-  useEffect(()=>{
-   console.log(tabNo)
-  },[tabNo])
+  const tabNo = useRecoilValue(GitexSurvey2024StateTab);
+  useEffect(() => {
+    console.log(tabNo);
+  }, [tabNo]);
   return (
     <>
       <div
@@ -26,24 +27,21 @@ export const Main = () => {
       >
         <div>
           <Tab isActive={tabNo === 1}>
-            <Home/>
+            <Home />
           </Tab>
-          <Tab isActive={tabNo===2}>
+          <Tab isActive={tabNo === 2}>
             <Contact />
-          </Tab>          
-          <Tab isActive={tabNo>2 && tabNo<18}>
-              <>
+          </Tab>
+          <Tab isActive={tabNo > 2 && tabNo < 18}>
+            <>
               <QuestionsMapper tab={tabNo} />
-              </>
-          </Tab>         
+            </>
+          </Tab>
           <Tab isActive={tabNo === 18}>
-             <TermsCondition/>
+            <TermsCondition />
           </Tab>
         </div>
       </div>
     </>
   );
 };
-
-
-
