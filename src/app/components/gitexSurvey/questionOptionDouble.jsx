@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useSaveData } from './useSaveData'
 import { useNext } from './useNext'
 import { indexToAlphabet } from '@/app/middleware/indexToAlphabet'
-export const QuestionOptionDouble = ({data}) => {
+import './main.css';
+import { FaAngleRight } from "react-icons/fa6";
+export const QuestionOptionDouble = ({ data }) => {
     const [selectedAnswers, setSelectedAnswers] = useState([])
     const [disable, setDisable] = useState(false)
     const next = useNext()
@@ -66,35 +68,96 @@ export const QuestionOptionDouble = ({data}) => {
     }
 
     return (
-        <div>
-            {data.answers.map((answer, index) => (
-                <>
-                    <div className="col-md-5" aria-disabled={(() => checkDisbaled(answer))} >
-                        <div
-                            className="row choice mb-2 rounded"
+        <div className='row'>
+            <div className="col-md-9 pb-5">
+                <div style={{ marginTop: '80px' }}>
+
+                    <h3
+                        style={{
+                            color: "gray",
+                            fontSize: "15px",
+                            fontWeight: "700",
+                            paddingTop: "20px",
+                        }}
+                    >
+                        Question {data.questionNumber}
+                    </h3>
+
+                    <h2
+                        style={{ fontSize: "25px", fontWeight: "600", color: "white" }}
+                        className="mb-5"
+                    >
+                        {data.question}
+                        <>
+                            <p
+                                style={{
+                                    color: "gray",
+                                    fontWeight: "600",
+                                    fontSize: "20px",
+                                }}
+                            >
+                                Please select top two.
+                            </p>
+                        </>
+                    </h2>
+                    <div style={{}}>
+                        <p
                             style={{
-
-                                border: "1px solid grey",
-                                marginLeft: "2px",
-                                color:
-                                    handleColor("fontColor", answer),
-                                backgroundColor: handleColor('backgroundColor', answer)
+                                color: "white",
+                                fontWeight: "600",
+                                fontSize: "15px",
+                                marginTop: "10px",
                             }}
-                            onClick={() => handleDoubleSelect(answer)}
                         >
-                            <div className="d-flex p-2">
-                                <div style={{ width: "95%" }}>{answer}</div>
-                                <div className="w-5 circle">{indexToAlphabet(index)}</div>
-                            </div>
-                        </div>
+                            Choose any 2
+                        </p>
                     </div>
+                    {data.answers.map((answer, index) => (
+                        <>
+                            <div className="col-md-5" aria-disabled={(() => checkDisbaled(answer))} >
+                                <div
+                                    className="row choice mb-2 rounded"
+                                    style={{
+
+                                        border: "1px solid grey",
+                                        marginLeft: "2px",
+                                        color:
+                                            handleColor("fontColor", answer),
+                                        backgroundColor: handleColor('backgroundColor', answer)
+                                    }}
+                                    onClick={() => handleDoubleSelect(answer)}
+                                >
+                                    <div className="d-flex p-2">
+                                        <div style={{ width: "95%" }}>{answer}</div>
+                                        <div className="w-5 circle">{indexToAlphabet(index)}</div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-                </>
-            ))}
+                        </>
+                    ))}
+                </div>
 
-            <div >
-                <button onClick={handleNext}>Next</button>
+                <button
+                    className="btn btn-danger"
+                    style={{
+                        //   padding: "15px 35px",
+                        borderRadius: "50px",
+                        fontSize: "15px",
+                        marginTop: "30px",
+
+
+                    }}
+
+                    onClick={handleNext}
+                >
+                    <span>
+                        Next
+
+                    </span>
+                    <FaAngleRight />
+                </button>
             </div>
         </div>
     )
