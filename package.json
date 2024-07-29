@@ -38,6 +38,7 @@
     "recoil": "^0.7.7",
     "recoil-persist": "^5.1.0",
     "rooks": "^7.14.1",
+    "slick-carousel": "^1.8.1",
     "swr": "^2.2.4"
   },
   "devDependencies": {
