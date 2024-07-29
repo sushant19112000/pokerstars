@@ -2,35 +2,26 @@ import React, { useState } from 'react'
 import { useNext } from './useNext'
 import { usePrevious } from './usePrevious'
 import { useSaveData } from './useSaveData'
-import { color } from 'framer-motion'
-export const ChooseDate = () => {
-    const [date, setDate] = useState("")
-    const [error, setError] = useState("");
-    const [isChecked, setChecked] = useState(false)
+import { countries } from './countries'
+import { statesOfBirth } from './stateofBirth'
+export const ChooseCountryStateCityOfBirth = () => {
+    const [stateOfBirth, setStateOfBirth] = useState("")
+    const [countryOfBirth, setCountryOfBirth] = useState("")
+    const [cityOfBirth,setCityOfBirth]=useState("")
     const next = useNext()
-
     const prev = usePrevious()
     const saveData = useSaveData()
 
     const handleNext = () => {
-        next()
+        
+            next()
+        
 
     }
 
     const handlePrev = () => {
         prev()
     }
-
-
-    const handleChange = (e) => {
-        const temp = e.target.value
-        setDate(temp)
-    }
-
-
-    const handleCheckboxChange = (e) => {
-        setChecked(e.target.checked);
-    };
 
 
     return (
@@ -42,7 +33,7 @@ export const ChooseDate = () => {
                             <span style={{ color: 'white' }} onClick={handlePrev}>Prev</span>
                         </div>
                         <div className=''>
-                            <p style={{ fontWeight: '600', color: 'white', fontFamily: 'Roboto', fontSize: '16px' }}>Votre adresse e-mail</p>
+                            <p style={{ fontWeight: '600', color: 'white', fontFamily: 'Roboto', fontSize: '16px' }}>Votre nom d'utilisateur</p>
 
                         </div>
                     </div>
@@ -84,73 +75,69 @@ export const ChooseDate = () => {
                     </div>
 
                 </div>
-
-
             </div>
-
-
-
 
             <div className="row justify-content-center pt-3" >
                 <div className="col-md-3" >
                     <div>
-                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>Les aspects légaux...
-                        </p>
+                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>Où êtes-vous né(e) ?</p>
                     </div>
 
                     <div>
-                        <p style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'RGB(102, 102, 102)' }}>Nous avons besoin de votre date de naissance pour confirmer que vous avez plus de 18</p>
+                        <p style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'RGB(102, 102, 102)' }}>Nous utiliserons votre lieu de naissance pour nous aider à vous identifier.</p>
                     </div>
 
 
                     <div>
-                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Date de naissance
-                        </span>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Pays de naissance</span>
 
                     </div>
 
                     <div className='mt-1'>
-                        <input onChange={handleChange} className='form-control' style={{ border: '1px solid black', height: '50px', borderRadius: '0' }} />
-
-                        {error && (
-                            <>
-                                <span style={{ color: 'RGB(8, 155, 128)', fontSize: '14px', fontFamily: 'Roboto' }}>Vérifiez qu'il n'y a pas d'erreur et réessayez</span>
-                            </>
-                        )}
-                    </div>
-
-                    <div className="mt-3">
-                        <div className="d-flex">
-                            <div className="">
-                                <input className='form-check me-2 ' type='checkbox'
-                                    onChange={handleCheckboxChange} />
-
-                            </div>
-                            <div className="">
-                                <p className='' style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'black', fontWeight: '500', marginTop: '2.5px' }}>
-                                    Je confirme que j'ai au moins 18 ans et que j'ai lu et compris les <a style={{ color: '#089b80' }} href="/">Modalités générales</a> ainsi que la <a style={{ color: '#089b80' }} href="/">Politique de confidentialité</a>.
-                                </p>
-
-
-
-                            </div>
-                        </div>
-
+                        <select className='form-select' defaultValue="France" onChange={((e) => setCountryOfBirth(e.target.value))}>
+                            {countries.map((country, index) => (
+                                <option key={index} value={country}>
+                                    {country}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
 
 
+                    <div className='mt-3'>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Département de naissance</span>
+
+                    </div>
+
+                    <div className='mt-1'>
+                        <select id="stateOfBirth" className="form-select" onChange={((e)=>(setStateOfBirth(e.target.value)))} data-testid="state-of-birth">
+                            {statesOfBirth.map((state, index) => (
+                                <option key={index} value={state}>{state}</option>
+                            ))}
+                        </select>
+                    </div>
+                    
+
+
+                    <div className='mt-3'>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Ville de naissance</span>
+
+                    </div>
+
+                    <div className='mt-1'>
+                        <select id="stateOfBirth" className="form-select" onChange={((e)=>(setCityOfBirth(e.target.value)))} data-testid="state-of-birth">
+                            {statesOfBirth.map((state, index) => (
+                                <option key={index} value={state}>{state}</option>
+                            ))}
+                        </select>
+                    </div>
 
                     <div className='mt-5 mb-5 text-center'>
-                        <button className='btn w-100' style={{ borderRadius: '18px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Créer un compte</button>
+                        <button className='btn' style={{ borderRadius: '18px', width: '386px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Continuer</button>
                     </div>
-
-
-
-
                 </div>
             </div>
         </>
-
     )
 }
