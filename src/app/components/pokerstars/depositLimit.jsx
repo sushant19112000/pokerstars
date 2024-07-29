@@ -229,7 +229,7 @@ export const DepositLimit = () => {
                 className="d-flex align-items-center px-2 "
                 style={{
                   backgroundColor: "rgb(247, 247, 224)",
-                  border: "0.5px solid black",
+                  border: "1px solid gray",
                   borderLeft: "0",
                 }}
               >
