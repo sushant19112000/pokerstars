@@ -12,7 +12,7 @@ import { ChooseUsername } from "./chooseUsername";
 <<<<<<< HEAD
 import Hero from "./hero";
 import "./main.css"
-import ValidateNameAndSurname from "./ValidateNameAndSurname";
+import ValidateNameAndSurname from "./FirstNameLastName";
 // const Tab = ({ isActive, children }) =>
 //   isActive ? <div>{children}</div> : null;
 =======
