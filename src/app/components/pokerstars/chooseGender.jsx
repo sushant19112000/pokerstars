@@ -13,7 +13,10 @@ export default function ChooseGender() {
   const saveData = useSaveData();
 
   const handleNext = () => {
-    next();
+    if (gender!=""){
+      saveData("gender",gender)
+      next();
+    }
   };
 
   const handlePrev = () => {
@@ -219,6 +222,7 @@ export default function ChooseGender() {
             <input
             type="radio"
               onChange={handleChange}
+              value="Homme"
             
               style={{
                 border: "1px solid black",
@@ -236,7 +240,7 @@ export default function ChooseGender() {
             <input
             type="radio"
               onChange={handleChange}
-            
+              value="Femme"
               style={{
                 border: "1px solid black",
                

@@ -5,16 +5,16 @@ import { useSaveData } from './useSaveData'
 import { autoWithDrawLimits } from './autoWithDrawLimits'
 export const AutoMaticWithDrawalLimit = () => {
     const [autoWithLimit, setAutoWithLimit] = useState("")
-    
+
     const next = useNext()
     const prev = usePrevious()
     const saveData = useSaveData()
 
     const handleNext = () => {
-
-        next()
-
-
+        if (autoWithLimit != "") {
+            saveData("autoWithLimit", autoWithLimit)
+            next()
+        }
     }
 
     const handlePrev = () => {
@@ -87,7 +87,7 @@ export const AutoMaticWithDrawalLimit = () => {
                     </div>
 
 
-                  
+
 
                     <div className='mt-1'>
                         <select className='form-select' defaultValue="France" onChange={((e) => setAutoWithLimit(e.target.value))}>
@@ -101,7 +101,7 @@ export const AutoMaticWithDrawalLimit = () => {
 
 
 
-                 
+
 
                     <div className='mt-5 mb-5 text-center'>
                         <button className='btn' style={{ borderRadius: '18px', width: '386px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Continuer</button>

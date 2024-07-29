@@ -11,10 +11,11 @@ export const LimitCap = () => {
     const saveData = useSaveData()
 
     const handleNext = () => {
-
-        next()
-
-
+        if(weeklyLimit && sevenLimit){
+            saveData("weeklytLimit",weeklyLimit)
+            saveData("sevenLimit",sevenLimit)
+            next()
+        }
     }
 
     const handlePrev = () => {
