@@ -6,7 +6,7 @@ import { ChooseCounty } from "./chooseCounty";
 import { ChooseUsername } from "./chooseUsername";
 import { ChoosePassword } from "./choosePassword";
 import { ChooseEmail } from "./chooseEmail";
-
+import { ChooseDate } from "./chooseDate";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
@@ -29,6 +29,9 @@ export const Main = () => {
           </Tab>
           <Tab isActive={tabNo ===4}>
              <ChooseEmail/>
+          </Tab>
+          <Tab isActive={tabNo === 5}>
+            <ChooseDate/>
           </Tab>
         </div>
       </div>

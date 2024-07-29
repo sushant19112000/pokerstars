@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import { useNext } from './useNext'
 import { usePrevious } from './usePrevious'
 import { useSaveData } from './useSaveData'
-export const ChooseEmail = () => {
-    const [email, setEmail] = useState("")
+import { color } from 'framer-motion'
+export const ChooseDate = () => {
+    const [date, setDate] = useState("")
     const [error, setError] = useState("");
+    const [isChecked, setChecked] = useState(false)
     const next = useNext()
+
     const prev = usePrevious()
     const saveData = useSaveData()
 
     const handleNext = () => {
-       next()
+        next()
 
     }
 
@@ -18,22 +21,16 @@ export const ChooseEmail = () => {
         prev()
     }
 
-    const validateEmail = (email) => {
-        // Basic email regex pattern
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    };
 
     const handleChange = (e) => {
         const temp = e.target.value
-        setEmail(temp)
-        if (validateEmail(email)) {
-            setError('');
-        } else {
-            setError("L'adresse e-mail n'est pas valide");
-        }
-
+        setDate(temp)
     }
+
+
+    const handleCheckboxChange = (e) => {
+        setChecked(e.target.checked);
+    };
 
 
     return (
@@ -97,16 +94,18 @@ export const ChooseEmail = () => {
             <div className="row justify-content-center pt-3" >
                 <div className="col-md-3" >
                     <div>
-                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>Quelle est votre adresse e-mail ?</p>
+                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>Les aspects légaux...
+                        </p>
                     </div>
 
                     <div>
-                        <p style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'RGB(102, 102, 102)' }}>Nous l'utiliserons pour vous contacter à propos de votre compte et vous apporter aide et assistance.</p>
+                        <p style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'RGB(102, 102, 102)' }}>Nous avons besoin de votre date de naissance pour confirmer que vous avez plus de 18</p>
                     </div>
 
 
                     <div>
-                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>E-mail</span>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Date de naissance
+                        </span>
 
                     </div>
 
@@ -115,14 +114,35 @@ export const ChooseEmail = () => {
 
                         {error && (
                             <>
-                                <span style={{ color: 'RGB(8, 155, 128)', fontSize: '14px', fontFamily: 'Roboto' }}>L'adresse e-mail n'est pas valide</span>
+                                <span style={{ color: 'RGB(8, 155, 128)', fontSize: '14px', fontFamily: 'Roboto' }}>Vérifiez qu'il n'y a pas d'erreur et réessayez</span>
                             </>
                         )}
                     </div>
 
+                    <div className="mt-3">
+                        <div className="d-flex">
+                            <div className="">
+                                <input className='form-check me-2 ' type='checkbox'
+                                    onChange={handleCheckboxChange} />
+
+                            </div>
+                            <div className="">
+                                <p className='' style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'black', fontWeight: '500', marginTop: '2.5px' }}>
+                                Je confirme que j'ai au moins 18 ans et que j'ai lu et compris les <a style={{color:'#089b80'}} href="/">Modalités générales</a> ainsi que la <a style={{color:'#089b80'}} href="/">Politique de confidentialité</a>.
+                                </p>
+                                
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
 
                     <div className='mt-5 mb-5 text-center'>
-                        <button className='btn' style={{ borderRadius: '18px', width: '386px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Continuer</button>
+                        <button className='btn w-100' style={{ borderRadius: '18px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Créer un compte</button>
                     </div>
 
 

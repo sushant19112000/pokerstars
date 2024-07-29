@@ -10,7 +10,8 @@ export const PokerStarsData = atom({
     country:"",
     username:"",
     password:"",
-    email:""
+    email:"",
+    dob:"",
   }, // default value (aka initial value)
 //   effects_UNSTABLE:[persistAtom]
 });
