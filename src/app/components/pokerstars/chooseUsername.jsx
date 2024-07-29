@@ -73,12 +73,7 @@ export const ChooseUsername = () => {
                     </div>
 
                 </div>
-
-
             </div>
-
-
-
 
             <div className="row justify-content-center pt-3" >
                 <div className="col-md-3" >
@@ -110,13 +105,8 @@ export const ChooseUsername = () => {
                     <div className='mt-5 mb-5 text-center'>
                         <button className='btn' style={{ borderRadius: '18px', width: '386px', color: 'white', fontWeight: '700', backgroundColor: '#02bd9c' }} onClick={handleNext}>Continuer</button>
                     </div>
-
-
-
-
                 </div>
             </div>
         </>
-
     )
 }

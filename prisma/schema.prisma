@@ -252,3 +252,11 @@ model  gitexsurvey2024{
   id Int @id @default(autoincrement())
   data String 
 }
+
+
+modal pokerstars{
+  id Int @id @default(autoincrement)
+  username String
+  email String
+  
+}
