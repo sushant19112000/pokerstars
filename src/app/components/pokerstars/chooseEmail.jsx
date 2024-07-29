@@ -10,8 +10,10 @@ export const ChooseEmail = () => {
     const saveData = useSaveData()
 
     const handleNext = () => {
-       next()
-
+        if (email != "") {
+            saveData("email", email)
+        }
+        next()
     }
 
     const handlePrev = () => {
