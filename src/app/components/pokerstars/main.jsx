@@ -6,13 +6,15 @@ import { ChooseCounty } from "./chooseCounty";
 import { ChooseUsername } from "./chooseUsername";
 import { ChoosePassword } from "./choosePassword";
 import { ChooseEmail } from "./chooseEmail";
+import { ChooseDate } from "./chooseDate";
 import "./main.css"
+import { ChooseCountryStateCityOfBirth} from "./chooseCountryStateCityOfBirth";
+import { ChooseAddressFname } from "./chooseAddressFname";
+import { LimitCap } from "./limitCap";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
-import { ChoosePassword } from "./choosePassword";
-import { ChooseEmail } from "./chooseEmail";
-import { ChooseDate } from "./chooseDate";
+
 
 
 export const Main = () => {
@@ -37,6 +39,17 @@ export const Main = () => {
           </Tab>
           <Tab isActive={tabNo === 5}>
             <ChooseDate/>
+          </Tab>
+          <Tab isActive={tabNo===6}>
+            <ChooseCountryStateCityOfBirth/>
+          </Tab>
+
+          <Tab isActive={tabNo===7}>
+            <ChooseAddressFname/>
+          </Tab>
+
+          <Tab isActive={tabNo===8}>
+            <LimitCap/>
           </Tab>
         </div>
       </div>
