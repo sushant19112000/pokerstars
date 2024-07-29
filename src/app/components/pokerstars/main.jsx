@@ -24,11 +24,11 @@ const Tab = ({ isActive, children }) =>
 >>>>>>> 21bba3c23d4837da76f6d62858c3f7ed60690faf
 
 export const Main = () => {
-  // const tabNo = useRecoilValue(pokerStarsTab);
-  // useEffect(() => {}, [tabNo]);
+  const tabNo = useRecoilValue(pokerStarsTab);
+  useEffect(() => {}, [tabNo]);
   return (
     <>
-      {/* <div
+      <div
       >
         <div>
           <Tab isActive={tabNo === 1}>
@@ -47,12 +47,9 @@ export const Main = () => {
             <ChooseDate/>
           </Tab>
         </div>
-      </div> */}
-      {/* <Hero/> */}
-      {/* <Carousel/> */}
-      {/* <CenterMode/> */}
-      <ChooseUsername/>
-      {/* <ValidateNameAndSurname/> */}
+      </div>
+
+
     </>
   );
 };
