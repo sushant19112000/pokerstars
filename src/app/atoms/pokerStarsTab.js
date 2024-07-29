@@ -1,7 +1,7 @@
 // atoms/asset.js
 import { atom } from "recoil";
-export const GitexSurvey2024StateTab = atom({
-  key: "", // unique ID (with respect to other atoms/selectors)
+export const pokerStarsTab = atom({
+  key: "pokerStarsTab", // unique ID (with respect to other atoms/selectors)
   default: 1, // default value (aka initial value)
 //   effects_UNSTABLE:[persistAtom]
 });
