@@ -3,7 +3,11 @@ import { Home } from "./home";
 import Contact from "./contact";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
-import { GitexSurvey2024StateTab } from "@/app/atoms/gitexSurvey2024TabNo";
+import { pokerStarsTab } from "@/app/atoms/pokerStarsTab";
+import { ChooseCounty } from "./chooseCounty";
+import { ChooseUsername } from "./chooseUsername";
+import { ChoosePassword } from "./choosePassword";
+import { ChooseEmail } from "./chooseEmail";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
