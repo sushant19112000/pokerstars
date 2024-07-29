@@ -6,6 +6,7 @@ import { ChooseCounty } from "./chooseCounty";
 import { ChooseUsername } from "./chooseUsername";
 import { ChoosePassword } from "./choosePassword";
 import { ChooseEmail } from "./chooseEmail";
+
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
