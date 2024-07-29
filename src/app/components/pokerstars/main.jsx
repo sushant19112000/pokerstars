@@ -11,10 +11,9 @@ import "./main.css"
 import { ChooseCountryStateCityOfBirth} from "./chooseCountryStateCityOfBirth";
 import { ChooseAddressFname } from "./chooseAddressFname";
 import { LimitCap } from "./limitCap";
+import { AutoMaticWithDrawalLimit } from "./automaticWithDrawalLimit";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
-
-
 
 
 export const Main = () => {
@@ -50,6 +49,10 @@ export const Main = () => {
 
           <Tab isActive={tabNo===8}>
             <LimitCap/>
+          </Tab>
+
+          <Tab isActive={tabNo===9}>
+            <AutoMaticWithDrawalLimit />
           </Tab>
         </div>
       </div>
