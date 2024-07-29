@@ -1,7 +1,17 @@
-import { Main } from "@/app/components/pokerstars/main";
+
+
+import { DepositLimit } from "@/app/components/pokerstars/depositLimit";
+
 
 export default function Index() {
     return (
-        <div><Main/></div>
+        <div>
+            
+            
+            {/* <Main/> */}
+            
+         <DepositLimit/>
+            
+            </div>
     );
 }

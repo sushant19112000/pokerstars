@@ -3,11 +3,11 @@ import { useSaveData } from "./useSaveData";
 import { usePrevious } from "./usePrevious";
 import { useNext } from "./useNext";
 
-export default function FirstNameLastName() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [nameerror, setNameError] = useState("");
-  const [surnameError, setSurnameError] = useState("");
+export default function ChooseGender() {
+  const [gender, setGender] = useState("");
+ 
+  // const [nameerror, setNameError] = useState("");
+  
   const next = useNext();
   const prev = usePrevious();
   const saveData = useSaveData();
@@ -20,15 +20,12 @@ export default function FirstNameLastName() {
     prev();
   };
 
-  const validateName = (name) => {
-    const ValidName = /\d+/;
-    return ValidName.test(name);
-  };
+  // const validateName = (name) => {
+  //   const ValidName = /\d+/;
+  //   return ValidName.test(name);
+  // };
 
-  const ValidSurname = ( surname) => {
-    const ValidSurname = /\d+/;
-    return ValidSurname.test(surname);
-  };
+  
 
   // const handleChange = (e) => {
   //     const temp = e.target.value
@@ -40,24 +37,12 @@ export default function FirstNameLastName() {
   //     }
 
   // }
-  const handleChangeName = (e) => {
+  const handleChange = (e) => {
     const temp = e.target.value;
-    setName(temp);
-    if (validateName(name)) {
-      setNameError("Le nom que vous avez saisi est invalide.");
-    } else {
-      setNameError("");
-    }
+    setGender(temp);
+   
   };
-  const handleChangeSurname = (e) => {
-    const temp = e.target.value;
-    setSurname(temp);
-    if (ValidSurname(surname)) {
-      setSurnameError("Le nom que vous avez saisi est invalide.");
-    } else {
-      setSurnameError("");
-    }
-  };
+ 
 
   return (
     <>
@@ -208,7 +193,7 @@ export default function FirstNameLastName() {
                 fontFamily: "Roboto",
               }}
             >
-              Quel est votre nom ?
+             Quel est votre sexe ?
             </p>
           </div>
 
@@ -220,73 +205,46 @@ export default function FirstNameLastName() {
                 color: "RGB(102, 102, 102)",
               }}
             >
-              Nous Veuillez renseigner votre nom légal complet afin que nous
-              puissions vous identifier
+           Veuillez sélectionner le sexe indiqué sur votre pièce d’identité.
             </p>
           </div>
 
           <div>
-            <span style={{ fontFamily: "Roboto", fontSize: "15px" }}>
-              Prénom
+            <span style={{ fontFamily: "Roboto", fontSize: "25px" ,fontWeight:"bold"}}>
+            Sexe
             </span>
           </div>
 
-          <div className="mt-1">
+          <div className="mt-1 d-flex align-items-center " style={{gap:"15px" ,alignItems:"center", fontWeight:"900"}}>
             <input
-              onChange={handleChangeName}
-              className="form-control"
+            type="radio"
+              onChange={handleChange}
+            
               style={{
                 border: "1px solid black",
-                height: "50px",
+               
                 borderRadius: "0",
               }}
             />
 
-            {nameerror && (
-              <>
-                <span
-                  style={{
-                    color: "red",
-                    fontSize: "14px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  L'adresse e-mail n'est pas valide
-                </span>
-              </>
-            )}
+            <p className="mt-3">Homme</p>
           </div>
 
-          <div>
-            <span style={{ fontFamily: "Roboto", fontSize: "15px" }}>
-              Nom de famille
-            </span>
-          </div>
+       
 
-          <div className="mt-1">
+          <div className="mt-1 d-flex align-items-center " style={{gap:"15px" ,alignItems:"center", fontWeight:"900"}}>
             <input
-              onChange={handleChangeSurname}
-              className="form-control"
+            type="radio"
+              onChange={handleChange}
+            
               style={{
                 border: "1px solid black",
-                height: "50px",
+               
                 borderRadius: "0",
               }}
             />
 
-            {surnameError && (
-              <>
-                <span
-                  style={{
-                    color: "red",
-                    fontSize: "14px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  L'adresse e-mail n'est pas valide
-                </span>
-              </>
-            )}
+            <p className="mt-3">Femme</p>
           </div>
 
           <div className="mt-5 mb-5 text-center">
