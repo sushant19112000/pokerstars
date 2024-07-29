@@ -1,21 +1,26 @@
-import React from "react";
-import { useEffect } from "react";
-import { useRecoilValue } from "recoil";
-import { pokerStarsTab } from "@/app/atoms/pokerStarsTab";
-import { ChooseCounty } from "./chooseCounty";
+// import React from "react";
+// import { useEffect } from "react";
+// import { useRecoilValue } from "recoil";
+// import { pokerStarsTab } from "@/app/atoms/pokerStarsTab";
+// import { ChooseCounty } from "./chooseCounty";
+// import { ChooseUsername } from "./chooseUsername";
+// import { ChoosePassword } from "./choosePassword";
+// import { ChooseEmail } from "./chooseEmail";
+import CenterMode from "./Carousel";
+import Carousel from "./Carousel";
 import { ChooseUsername } from "./chooseUsername";
-import { ChoosePassword } from "./choosePassword";
-import { ChooseEmail } from "./chooseEmail";
-
-const Tab = ({ isActive, children }) =>
-  isActive ? <div>{children}</div> : null;
+import Hero from "./hero";
+import "./main.css"
+import ValidateNameAndSurname from "./ValidateNameAndSurname";
+// const Tab = ({ isActive, children }) =>
+//   isActive ? <div>{children}</div> : null;
 
 export const Main = () => {
-  const tabNo = useRecoilValue(pokerStarsTab);
-  useEffect(() => {}, [tabNo]);
+  // const tabNo = useRecoilValue(pokerStarsTab);
+  // useEffect(() => {}, [tabNo]);
   return (
     <>
-      <div
+      {/* <div
       >
         <div>
           <Tab isActive={tabNo === 1}>
@@ -31,7 +36,12 @@ export const Main = () => {
              <ChooseEmail/>
           </Tab>
         </div>
-      </div>
+      </div> */}
+      {/* <Hero/> */}
+      {/* <Carousel/> */}
+      {/* <CenterMode/> */}
+      <ChooseUsername/>
+      {/* <ValidateNameAndSurname/> */}
     </>
   );
 };
