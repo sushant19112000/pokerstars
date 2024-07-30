@@ -13,10 +13,12 @@ export const ChooseCountryStateCityOfBirth = () => {
     const saveData = useSaveData()
 
     const handleNext = () => {
-        
-            next()
-        
-
+            if (stateOfBirth!="" && countryOfBirth!="" && cityOfBirth!=""){
+                saveData("stateofbirth",stateOfBirth)
+                saveData("countryofbirth",countryOfBirth)
+                saveData("cityofbirth",cityOfBirth)
+                next()
+            } 
     }
 
     const handlePrev = () => {

@@ -11,6 +11,7 @@ export const ChoosePassword = () => {
 
     const handleNext = () => {
         if (!isTooShort && startsWithLetter && hasDigit) {
+            saveData("password",password)
             next()
         }
 

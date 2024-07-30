@@ -3,35 +3,28 @@ import { useNext } from "./useNext";
 import { usePrevious } from "./usePrevious";
 import { useSaveData } from "./useSaveData";
 export const DepositLimit = () => {
-  const [email, setEmail] = useState("");
+  const [depositLimit,setDepositLimit]=useState()
   const [error, setError] = useState("");
   const next = useNext();
   const prev = usePrevious();
   const saveData = useSaveData();
+   
+
 
   const handleNext = () => {
-    next();
+    if (depositLimit>=7){
+      saveData("depositlimit",7)
+      next();
+    }
   };
 
   const handlePrev = () => {
     prev();
   };
 
-  const validateEmail = (email) => {
-    // Basic email regex pattern
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
 
-  const handleChange = (e) => {
-    const temp = e.target.value;
-    setEmail(temp);
-    if (validateEmail(email)) {
-      setError("");
-    } else {
-      setError("L'adresse e-mail n'est pas valide");
-    }
-  };
+
+
 
   return (
     <>
@@ -224,6 +217,7 @@ export const DepositLimit = () => {
                 inputMode="decimal"
                 className="px-5 py-2"
                 defaultValue="5,00"
+                onChange={((e)=>setDepositLimit(e.target.value))}
               />
               <div
                 className="d-flex align-items-center px-2 "
