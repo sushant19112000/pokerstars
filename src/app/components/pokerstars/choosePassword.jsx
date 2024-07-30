@@ -9,9 +9,11 @@ export const ChoosePassword = () => {
   const prev = usePrevious();
   const saveData = useSaveData();
 
-  const handleNext = () => {
-    if (!isTooShort && startsWithLetter && hasDigit) {
-      next();
+    const handleNext = () => {
+        if (!isTooShort && startsWithLetter && hasDigit) {
+            next()
+        }
+
     }
   };
 

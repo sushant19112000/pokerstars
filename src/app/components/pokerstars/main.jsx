@@ -17,6 +17,7 @@ import { ChooseCountryStateCityOfBirth } from "./chooseCountryStateCityOfBirth";
 import { ChooseAddressFname } from "./chooseAddressFname";
 import { LimitCap } from "./limitCap";
 import { AutoMaticWithDrawalLimit } from "./automaticWithDrawalLimit";
+import { DepositLimit } from "./depositLimit";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
@@ -50,11 +51,20 @@ export const Main = () => {
             <ChooseAddressFname />
           </Tab>
 
-          <Tab isActive={tabNo === 8}>
-            <LimitCap />
+          
+
+          <Tab isActive={tabNo==8}>
+            <DepositLimit/>
           </Tab>
 
           <Tab isActive={tabNo === 9}>
+            <LimitCap />
+          </Tab>
+          
+          <Tab isActive={tabNo==10}>
+          </Tab>
+
+          <Tab isActive={tabNo === 11}>
             <AutoMaticWithDrawalLimit />
           </Tab>
         </div>

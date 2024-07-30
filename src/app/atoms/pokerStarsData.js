@@ -7,7 +7,7 @@ const { persistAtom } = recoilPersist()
 export const PokerStarsData = atom({
   key: "pokerStarsData", // unique ID (with respect to other atoms/selectors)
   default: {
-    country:"",
+    countryf1:"",
     username:"",
     password:"",
     email:"",
@@ -16,7 +16,14 @@ export const PokerStarsData = atom({
     gender:"",
     autoWithLimit:"",
     weeklyLimit:"",
-    sevenLimit:""
+    sevenLimit:"",
+    stateofbirth:"",
+    countryofbirth:"",
+    cityofbirth:"",
+    state:"",
+    city:"",
+    postcode:"",
+    address:""
   }, // default value (aka initial value)
 //   effects_UNSTABLE:[persistAtom]
 });

@@ -5,22 +5,34 @@ import { useSaveData } from "./useSaveData";
 import { countries } from "./countries";
 import { statesOfBirth } from "./stateofBirth";
 export const ChooseAddressFname = () => {
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("France");
-  const [city, setCity] = useState("");
-  const [address, setAddress] = useState("");
-  const [postCode, setPostCode] = useState("");
-  const next = useNext();
-  const prev = usePrevious();
-  const saveData = useSaveData();
+    const [state, setState] = useState("")
+    const [country, setCountry] = useState("France")
+    const [city, setCity] = useState("")
+    const [address, setAddress] = useState("")
+    const [postCode, setPostCode] = useState("")
+    const next = useNext()
+    const prev = usePrevious()
+    const saveData = useSaveData()
 
-  const handleNext = () => {
-    next();
-  };
+    const handleNext = () => {
+        if (isValid()) {
+            saveData("state", state)
+            saveData("address", address)
+            saveData("postcode", postCode)
+            saveData("city", city)
+            next()
+        }
+    }
 
-  const handlePrev = () => {
-    prev();
-  };
+    const handlePrev = () => {
+        prev()
+    }
+
+    const isValid = () => {
+        return state != "" && country != "" && city != "" && address != "" && postCode != ""
+    }
+
+
 
   return (
     <>
@@ -200,18 +212,12 @@ export const ChooseAddressFname = () => {
             </span>
           </div>
 
-          <div className="mt-1">
-            <input
-              value={country}
-              disabled
-              className="form-control"
-              style={{
-                border: "1px solid black",
-                height: "50px",
-                borderRadius: "0",
-              }}
-            />
-          </div>
+                    <div className='mt-1'>
+                        <input value={country} disabled className='form-control' style={{ border: '1px solid black', height: '50px', borderRadius: '0' }} />
+
+
+                    </div>
+
 
           <div>
             <span
@@ -225,88 +231,48 @@ export const ChooseAddressFname = () => {
             </span>
           </div>
 
-          <div className="mt-1">
-            <input
-              onChange={(e) => setAddress(e.target.value)}
-              className="form-control"
-              style={{
-                border: "1px solid black",
-                height: "50px",
-                borderRadius: "0",
-              }}
-            />
-            {address.length <= 4 && (
-              <>
-                <span
-                  style={{
-                    color: "RGB(8, 155, 128)",
-                    fontSize: "14px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  Veuillez réessayer. Ceci doit comporter au moins 4 caractères.
-                </span>
-              </>
-            )}
-          </div>
+                    <div className='mt-1'>
+                        <input onChange={((e) => setAddress(e.target.value))} className='form-control' style={{ border: '1px solid black', height: '50px', borderRadius: '0' }} />
+                        {address.length <= 4 && (
+                            <>
+                                <span style={{ color: 'RGB(8, 155, 128)', fontSize: '14px', fontFamily: 'Roboto' }}>Veuillez réessayer. Ceci doit comporter au moins 4 caractères.</span>
+                            </>
+                        )}
 
-          <div className="mt-3">
-            <span
-              style={{
-                color: "RGB(215, 0, 34)",
-                fontFamily: "Roboto",
-                fontSize: "15px",
-              }}
-            >
-              Département de naissance
-            </span>
-          </div>
+                    </div>
 
-          <div className="mt-1">
-            <select
-              style={{
-                border: "1px soild black !important",
-                outline: "none",
-                height: "40px",
-              }}
-              className="form-select"
-              onChange={(e) => setState(e.target.value)}
-            >
-              {statesOfBirth.map((state, index) => (
-                <option key={index} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-          </div>
 
-          <div className="mt-3">
-            <span
-              style={{
-                color: "RGB(215, 0, 34)",
-                fontFamily: "Roboto",
-                fontSize: "15px",
-              }}
-            >
-              Ville de naissance
-            </span>
-          </div>
 
-          <div className="mt-1">
-            <select
-              id="stateOfBirth"
-              style={{ border: "1px soild black" }}
-              className="form-select"
-              onChange={(e) => setCity(e.target.value)}
-              data-testid="state-of-birth"
-            >
-              {statesOfBirth.map((state, index) => (
-                <option key={index} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-          </div>
+
+
+
+                    <div className='mt-3'>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Département de naissance</span>
+
+                    </div>
+
+                    <div className='mt-1'>
+                        <select style={{ border: '1px soild black !important', outline: 'none', height: '40px' }} className="form-select" onChange={((e) => (setState(e.target.value)))} >
+                            {statesOfBirth.map((state, index) => (
+                                <option key={index} value={state}>{state}</option>
+                            ))}
+                        </select>
+                    </div>
+
+
+
+                    <div className='mt-3'>
+                        <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Ville de naissance</span>
+
+                    </div>
+
+                    <div className='mt-1'>
+                        <select id="stateOfBirth" style={{ border: '1px soild black' }} className="form-select" onChange={((e) => (setCity(e.target.value)))} data-testid="state-of-birth">
+                            {statesOfBirth.map((state, index) => (
+                                <option key={index} value={state}>{state}</option>
+                            ))}
+                        </select>
+                    </div>
 
           <div className="mt-3">
             <span
@@ -320,17 +286,11 @@ export const ChooseAddressFname = () => {
             </span>
           </div>
 
-          <div className="mt-1">
-            <input
-              onChange={(e) => setPostCode(e.target.value)}
-              className="form-control"
-              style={{
-                border: "1px solid black",
-                height: "50px",
-                borderRadius: "0",
-              }}
-            />
-          </div>
+                    <div className='mt-1'>
+                        <input onChange={((e) => setPostCode(e.target.value))} className='form-control' style={{ border: '1px solid black', height: '50px', borderRadius: '0' }} />
+
+
+                    </div>
 
           <div className="mt-5 mb-5 text-center">
             <button
