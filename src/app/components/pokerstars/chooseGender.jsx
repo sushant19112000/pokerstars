@@ -5,16 +5,16 @@ import { useNext } from "./useNext";
 
 export default function ChooseGender() {
   const [gender, setGender] = useState("");
- 
+
   // const [nameerror, setNameError] = useState("");
-  
+
   const next = useNext();
   const prev = usePrevious();
   const saveData = useSaveData();
 
   const handleNext = () => {
-    if (gender!=""){
-      saveData("gender",gender)
+    if (gender != "") {
+      saveData("gender", gender);
       next();
     }
   };
@@ -27,8 +27,6 @@ export default function ChooseGender() {
   //   const ValidName = /\d+/;
   //   return ValidName.test(name);
   // };
-
-  
 
   // const handleChange = (e) => {
   //     const temp = e.target.value
@@ -43,9 +41,7 @@ export default function ChooseGender() {
   const handleChange = (e) => {
     const temp = e.target.value;
     setGender(temp);
-   
   };
- 
 
   return (
     <>
@@ -196,7 +192,7 @@ export default function ChooseGender() {
                 fontFamily: "Roboto",
               }}
             >
-             Quel est votre sexe ?
+              Quel est votre sexe ?
             </p>
           </div>
 
@@ -208,25 +204,33 @@ export default function ChooseGender() {
                 color: "RGB(102, 102, 102)",
               }}
             >
-           Veuillez sélectionner le sexe indiqué sur votre pièce d’identité.
+              Veuillez sélectionner le sexe indiqué sur votre pièce d’identité.
             </p>
           </div>
 
           <div>
-            <span style={{ fontFamily: "Roboto", fontSize: "25px" ,fontWeight:"bold"}}>
-            Sexe
+            <span
+              style={{
+                fontFamily: "Roboto",
+                fontSize: "25px",
+                fontWeight: "bold",
+              }}
+            >
+              Sexe
             </span>
           </div>
 
-          <div className="mt-1 d-flex align-items-center " style={{gap:"15px" ,alignItems:"center", fontWeight:"900"}}>
+          <div
+            className="mt-1 d-flex align-items-center "
+            style={{ gap: "15px", alignItems: "center", fontWeight: "900" }}
+          >
             <input
-            type="radio"
+              type="radio"
               onChange={handleChange}
               value="Homme"
-            
               style={{
                 border: "1px solid black",
-               
+
                 borderRadius: "0",
               }}
             />
@@ -234,16 +238,17 @@ export default function ChooseGender() {
             <p className="mt-3">Homme</p>
           </div>
 
-       
-
-          <div className="mt-1 d-flex align-items-center " style={{gap:"15px" ,alignItems:"center", fontWeight:"900"}}>
+          <div
+            className="mt-1 d-flex align-items-center "
+            style={{ gap: "15px", alignItems: "center", fontWeight: "900" }}
+          >
             <input
-            type="radio"
+              type="radio"
               onChange={handleChange}
               value="Femme"
               style={{
                 border: "1px solid black",
-               
+
                 borderRadius: "0",
               }}
             />

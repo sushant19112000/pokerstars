@@ -1,18 +1,15 @@
-import { AutoMaticWithDrawalLimit } from "@/app/components/pokerstars/automaticWithDrawalLimit";
-import { DepositLimit } from "@/app/components/pokerstars/depositLimit";
-import { LimitCap } from "@/app/components/pokerstars/limitCap";
-import { RangeSlider } from "@/app/components/pokerstars/RangeSlider";
+import RebatePage from "@/app/components/pokerstars/200rebatePage";
+import Bonus100Page from "@/app/components/pokerstars/bonus100Page";
+import MultiSportsPage from "@/app/components/pokerstars/multi-SportPage";
 
 export default function Index() {
   return (
     <div>
       {/* <Main/> */}
 
-      {/* <DepositLimit /> */}
-      {/* <LimitCap/> */}
-      {/* <AutoMaticWithDrawalLimit/> */}
-      <RangeSlider min={2} max={167} step={1}/>
-
+      {/* <Bonus100Page /> */}
+      <MultiSportsPage/>
+      {/* <RebatePage/> */}
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function FirstNameLastName() {
     return ValidName.test(name);
   };
 
-  const ValidSurname = ( surname) => {
+  const ValidSurname = (surname) => {
     const ValidSurname = /\d+/;
     return ValidSurname.test(surname);
   };
@@ -80,9 +80,7 @@ export default function FirstNameLastName() {
                   fontFamily: "Roboto",
                   fontSize: "16px",
                 }}
-              >
-                Votre adresse e-mail
-              </p>
+              ></p>
             </div>
           </div>
         </div>
