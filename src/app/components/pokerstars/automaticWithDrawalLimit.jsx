@@ -3,12 +3,36 @@ import { useNext } from './useNext'
 import { usePrevious } from './usePrevious'
 import { useSaveData } from './useSaveData'
 import { autoWithDrawLimits } from './autoWithDrawLimits'
+
+
+
+
 export const AutoMaticWithDrawalLimit = () => {
     const [autoWithLimit, setAutoWithLimit] = useState("")
+
+
+
+
+
+  
+   
+  
+
+
+
+
+
+
+
+
 
     const next = useNext()
     const prev = usePrevious()
     const saveData = useSaveData()
+
+
+
+
 
     const handleNext = () => {
         if (autoWithLimit != "") {
