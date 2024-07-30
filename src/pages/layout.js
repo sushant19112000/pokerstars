@@ -116,19 +116,19 @@ export default function RootLayout({ children }) {
 
   return (
     <div className="d-flex flex-column" style={{ minHeight: "100vh", backgroundColor: '#000000', boxShadow: '' }}>
-      {shouldRenderNavAndFooter && (
+      {/* {shouldRenderNavAndFooter && (
         <div style={{ backgroundColor: '#000000' }}>
           <div className='container'>
             <Navigation />
           </div>
         </div>
-      )}
+      )} */}
       <main className="flex-grow-1" style={{ backgroundColor: '#f3f4f6' }}>
         <div className=''>
           {children}
         </div>
       </main>
-      {shouldRenderNavAndFooter && <Newfooter />}
+      {/* {shouldRenderNavAndFooter && <Newfooter />} */}
       <BootstrapClient />
     </div>
   );

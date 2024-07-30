@@ -35,7 +35,7 @@ export const ChooseCountryStateCityOfBirth = () => {
                             <span style={{ color: 'white' }} onClick={handlePrev}>Prev</span>
                         </div>
                         <div className=''>
-                            <p style={{ fontWeight: '600', color: 'white', fontFamily: 'Roboto', fontSize: '16px' }}>Votre nom d'utilisateur</p>
+                            <p style={{ fontWeight: '600', color: 'white', fontFamily: 'Roboto', fontSize: '16px' }}></p>
 
                         </div>
                     </div>

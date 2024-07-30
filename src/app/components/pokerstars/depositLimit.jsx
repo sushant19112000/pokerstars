@@ -47,9 +47,7 @@ export const DepositLimit = () => {
                   fontFamily: "Roboto",
                   fontSize: "16px",
                 }}
-              >
-                Votre adresse e-mail
-              </p>
+              ></p>
             </div>
           </div>
         </div>

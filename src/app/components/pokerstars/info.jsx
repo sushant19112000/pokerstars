@@ -1,6 +1,6 @@
 export default function Info() {
   return (
-    <div className="container">
+    <div className="container" style={{ color: "black", fontFamily: "Roboto" }}>
       <h1 className="my-4" style={{ fontWeight: "900" }}>
         Modalités
       </h1>
@@ -11,7 +11,7 @@ export default function Info() {
             <strong>Ce qui est proposé</strong>
           </u>
         </p>
-        <p>
+        <p style={{ color: "#000000" }}>
           Les joueurs qui effectuent leur tout premier dépôt d'argent réel d'au
           moins 10&nbsp;€ avec le code bonus «&nbsp;STARS100&nbsp;» peuvent
           bénéficier d’un bonus pouvant aller jusqu’à 100&nbsp;€.

@@ -1,8 +1,8 @@
 export default function Section3() {
   return (
-    <section className="py-3 py-md-5" style={{ color: "black" }}>
+    <section className="py-3 py-md-5" style={{ color: "black" ,backgroundColor:"#FEFBEA"}}>
       <div className="container">
-        <h1 className="pb-4" style={{ fontWeight: "bold" }}>
+        <h1 className="pb-4" style={{ fontWeight: "bolder" }}>
           REJOIGNEZ LE TEMPLE DU POKER EN LIGNE
         </h1>
         <div className="row gy-3 gy-md-4 gy-lg-0 ">
