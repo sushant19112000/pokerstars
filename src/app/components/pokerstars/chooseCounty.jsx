@@ -14,7 +14,7 @@ export const ChooseCounty = () => {
     const handleNext = () => {
         if (selected != "") {
             next()
-            saveData("country", selected)
+            saveData("countryf1", selected)
         }
     }
     return (

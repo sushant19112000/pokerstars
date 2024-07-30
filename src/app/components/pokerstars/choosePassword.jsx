@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNext } from './useNext'
 import { usePrevious } from './usePrevious'
 import { useSaveData } from './useSaveData'
+import { useRecoilValue } from 'recoil'
+import { PokerStarsData } from '@/app/atoms/pokerStarsData'
 export const ChoosePassword = () => {
     const [password, setPassword] = useState("")
-
+    const data=useRecoilValue(PokerStarsData)
     const next = useNext()
     const prev = usePrevious()
     const saveData = useSaveData()
+    
 
+    useEffect(()=>{
+        
+    },[data])
     const handleNext = () => {
         if (!isTooShort && startsWithLetter && hasDigit) {
             saveData("password",password)
@@ -85,7 +91,7 @@ export const ChoosePassword = () => {
             <div className="row justify-content-center pt-3" >
                 <div className="col-md-3" >
                     <div>
-                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>OK, Dext683. Maintenant, définissez un mot de passe</p>
+                        <p style={{ fontSize: '25px', color: 'black', fontWeight: '900', fontFamily: 'Roboto' }}>OK, {data.username}. Maintenant, définissez un mot de passe</p>
                     </div>
                     <div>
                         <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Mot de passe</span>
