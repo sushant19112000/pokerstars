@@ -14,7 +14,7 @@ export const ChooseDate = () => {
 
   const handleNext = () => {
     if (isValidDate(date)) {
-      saveData("date", date); // Save the valid date
+      saveData("dob", date); // Save the valid date
       next();
     } else {
       setError("Veuillez entrer une date valide au format dd/MM/yyyy.");
