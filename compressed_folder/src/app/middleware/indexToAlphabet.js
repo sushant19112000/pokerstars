@@ -1,0 +1,1 @@
+export const indexToAlphabet = (index) => String.fromCharCode(65 + index);

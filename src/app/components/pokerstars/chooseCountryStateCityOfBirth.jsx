@@ -125,7 +125,7 @@
 //                             ))}
 //                         </select>
 //                     </div>
-                    
+
 
 
 //                     <div className='mt-3'>
@@ -158,7 +158,8 @@ import { usePrevious } from './usePrevious';
 import { useSaveData } from './useSaveData';
 import { countries } from './countries';
 import { statesOfBirth } from './stateofBirth'; // Assuming statesOfBirth includes state names
-
+import { GrPrevious } from 'react-icons/gr'
+import { useSaveMultipleData } from './useSaveDataMultiple';
 
 export const ChooseCountryStateCityOfBirth = () => {
     const [stateOfBirth, setStateOfBirth] = useState("");
@@ -166,21 +167,23 @@ export const ChooseCountryStateCityOfBirth = () => {
     const [cityOfBirth, setCityOfBirth] = useState("");
     const next = useNext();
     const prev = usePrevious();
-    const saveData = useSaveData();
-
+    const saveMultipleData = useSaveMultipleData();
+   
     const handleNext = () => {
         if (stateOfBirth !== "" && countryOfBirth !== "" && cityOfBirth !== "") {
-            saveData("stateofbirth", stateOfBirth);
-            saveData("countryofbirth", countryOfBirth);
-            saveData("cityofbirth", cityOfBirth);
+            saveMultipleData({
+                stateofbirth: stateOfBirth,
+                countryofbirth: countryOfBirth,
+                cityofbirth: cityOfBirth
+              });
             next();
         }
     };
 
     useEffect(() => {
-        console.log('city', cityOfBirth);
-        console.log('countryofBirth', countryOfBirth);
-        console.log('stateofBirth', stateOfBirth);
+        // console.log('city', cityOfBirth);
+        // console.log('countryofBirth', countryOfBirth);
+        // console.log('stateofBirth', stateOfBirth);
     }, [cityOfBirth, countryOfBirth, stateOfBirth]);
 
     const handlePrev = () => {
@@ -191,30 +194,30 @@ export const ChooseCountryStateCityOfBirth = () => {
         <>
             <div className="row justify-content-center" style={{ backgroundColor: 'black' }}>
                 <div className="col-md-3">
-                    <div className='pt-2 pb-2 d-flex'>
-                        <div>
-                            <span style={{ color: 'white' }} onClick={handlePrev}>Prev</span>
+                    <div className="pt-4 pb-4 d-flex align-items-center">
+                        <div className="mr-auto">
+                            <span style={{ color: "white" }} onClick={handlePrev}>
+                                <GrPrevious />
+                            </span>
+                        </div>
+                        <div className="w-100 text-center">
+                            <p
+                                style={{
+                                    fontWeight: "600",
+                                    color: "white",
+                                    fontFamily: "Roboto",
+                                    fontSize: "16px",
+                                    margin: 0
+                                }}
+                            >
+                                Votre lieu de naissance
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="row justify-content-center mt-2">
-                <div className="col-md-3 text-center">
-                    <div className="_88e00b5 text-center">
-                        <div className="_7c374bc d-flex justify-content-center">
-                            <svg className='me-2' width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" width="24" height="24" rx="12" fill="#000" />
-                                <path d="M13.553 17H12.28V8.571l-2.55.937V8.359L13.354 7h.199V17z" fill="#fff" />
-                            </svg>
-                            <p style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'black', fontWeight: '500', marginTop: '2.5px' }}>Informations de compte</p>
-                            <div>
-                                {/* Other SVG icons */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <div className="row justify-content-center pt-3">
                 <div className="col-md-3">
@@ -242,22 +245,31 @@ export const ChooseCountryStateCityOfBirth = () => {
                         <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Département de naissance</span>
                     </div>
                     <div className='mt-1'>
-                        <select id="stateOfBirth" className="form-select" value={stateOfBirth} onChange={(e) => setStateOfBirth(e.target.value)} data-testid="state-of-birth">
-                            {statesOfBirth.map((state, index) => (
-                                <option key={index} value={state}>{state}</option>
-                            ))}
-                        </select>
+                        <input
+                            onChange={(e) => setStateOfBirth(e.target.value)}
+                            className="form-control"
+                            style={{
+                                border: "1px solid black",
+                                height: "50px",
+                                borderRadius: "0",
+                            }}
+                        />
+
                     </div>
 
                     <div className='mt-3'>
                         <span style={{ color: 'RGB(215, 0, 34)', fontFamily: 'Roboto', fontSize: '15px' }}>Ville de naissance</span>
                     </div>
                     <div className='mt-1'>
-                        <select id="cityOfBirth" className="form-select" value={cityOfBirth} onChange={(e) => setCityOfBirth(e.target.value)} data-testid="city-of-birth">
-                            {statesOfBirth.map((city, index) => (
-                                <option key={index} value={city}>{city}</option>
-                            ))}
-                        </select>
+                        <input
+                            onChange={(e) => setCityOfBirth(e.target.value)}
+                            className="form-control"
+                            style={{
+                                border: "1px solid black",
+                                height: "50px",
+                                borderRadius: "0",
+                            }}
+                        />
                     </div>
 
                     <div className='mt-5 mb-5 text-center'>
@@ -268,3 +280,6 @@ export const ChooseCountryStateCityOfBirth = () => {
         </>
     );
 };
+
+
+

@@ -1,0 +1,33 @@
+task3-> if answer not in selectedAnswers then disabled ={disable} else disabled={!disable}
+task4-> if (buttons.length ==2){ <div display=flex>  
+   if (button=="Next"){
+    <button onClick=handleNext()>
+    Next </button>    
+   }
+   if (button=="Submit")
+   upload button
+
+   if button skip 
+   skip
+ 
+</div>
+}
+
+//tasks to be completed
+make contact page load from questions   ->   question{type:'contact',answers:[],buttons:[]}
+make homepage  from     ->questipon {type:"home":}
+
+//schema
+surveys 
+id name code surveysData
+1              sureysData[]
+
+sureysData
+id data
+1   []
+
+
+
+
+
+

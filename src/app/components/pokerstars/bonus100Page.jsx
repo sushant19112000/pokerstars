@@ -1,3 +1,4 @@
+
 import Carousel from "./Carousel";
 import Heading from "./heading";
 import Hero from "./hero";
@@ -8,12 +9,12 @@ import Section3 from "./section3";
 export default function Bonus100Page() {
   return (
     <div style={{ backgroundColor: "#ffffff" }}>
-      {/* <Hero />
+      <Hero />
       <Section2 />
       <Section3 />
-      <Carousel />
+     
       <Heading />
-      <Info /> */}
+      <Info />
     </div>
   );
 }

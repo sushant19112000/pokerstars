@@ -1,0 +1,50 @@
+.form-control::placeholder {
+  color: rgba(185, 164, 164, 0.7);
+  font-weight: 500;
+}
+.choice:hover {
+  outline: 2px solid rgb(219, 210, 210);
+}
+.circle {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  line-height: 30px;
+  color: black;
+  font-weight: bold;
+  font-size: small;
+}
+
+.circle:hover::after {
+  content: "KEY";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 2px;
+  display: block;
+  color: black;
+  font-weight: bold;
+  font-size: small;
+  z-index: 1;
+}
+.previous {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  text-align: center;
+  border: 1px solid silver;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+}

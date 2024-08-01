@@ -12,18 +12,20 @@ export const PokerStarsData = atom({
     password:"",
     email:"",
     dob:"",
-    date:"",
     gender:"",
-    autoWithLimit:"",
-    weeklyLimit:"",
-    sevenLimit:"",
+    autowithlimit:"",
     stateofbirth:"",
     countryofbirth:"",
     cityofbirth:"",
     state:"",
     city:"",
     postcode:"",
-    address:""
+    address:"",
+    firstname:"",
+    lastname:"",
+    depositlimit:"",
+    sevenlimit:"",
+    weeklylimit:""
   }, // default value (aka initial value)
 //   effects_UNSTABLE:[persistAtom]
 });

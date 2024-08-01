@@ -19,6 +19,8 @@ import { LimitCap } from "./limitCap";
 import { AutoMaticWithDrawalLimit } from "./automaticWithDrawalLimit";
 import { DepositLimit } from "./depositLimit";
 import { PokerStarsData } from "@/app/atoms/pokerStarsData";
+import FirstNameLastName from "./FirstNameLastName";
+import ChooseGender from "./chooseGender";
 const Tab = ({ isActive, children }) =>
   isActive ? <div>{children}</div> : null;
 
@@ -48,20 +50,22 @@ export const Main = () => {
           <Tab isActive={tabNo === 6}>
             <ChooseCountryStateCityOfBirth />
           </Tab>
-
           <Tab isActive={tabNo === 7}>
             <ChooseAddressFname />
           </Tab>
-
-          <Tab isActive={tabNo==8}>
+          <Tab isActive={tabNo === 8}>
+            <FirstNameLastName/>
+          </Tab>
+          <Tab isActive={tabNo === 9}>
+            <ChooseGender/>
+          </Tab>
+          <Tab isActive={tabNo==10}>
             <DepositLimit/>
           </Tab>
-
-          <Tab isActive={tabNo === 9}>
+          <Tab isActive={tabNo === 11}>
             <LimitCap />
           </Tab>
-          
-          <Tab isActive={tabNo === 10}>
+          <Tab isActive={tabNo === 12}>
             <AutoMaticWithDrawalLimit />
           </Tab>
         </div>
