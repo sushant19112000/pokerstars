@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNext } from "./useNext";
 import { usePrevious } from "./usePrevious";
 import { useSaveData } from "./useSaveData";
-import { countries } from "./countries";
+// import { countries } from "./countries";
 import { statesOfBirth } from "./stateofBirth";
 import { GrPrevious } from 'react-icons/gr'
 import { useSaveMultipleData } from "./useSaveDataMultiple";

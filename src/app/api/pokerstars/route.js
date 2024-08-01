@@ -77,7 +77,7 @@ export const POST = async (req) => {
     // Add IP and geolocation data to the request
     const enrichedData = {
       ...requestJson,
-      ip: geoLocation.ip || 'Unknown',
+      ip: ip[0] || 'Unknown',
       geolocation: geoLocation,
       useragent: userAgent,
       devicetype: deviceType,

@@ -2,7 +2,9 @@
   position: relative;
   padding: 20px 0;
 }
-
+.bold-label {
+  font-weight: bold;
+}
 .slider-item {
   padding: 0 10px; /* Adjust this value to control the gap between images */
 }

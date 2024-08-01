@@ -1,7 +1,0 @@
-    const handleNext = () => {
-        if(weeklyLimit && sevenLimit){
-            saveData("weeklytLimit",weeklyLimit)
-            saveData("sevenLimit",sevenLimit)
-            next()
-        }
-    }
