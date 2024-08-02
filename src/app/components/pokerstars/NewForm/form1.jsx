@@ -14,9 +14,9 @@ export const Form1 = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [dateofbirth, setDateOfBirth] = useState("");
+  const [countryofbirth, setCountryOfBirth] = useState("France");
   const [stateofbirth, setStateOfBirth] = useState("");
   const [cityofbirth, setCityOfBirth] = useState("");
-  const [address, setAddress] = useState("");
   const [firstname, setFirstName] = useState("");
   const [gender, setGender] = useState("");
   const [lastname, setLastName] = useState("");
@@ -36,11 +36,11 @@ export const Form1 = () => {
       setError("L'adresse e-mail n'est pas valide");
     }
   };
-console.log(country,"selected country")
+  console.log(country, "selected country");
   const next = useNext();
   const saveData = useSaveMultipleData();
   const handleNext = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     saveData({
       countryf1: country,
       username: username,
@@ -50,29 +50,36 @@ console.log(country,"selected country")
       firstname: firstname,
       lastname: lastname,
       gender: gender,
+      countryofbirth: countryofbirth,
+      stateofbirth: stateofbirth,
+      cityofbirth: cityofbirth,
     });
     next();
   };
   return (
-    <div className="container card-0 justify-content-center">
+    <div className=" card-0 justify-content-center">
+      <div className="py-4" style={{ backgroundColor: "black" }}>
+        <Svg />
+      </div>
       <div className="card-body px-sm-4 px-0">
-        <div className="row justify-content-center mb-5"></div>
         <div className="row justify-content-center round">
-          <div className="col-lg-10 col-md-12">
+          <div className="col-lg-10 col-md-12 mt-3">
             <div className="card shadow-lg card-1">
-              <div className="card-body inner-card">
+              <div className=" inner-card">
                 <div
                   style={{
-                    backgroundColor: "black",
+                    backgroundColor: "#190A05",
+                    background:
+                      "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                    background: "linear-gradient(to bottom, #FF0000, #190a05)",
                     color: "white",
                     fontWeight: "bolder",
                   }}
-                  className="text-center mb-5 py-2 rounded"
+                  className="text-center mb-5 py-4"
                 >
-                  <div>
-                    <Svg />
-                  </div>
-                  <h2>Informations de compte</h2>
+                  <h3 style={{ fontWeight: "bolder" }}>
+                    Informations de compte
+                  </h3>
                 </div>
 
                 <form onSubmit={handleNext}>
@@ -80,13 +87,13 @@ console.log(country,"selected country")
                     <div className="col-lg-5 col-md-6 col-sm-12">
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="inputEmail4">
-                        Dans quel pays habitez-vous ?
+                          Dans quel pays habitez-vous ?
                         </label>
                         <select
                           onChange={(e) => {
                             setCountry(e.target.value);
                           }}
-                          className="form-select"
+                          className="form-select form-input-border"
                           required
                         >
                           {countries.map((country, index) => (
@@ -96,12 +103,12 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="Mobile-Number">
-                        Mot de passe
+                          Mot de passe
                         </label>
                         <input
                           onChange={(e) => setPassword(e.target.value)}
                           type="text"
-                          className="form-control"
+                          className="form-control "
                           placeholder=""
                           required
                         />
@@ -122,7 +129,7 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="time">
-                        Date de naissance
+                          Date de naissance
                         </label>
                         <input
                           onChange={(e) => {
@@ -150,26 +157,12 @@ console.log(country,"selected country")
                           required
                         />
                       </div>
-                      {/* <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="email">
-                          Adresse
-                        </label>
-                        <input
-                          onChange={(e) => {
-                            setAddress(e.target.value);
-                          }}
-                          type="text"
-                          className="form-control"
-                          id="text"
-                          placeholder=""
-                          required
-                        />
-                      </div> */}
                     </div>
+
                     <div className="col-lg-5 col-md-6 col-sm-12">
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="last-name">
-                        Nom d'utilisateur
+                          Nom d'utilisateur
                         </label>
                         <input
                           onChange={(e) => setUsername(e.target.value)}
@@ -196,10 +189,10 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="email">
-                        E-mail
+                          E-mail
                         </label>
                         <input
-                          onChange={handleChange}
+                          onChange={(e) => setEmail(e.target.value)}
                           type="email"
                           className="form-control"
                           id="email"
@@ -221,24 +214,8 @@ console.log(country,"selected country")
                           </>
                         )} */}
                       </div>
-                      {/* <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="birth-country">
-                          Pays de naissance
-                        </label>
-                        <select
-                          onChange={(e) => {
-                            setCountryOfBirth(e.target.value);
-                          }}
-                          className="form-select"
-                          required
-                        >
-                          {countries.map((country, index) => (
-                            <option key={index}>{country}</option>
-                          ))}
-                        </select>
-                      </div> */}
 
-<div className="form-group mb-4">
+                      <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="last-name">
                           Prénom
                         </label>
@@ -253,15 +230,6 @@ console.log(country,"selected country")
                           required
                         />
                       </div>
-
-
-
-
-
-
-
-
-
 
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="email">
@@ -311,6 +279,74 @@ console.log(country,"selected country")
                         </div>
                       </div>
                     </div>
+                    <div
+                      className="col-lg-10 col-md-10 col-sm-10"
+                      id="secondary-div-center"
+                    >
+                      <div>
+                       <h5
+  style={{
+    fontSize: "25px",
+    fontWeight: "bolder",
+    background: "linear-gradient(to right, #D70022, #190A05)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  }}
+  className="mb-4"
+>
+  Où êtes-vous né(e) ?
+</h5>
+                        <div className="row justify-content-center justify-content-md-start">
+                          <div className="col-10 col-md-6 mb-3">
+                            <label style={boldStyle} htmlFor="birth-country">
+                              Pays de naissance
+                            </label>
+                            <select
+                              onChange={(e) => {
+                                setCountryOfBirth(e.target.value);
+                              }}
+                              className="form-select"
+                              required
+                            >
+                              {countries.map((country, index) => (
+                                <option key={index}>{country}</option>
+                              ))}
+                            </select>
+                          </div>
+
+                          <div className="col-10 col-md-6 mb-2">
+                            <label style={boldStyle} htmlFor="Mobile-Number">
+                              Département de naissance
+                            </label>
+                            <input
+                              onChange={(e) => {
+                                setStateOfBirth(e.target.value);
+                              }}
+                              type="text"
+                              className="form-control"
+                              id="Mobile-Number"
+                              placeholder=""
+                              required
+                            />
+                          </div>
+                          <div className="col-10 col-md-6">
+                            <label style={boldStyle} htmlFor="last-name">
+                              Ville de naissance
+                            </label>
+                            <input
+                              onChange={(e) => {
+                                setCityOfBirth(e.target.value);
+                              }}
+                              type="text"
+                              className="form-control"
+                              id="last-name"
+                              placeholder=""
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="row justify-content-center py-3">
@@ -324,7 +360,7 @@ console.log(country,"selected country")
                           maxWidth: "186px",
                           color: "white",
                           fontWeight: "700",
-                          backgroundColor: "#D70022",
+                          backgroundColor: "#000000",
                         }}
                       >
                         <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
@@ -339,7 +375,9 @@ console.log(country,"selected country")
                           maxWidth: "186px",
                           color: "white",
                           fontWeight: "700",
-                          backgroundColor: "#02bd9c",
+                          background:
+                          "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                        background: "linear-gradient(to bottom, #FF0000, #190a05)",
                         }}
                       >
                         Continuer{" "}
