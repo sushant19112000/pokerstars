@@ -9,17 +9,15 @@ import Svg from "./svg.jsx";
 const boldStyle = { fontWeight: "bold" };
 
 export const Form1 = () => {
-  const [country, setCountry] = useState("");
-
+  const [country, setCountry] = useState("France");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [dateofbirth, setDateOfBirth] = useState("");
-  const [countryofbirth, setCountryOfBirth] = useState("");
+  const [countryofbirth, setCountryOfBirth] = useState("France");
   const [stateofbirth, setStateOfBirth] = useState("");
   const [cityofbirth, setCityOfBirth] = useState("");
   const [address, setAddress] = useState("");
-
   const [error, setError] = useState("");
   const validateEmail = (email) => {
     // Basic email regex pattern
@@ -37,9 +35,7 @@ export const Form1 = () => {
   };
 console.log(country,"selected country")
   const next = useNext();
-
   const saveData = useSaveMultipleData();
-
   const handleNext = (e) => {
     e.preventDefault()
     saveData({
@@ -47,7 +43,6 @@ console.log(country,"selected country")
       username: username,
       password: password,
       email: email,
-
       dob: dateofbirth,
       countryofbirth: countryofbirth,
       stateofbirth: stateofbirth,
@@ -56,7 +51,6 @@ console.log(country,"selected country")
     });
     next();
   };
-
   return (
     <div className="container card-0 justify-content-center">
       <div className="card-body px-sm-4 px-0">
@@ -210,7 +204,7 @@ console.log(country,"selected country")
                           required
                         />
 
-                        {error && (
+                        {/* {error && (
                           <>
                             <span
                               style={{
@@ -222,7 +216,7 @@ console.log(country,"selected country")
                               L'adresse e-mail n'est pas valide
                             </span>
                           </>
-                        )}
+                        )} */}
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="birth-country">
@@ -277,7 +271,7 @@ console.log(country,"selected country")
                       </button>
                       <button
                         className="btn"
-                        type="onSubmit"
+                        type="submit"
                         style={{
                           borderRadius: "18px",
                           width: "100%",

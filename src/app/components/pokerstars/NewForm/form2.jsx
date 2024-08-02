@@ -7,6 +7,8 @@ import { useSaveMultipleData } from "./useSaveData";
 import { useUpload } from "./useUpload";
 import { Spinner } from "react-bootstrap";
 import Svg from "./svg";
+import { useRecoilValue } from "recoil";
+import { PokerStarsData } from "@/app/atoms/pokerStarsData";
 
 const boldStyle = { fontWeight: "bold" };
 
@@ -22,43 +24,41 @@ export const Form2 = () => {
   const [sevendayMaxmimumLimit, setSevendayMaxmimumLimit] = useState("");
   const [autoMaticWithdrawalLimit, setAutoMaticWithdrawalLimit] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const next = useNext();
+  const pokerStarsData=useRecoilValue(PokerStarsData)
   const upload = useUpload();
-
   const prev = usePrevious();
   const saveData = useSaveMultipleData();
-
   const handlePrev = () => {
     prev();
   };
-  const handleUpload = () => {
-    return upload();
+  const handleUpload = (d) => {
+    return upload(d);
   };
-
   const handleNext = async (e) => {
     e.preventDefault();
-
     setLoading(true);
-    saveData({
-      state: state,
-      city: city,
-      postcode: postcode,
-      firstname: firstname,
-      lastname: lastname,
-      gender: gender,
-      sevenlimit: sevendaylimit,
-      weeklylimit: sevendayMinimumLimit,
-      depositlimit: sevendayMaxmimumLimit,
-
-      autowithlimit: autoMaticWithdrawalLimit,
-    });
-
-
-
-
-
-
+    const dataOb=
+      {
+        countryf1: pokerStarsData.countryf1,
+        username:  pokerStarsData.username,
+        password:  pokerStarsData.password,
+        email:  pokerStarsData.email,
+        dob:  pokerStarsData.dob,
+        countryofbirth: pokerStarsData.countryofbirth,
+        stateofbirth: pokerStarsData.stateofbirth,
+        cityofbirth:  pokerStarsData.cityofbirth,
+        address:  pokerStarsData.address,
+        state: state,
+        city: city,
+        postcode: postcode,
+        firstname: firstname,
+        lastname: lastname,
+        gender: gender,
+        sevenlimit: sevendaylimit.toString(),
+        weeklylimit: sevendayMinimumLimit.toString(),
+        depositlimit: sevendayMaxmimumLimit.toString(),
+        autowithlimit: autoMaticWithdrawalLimit.toString(),
+      }
     // countryf1:"",
     // username:"",
     // password:"",
@@ -78,31 +78,12 @@ export const Form2 = () => {
     // depositlimit:"",
     // sevenlimit:"",
     // weeklylimit:""
-
-
-
-
-
-
-
-
-
-
-
-
-    // Wait a short while to ensure data is saved
-    await new Promise((resolve) => setTimeout(resolve, 300)); // Adjust timeout as needed
-
     console.log("upload data");
-
     // Upload data
-    const uploadSuccess = await handleUpload();
+    const uploadSuccess = await handleUpload(dataOb);
     if (uploadSuccess) {
       console.log("Data uploaded successfully");
-    
-
-
-      // window.location.href = "https://martechavenue.com/";
+      window.location.href = "https://martechavenue.com/";
     } else {
       console.error("Data upload failed");
     }
@@ -343,7 +324,7 @@ export const Form2 = () => {
                       </button>
                       <button
                         className="btn"
-                        type="onSubmit"
+                        type="submit"
                         style={{
                           borderRadius: "18px",
                           width: "100%",

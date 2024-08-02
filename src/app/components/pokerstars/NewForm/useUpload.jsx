@@ -2,10 +2,7 @@ import { useRecoilState } from "recoil";
 import { PokerStarsData } from "@/app/atoms/pokerStarsData";
 
 export const useUpload = () => {
-  const [sdata, setData] = useRecoilState(PokerStarsData);
-
-
-  const handleUpload = async () => {
+  const handleUpload = async (sdata) => {
 
     console.log(sdata,"uploaded data")
       const response = await fetch(`/api/pokerstars`, {

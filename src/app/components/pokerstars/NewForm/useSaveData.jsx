@@ -7,12 +7,10 @@ export const useSaveMultipleData = () => {
   const handleSaveMultipleData = (updates) => {
     // Create a copy of the current state
     const updatedData = { ...pokerStarsState };
-    
     // Apply all updates
     for (const [key, value] of Object.entries(updates)) {
       updatedData[key] = value;
     }
-
     // Update state with new data
     setPokerStarsState(updatedData);
   };

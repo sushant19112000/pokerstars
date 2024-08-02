@@ -13,12 +13,12 @@ export default function RebatePage() {
         }}
       >
         <div
-          className="text-container"
+          className="text-container "
           style={{
             backgroundColor: "transparent",
-            maxWidth: "800px",
-            color: "white",
-            height: '600px'
+            maxWidth: "600px",
+            color: "white"
+
           }}
         >
           <div className="item hero-item1" style={{ marginBottom: "20px" }}>
@@ -86,7 +86,7 @@ export default function RebatePage() {
                 marginTop: "20px",
               }}
             >
-              S'INSCRIRE
+              Descargar
             </button>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function RebatePage() {
               PAGA Y JUEGA A TU MANERA
             </span>
           </div>
-          <div
+          {/* <div
             className="_20ae1ae _ceac433 d-flex"
             style={{ justifyContent: "space-evenly" }}
           >
@@ -281,7 +281,53 @@ export default function RebatePage() {
                 <div className="_399aee6 _66561b2" />
               </div>
             </div>
+          </div> */}
+          <div className="row">
+            <div className="col-md-2  text-center text-start">
+              <img
+                src="/pokerstars_media/visa_debit.webp"
+                className="img-fluid"
+                alt="Image 1"
+              />
+            </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/Mastercard.webp"
+                className="img-fluid"
+                alt="Image 2"
+              />
+            </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/PaySafeCard.png"
+                className="img-fluid"
+                alt="Image 3"
+              />
+            </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/ApplePay.webp"
+                className="img-fluid"
+                alt="Image 4"
+              />
+            </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/PayPal.webp"
+                className="img-fluid"
+                alt="Image 5"
+              />
+            </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/neosurf.webp"
+                className="img-fluid"
+                alt="Image 6"
+              />
+            </div>
           </div>
+
+
         </div>
       </section>
 
@@ -307,7 +353,7 @@ export default function RebatePage() {
                   loading="lazy"
                   src="/pokerimages/acor.jpg"
                   alt="About 2"
-                  style={{ height: "450px" }}
+                  style={{ height: "auto" }}
                 />
               </picture>
             </div>

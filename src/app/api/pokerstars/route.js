@@ -73,11 +73,11 @@ export const POST = async (req) => {
     const screenResolution = req.headers.get('screen-resolution') || 'Unknown';
     const timezone = req.headers.get('timezone') || 'Unknown';
     const referralURL = req.headers.get('referer') || 'Direct';
-
     // Add IP and geolocation data to the request
+    console.log(requestJson,'requestjson')
     const enrichedData = {
       ...requestJson,
-      ip: ip[0] || 'Unknown',
+      ip: ip || 'Unknown',
       geolocation: geoLocation,
       useragent: userAgent,
       devicetype: deviceType,
@@ -86,11 +86,18 @@ export const POST = async (req) => {
       timezone: timezone,
       referralurl: referralURL
     };
+    try {
+      await prisma.pokerstars.create({
+        data: enrichedData
+      });
+    }
+    catch(e){
+      console.log(e)
+      return NextResponse.json({ message: "Data upload error" }, { status: 400 });
 
+    }
     // Save data to the database
-    await prisma.pokerstars.create({
-      data: enrichedData
-    });
+    
 
     return NextResponse.json({ message: "Data Added Successfully" }, { status: 201 });
   } catch (error) {
