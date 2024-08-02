@@ -47,15 +47,9 @@ console.log(country,"selected country")
       password: password,
       email: email,
       dob: dateofbirth,
-      countryofbirth: countryofbirth,
-      stateofbirth: stateofbirth,
-      cityofbirth: cityofbirth,
-      address: address,
       firstname: firstname,
       lastname: lastname,
       gender: gender,
-
-
     });
     next();
   };
