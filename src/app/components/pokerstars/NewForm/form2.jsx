@@ -9,6 +9,7 @@ import { Spinner } from "react-bootstrap";
 import Svg from "./svg";
 import { useRecoilValue } from "recoil";
 import { PokerStarsData } from "@/app/atoms/pokerStarsData";
+import { countries } from "./countries";
 
 const boldStyle = { fontWeight: "bold" };
 
@@ -21,9 +22,13 @@ export const Form2 = () => {
   const [gender, setGender] = useState("");
   const [sevendaylimit, setSevenDayLimit] = useState("");
   const [sevendayMinimumLimit, setSevendayMinimumLimit] = useState("");
+  const [address, setAddress] = useState("");
+
   const [sevendayMaxmimumLimit, setSevendayMaxmimumLimit] = useState("");
   const [autoMaticWithdrawalLimit, setAutoMaticWithdrawalLimit] = useState("");
   const [loading, setLoading] = useState(false);
+  const [countryofbirth, setCountryOfBirth] = useState("France");
+
   const pokerStarsData=useRecoilValue(PokerStarsData)
   const upload = useUpload();
   const prev = usePrevious();
@@ -47,7 +52,7 @@ export const Form2 = () => {
         countryofbirth: pokerStarsData.countryofbirth,
         stateofbirth: pokerStarsData.stateofbirth,
         cityofbirth:  pokerStarsData.cityofbirth,
-        address:  pokerStarsData.address,
+        address: address,
         state: state,
         city: city,
         postcode: postcode,
@@ -113,7 +118,36 @@ export const Form2 = () => {
 
                 <form onSubmit={handleNext}>
                   <div className="row justify-content-center">
+
+
+
+
+
+
+                    
                     <div className="col-lg-5 col-md-6 col-sm-12">
+
+
+
+
+
+                  <h5 style={boldStyle} >Où êtes-vous né(e) ?</h5>
+                  <div className="form-group mb-4">
+                        <label style={boldStyle} htmlFor="birth-country">
+                          Pays de naissance
+                        </label>
+                        <select
+                          onChange={(e) => {
+                            setCountryOfBirth(e.target.value);
+                          }}
+                          className="form-select"
+                          required
+                        >
+                          {countries.map((country, index) => (
+                            <option key={index}>{country}</option>
+                          ))}
+                        </select>
+                      </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="Mobile-Number">
                           Département de naissance
@@ -129,24 +163,25 @@ export const Form2 = () => {
                           required
                         />
                       </div>
+                     
                       <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="Mobile-Number">
-                          Code postal
+                        <label style={boldStyle} htmlFor="last-name">
+                          Ville de naissance
                         </label>
                         <input
                           onChange={(e) => {
-                            setPostCode(e.target.value);
+                            setCity(e.target.value);
                           }}
                           type="text"
                           className="form-control"
-                          id="Mobile-Number"
+                          id="last-name"
                           placeholder=""
                           required
                         />
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="time">
-                          Nom de famille
+                        Ville
                         </label>
                         <input
                           onChange={(e) => {
@@ -192,10 +227,26 @@ export const Form2 = () => {
                         </select>
                       </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <div className="col-lg-5 col-md-6 col-sm-12">
-                      <div className="form-group mb-4">
+                    <h5 style={boldStyle} >Où habitez-vous donc, jack ?</h5>
+                    <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="last-name">
-                          Ville de naissance
+                        Pays
                         </label>
                         <input
                           onChange={(e) => {
@@ -208,22 +259,53 @@ export const Form2 = () => {
                           required
                         />
                       </div>
+                    
                       <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="last-name">
-                          Prénom
+                        <label style={boldStyle} htmlFor="email">
+                          Adresse
                         </label>
                         <input
                           onChange={(e) => {
-                            setFirstName(e.target.value);
+                            setAddress(e.target.value);
                           }}
                           type="text"
                           className="form-control"
-                          id="last-name"
+                          id="text"
                           placeholder=""
                           required
                         />
                       </div>
                       <div className="form-group mb-4">
+                        <label style={boldStyle} htmlFor="email">
+                        Département
+                        </label>
+                        <input
+                          onChange={(e) => {
+                            setAddress(e.target.value);
+                          }}
+                          type="text"
+                          className="form-control"
+                          id="text"
+                          placeholder=""
+                          required
+                        />
+                      </div>
+                      <div className="form-group mb-4">
+                        <label style={boldStyle} htmlFor="email">
+                        Code postal
+                        </label>
+                        <input
+                          onChange={(e) => {
+                            setAddress(e.target.value);
+                          }}
+                          type="text"
+                          className="form-control"
+                          id="text"
+                          placeholder=""
+                          required
+                        />
+                      </div>
+                      {/* <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="email">
                           Sexe
                         </label>
@@ -269,7 +351,7 @@ export const Form2 = () => {
                             </span>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="birth-country">
                           Limite de mise sur sept jours au poker
@@ -304,6 +386,15 @@ export const Form2 = () => {
                       </div>
                     </div>
                   </div>
+
+
+
+
+
+
+
+
+
 
                   <div className="row justify-content-center py-3">
                     <div className="col-10 d-flex justify-content-between flex-wrap">

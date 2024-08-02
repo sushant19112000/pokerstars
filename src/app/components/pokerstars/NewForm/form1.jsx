@@ -14,10 +14,13 @@ export const Form1 = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [dateofbirth, setDateOfBirth] = useState("");
-  const [countryofbirth, setCountryOfBirth] = useState("France");
   const [stateofbirth, setStateOfBirth] = useState("");
   const [cityofbirth, setCityOfBirth] = useState("");
   const [address, setAddress] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [gender, setGender] = useState("");
+  const [lastname, setLastName] = useState("");
+
   const [error, setError] = useState("");
   const validateEmail = (email) => {
     // Basic email regex pattern
@@ -48,6 +51,11 @@ console.log(country,"selected country")
       stateofbirth: stateofbirth,
       cityofbirth: cityofbirth,
       address: address,
+      firstname: firstname,
+      lastname: lastname,
+      gender: gender,
+
+
     });
     next();
   };
@@ -78,7 +86,7 @@ console.log(country,"selected country")
                     <div className="col-lg-5 col-md-6 col-sm-12">
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="inputEmail4">
-                          Country
+                        Dans quel pays habitez-vous ?
                         </label>
                         <select
                           onChange={(e) => {
@@ -94,7 +102,7 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="Mobile-Number">
-                          Mot de passe
+                        Mot de passe
                         </label>
 
                         <input
@@ -121,7 +129,7 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="time">
-                          Date de naissance
+                        Date de naissance
                         </label>
                         <input
                           onChange={(e) => {
@@ -135,19 +143,21 @@ console.log(country,"selected country")
                         />
                       </div>
                       <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="skill">
-                          Département de naissance
+                        <label style={boldStyle} htmlFor="time">
+                          Nom de famille
                         </label>
                         <input
-                          onChange={(e) => setStateOfBirth(e.target.value)}
+                          onChange={(e) => {
+                            setLastName(e.target.value);
+                          }}
                           type="text"
                           className="form-control"
-                          id="Département"
+                          id="time"
                           placeholder=""
                           required
                         />
                       </div>
-                      <div className="form-group mb-4">
+                      {/* <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="email">
                           Adresse
                         </label>
@@ -161,12 +171,12 @@ console.log(country,"selected country")
                           placeholder=""
                           required
                         />
-                      </div>
+                      </div> */}
                     </div>
                     <div className="col-lg-5 col-md-6 col-sm-12">
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="last-name">
-                          Nom d'utilisateur
+                        Nom d'utilisateur
                         </label>
                         <input
                           onChange={(e) => setUsername(e.target.value)}
@@ -193,7 +203,7 @@ console.log(country,"selected country")
                       </div>
                       <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="email">
-                          Email
+                        E-mail
                         </label>
                         <input
                           onChange={handleChange}
@@ -218,7 +228,7 @@ console.log(country,"selected country")
                           </>
                         )} */}
                       </div>
-                      <div className="form-group mb-4">
+                      {/* <div className="form-group mb-4">
                         <label style={boldStyle} htmlFor="birth-country">
                           Pays de naissance
                         </label>
@@ -233,21 +243,79 @@ console.log(country,"selected country")
                             <option key={index}>{country}</option>
                           ))}
                         </select>
-                      </div>
-                      <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="birth-city">
-                          Ville de naissance
+                      </div> */}
+
+<div className="form-group mb-4">
+                        <label style={boldStyle} htmlFor="last-name">
+                          Prénom
                         </label>
                         <input
                           onChange={(e) => {
-                            setCityOfBirth(e.target.value);
+                            setFirstName(e.target.value);
                           }}
                           type="text"
                           className="form-control"
-                          id="birth-city"
+                          id="last-name"
                           placeholder=""
                           required
                         />
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                      <div className="form-group mb-4">
+                        <label style={boldStyle} htmlFor="email">
+                          Sexe
+                        </label>
+                        <div className="d-flex mt-2 " style={{ gap: "10px" }}>
+                          <div className="d-flex align-items-center">
+                            <input
+                              onChange={(e) => {
+                                setGender(e.target.value);
+                              }}
+                              type="radio"
+                              value="Homme"
+                              required
+                              name="gender"
+                              style={{
+                                border: "1px solid black",
+                                height: "20px",
+                                width: "20px",
+                                marginRight: "8px",
+                              }}
+                            />
+                            <span style={boldStyle} htmlFor="skill">
+                              Homme
+                            </span>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <input
+                              onChange={(e) => {
+                                setGender(e.target.value);
+                              }}
+                              type="radio"
+                              value="Femme"
+                              required
+                              name="gender"
+                              style={{
+                                border: "1px solid black",
+                                height: "20px",
+                                width: "20px",
+                                marginRight: "8px",
+                              }}
+                            />
+                            <span style={boldStyle} htmlFor="skill">
+                              Femme
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
