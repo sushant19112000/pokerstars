@@ -16,7 +16,7 @@ export default function MultiSports() {
           className="text-container"
           style={{
             backgroundColor: "transparent",
-            maxWidth: "800px",
+            maxWidth: "40%",
             color: "white",
           }}
         >
@@ -24,18 +24,18 @@ export default function MultiSports() {
             <div className="mb-3">
               <span
                 className="font-druk col-white"
-                style={{ fontSize: "40.6167px", fontWeight: 600 }}
+                style={{ fontSize: "35.6167px", fontWeight: 600 }}
               >
                 OFFRE DE BIENVENUE
               </span>
             </div>
-            <div className="mb-3">
+            <div className="mb-3 col-md-8">
               <span
                 className="font-druk"
                 style={{
                   color: "#35B9E3",
-                  fontSize: 60,
-                  fontWeight: 700,
+                  fontSize: 50,
+                  fontWeight: 900,
                   lineHeight: 1,
                 }}
               >
@@ -55,10 +55,10 @@ export default function MultiSports() {
               </span>
             </div>
             <p
-              className="terms-heading font-roboto"
+              className="terms-heading font-roboto col-11"
               style={{
                 color: "rgb(197, 197, 197)",
-                fontSize: "22.2333px",
+                fontSize: "19.2333px",
                 fontWeight: 400,
               }}
             >
@@ -109,7 +109,7 @@ export default function MultiSports() {
       ></div>
 
       {/* <Premierspas/> */}
-      <section style={{ backgroundColor: "#f5f5f5" }}>
+      <section style={{ backgroundColor: "" }}>
         <div className="container pt-5 pb-3">
           <div className=" pb-3">
             <span
@@ -121,7 +121,7 @@ export default function MultiSports() {
           </div>
           <div>
             <div className="row">
-              <div className="col-md-4 d-flex align-items-center py-3">
+              {/* <div className="col-md-4 d-flex align-items-center py-3">
                 <picture>
                   <img
                     alt="Inscrivez-vous"
@@ -143,6 +143,7 @@ export default function MultiSports() {
                 </div>
               </div>
               <div className="col-md-4 d-flex align-items-center py-3">
+
                 <picture>
                   <img
                     alt="Déposez"
@@ -187,7 +188,104 @@ export default function MultiSports() {
                     jours.
                   </p>
                 </div>
+              </div> */}
+
+              <div className="row justify-content-center">
+                <div className="col-md-4">
+                  <div className="row justify-content-center">
+                    <div className="col-md-3 mb-2 ">
+                      <img src="/pokerstars_media/1._Register.svg" height={80} width={80} />
+                    </div>
+                    <div className="col-md-9">
+                      <div className="mb-4">
+                        <span
+                          className=" font-druk"
+                          style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                        >
+                          1. INSCRIVEZ-VOUS
+                        </span>
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            fontFamily:
+                              'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                            fontSize: 14,
+                            color: "black",
+                            fontWeight: 500
+                          }}
+                        >
+                          Connectez-vous pour profiter de notre offre de bienvenue.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="row">
+                    <div className="col-md-3 mb-2">
+                      <img src="/pokerstars_media/2._Free_bets.svg" height={80} width={80} />
+                    </div>
+                    <div className="col-md-9">
+                      <div className="mb-2 " style={{ fontSize: 20 }}>
+                        <span
+                          className=" font-druk"
+                          style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                        >
+                          2. Recevez jusqu'à 100 € en freebets
+                        </span>
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            fontFamily:
+                              'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                            fontSize: 14,
+                            color: "black",
+                            fontWeight: 500,
+                            textAlign: "justify"
+                          }}
+                        >
+                          Si votre premier pari sportif est perdant, nous égalons votre mise
+                          jusqu'à 100 € sous forme de freebets. Deux freebets auront la même
+                          valeur combinée que votre mise, jusqu'à 100 €.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="row">
+                    <div className="col-md-3 mb-2">
+                      <img src="/pokerstars_media/3._Tickets.svg" height={80} width={80} />
+                    </div>
+                    <div className="col-md-9">
+                      <div className="mb-2 " style={{ fontSize: 20 }}>
+                        <span
+                          className=" font-druk"
+                          style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                        >
+                          3. Profitez de nombreux marchés
+                        </span>
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            fontFamily:
+                              'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                            fontSize: 14,
+                            color: "black",
+                            fontWeight: 500
+                          }}
+                        >
+                          Utilisez vos freebets sur le sport de votre choix sous sept jours.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -201,98 +299,53 @@ export default function MultiSports() {
               PAYEZ ET JOUEZ À VOTRE FAÇON
             </span>
           </div>
-          <div
-            className="_20ae1ae _ceac433 d-flex"
-            style={{ justifyContent: "space-evenly" }}
-          >
-            <div className="_b10c2b6 d-flex">
-              <div className="_fdf20a6 d-flex ">
-                <div className="_1cb8130 _58c2bf1 ">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/bltdf150113c5410b72/65a67ddfd7d856d0aab4de98/visa_debit.png"
-                    alt="Visa Debit"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+          <div className="row">
+            <div className="col-md-2  text-center text-start">
+              <img
+                src="/pokerstars_media/visa_debit.webp"
+                className="img-fluid"
+                alt="Image 1"
+              />
             </div>
-            <div className="_b10c2b6">
-              <div className="_fdf20a6">
-                <div className="_1cb8130 _58c2bf1">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/blt1bac1c4111411c27/6528f9b0dfea733e438216ff/Mastercard.png"
-                    alt="Mastercard"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/Mastercard.webp"
+                className="img-fluid"
+                alt="Image 2"
+              />
             </div>
-            <div className="_b10c2b6">
-              <div className="_fdf20a6">
-                <div className="_1cb8130 _58c2bf1">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/blt80bc5f9abc388c7e/6528f9b0074906ea30258213/PaySafeCard.png"
-                    alt="Paysafe"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/PaySafeCard.png"
+                className="img-fluid"
+                alt="Image 3"
+              />
             </div>
-            <div className="_b10c2b6">
-              <div className="_fdf20a6">
-                <div className="_1cb8130 _58c2bf1">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/bltd283c9689a0bd1f7/6528f9af70acce43606af36c/ApplePay.png"
-                    alt="Apple Pay"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/ApplePay.webp"
+                className="img-fluid"
+                alt="Image 4"
+              />
             </div>
-            <div className="_b10c2b6">
-              <div className="_fdf20a6">
-                <div className="_1cb8130 _58c2bf1">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/bltf2b39f147b8905c6/6528f9b069ac2547fd177145/PayPal.png"
-                    alt="PayPal"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/PayPal.webp"
+                className="img-fluid"
+                alt="Image 5"
+              />
             </div>
-            <div className="_b10c2b6">
-              <div className="_fdf20a6">
-                <div className="_1cb8130 _58c2bf1">
-                  <img
-                    src="https://cms.rationalcdn.com/v3/assets/blteecf9626d9a38b03/blt2e12bbbd24a71729/65a69707c992b7d1f8b897f5/neosurf.png"
-                    alt="Neosurf"
-                    width={124}
-                    height={80}
-                    className="_6a3fb42"
-                  />
-                </div>
-                <div className="_399aee6 _66561b2" />
-              </div>
+            <div className="col-md-2 text-center text-start">
+              <img
+                src="/pokerstars_media/neosurf.webp"
+                className="img-fluid"
+                alt="Image 6"
+              />
             </div>
           </div>
         </div>
 
-        <div style={{ backgroundColor: "#f5f5f5" }}>
+        <div style={{ backgroundColor: "#f5f5f5 !important" }}>
           <div className="container pt-5 pb-3">
             <div className=" pb-3">
               <span
@@ -303,11 +356,11 @@ export default function MultiSports() {
               </span>
             </div>
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-4 col-md-3" >
                 <div className="row justify-content-center">
                   <div className="col-md-6">
-                    <div className="row">
-                      <div className="col-md-4">
+                    <div className="row justify-content-center">
+                      <div className="col-md-4 mb-2">
                         <img
                           src="/pokerstars_media/basketball.png"
                           height={24}
@@ -331,10 +384,10 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-6">
-                    <div className="row">
+                    <div className="row justify-content-center">
                       <div className="col-md-4">
                         <img
                           src="/pokerstars_media/football.png"
@@ -359,10 +412,10 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-6">
-                    <div className="row">
+                    <div className="row justify-content-center">
                       <div className="col-md-4">
                         <img
                           src="/pokerstars_media/tennis.png"
@@ -370,7 +423,7 @@ export default function MultiSports() {
                           width={24}
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className=" col-md-8">
                         <p
                           style={{
                             color: "RGB(68, 68, 68)",
@@ -387,7 +440,7 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-9">
                     <div className="row">
@@ -415,7 +468,7 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-6">
                     <div className="row">
@@ -443,7 +496,7 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-6">
                     <div className="row">
@@ -471,7 +524,7 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-6">
                     <div className="row">
@@ -499,7 +552,7 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-4 col-md-3">
                 <div className="row justify-content-center">
                   <div className="col-md-9">
                     <div className="row">
@@ -592,7 +645,7 @@ export default function MultiSports() {
       <section className="container my-5">
         <div>
           <div className="">
-            <div className=" d-flex">
+            {/* <div className=" d-flex">
               <div className=" d-flex">
                 <div className=" d-flex">
                   <div className=" d-flex pe-4">
@@ -680,6 +733,44 @@ export default function MultiSports() {
                   </div>
                 </div>
               </div>
+            </div> */}
+
+            <div class="row justify-content-center">
+              <div class="col-9 text-center text-md-start col-md-4 mb-5 ">
+                <div class="row">
+                  <div class="col-md-2 mb-2">
+                    <img src="/pokerstars_media/USP_1_Secure.svg" height="45" width="45" />
+                  </div>
+                  <div class="col-md-10">
+                    De l'action en ligne sûre et sécurisée.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-9  col-md-4  text-center text-md-start mb-3 mb-5 ">
+                <div class="row">
+                  <div class="col-md-2 mb-2">
+                    <img src="/pokerstars_media/USP_2_Choice.svg" height="45" width="45" />
+                  </div>
+                  <div class="col-md-10">
+                    Des paris sportifs en ligne sur l’appareil de votre choix.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-9  text-center text-md-start  col-md-4">
+                <div class="row">
+                  <div class="col-md-2 mb-2">
+                    <img src="/pokerstars_media/USP_3_Live_chat.svg" height="45" width="45" />
+                  </div>
+                  <div class="col-md-10">
+                  Une équipe de support client dédiée, à votre service 24/7.
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -710,9 +801,10 @@ export default function MultiSports() {
 
         <p style={{ color: "#000000", fontWeight: "600" }}>
           <span
+            className="font-druk"
             style={{
               fontSize: "20px",
-              fontFamily: "bold",
+              fontStyle: "bold",
               color: "#000000",
               fontWeight: "900",
             }}
@@ -727,9 +819,10 @@ export default function MultiSports() {
         </p>
         <p style={{ color: "#000000", fontWeight: "600" }}>
           <span
+           className="font-druk"
             style={{
               fontSize: "20px",
-              fontFamily: "bold",
+              fontStyle: "bold",
               color: "#000000",
               fontWeight: "900",
             }}
@@ -742,9 +835,10 @@ export default function MultiSports() {
         </p>
         <p style={{ color: "#000000", fontWeight: "600" }}>
           <span
+           className="font-druk"
             style={{
               fontSize: "20px",
-              fontFamily: "bold",
+              fontStyle: "bold",
               color: "#000000",
               fontWeight: "900",
             }}
@@ -789,9 +883,10 @@ export default function MultiSports() {
         </p>
         <p style={{ color: "#000000", fontWeight: "600" }}>
           <span
+           className="font-druk"
             style={{
               fontSize: "20px",
-              fontFamily: "bold",
+              fontStyle: "bold",
               color: "#000000",
               fontWeight: "900",
             }}
@@ -827,9 +922,10 @@ export default function MultiSports() {
         </p>
         <p style={{ color: "#000000", fontWeight: "600" }}>
           <span
+           className="font-druk"
             style={{
               fontSize: "20px",
-              fontFamily: "bold",
+              fontStyle: "bold",
               color: "#000000",
               fontWeight: "900",
             }}

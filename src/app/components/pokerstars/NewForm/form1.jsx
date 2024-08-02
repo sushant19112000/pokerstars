@@ -96,7 +96,6 @@ console.log(country,"selected country")
                         <label style={boldStyle} htmlFor="Mobile-Number">
                           Mot de passe
                         </label>
-
                         <input
                           onChange={(e) => setPassword(e.target.value)}
                           type="text"

@@ -93,7 +93,7 @@ export const Form2 = () => {
     <div className="container card-0 justify-content-center">
       <div className="card-body px-sm-4 px-0">
         <div className="row justify-content-center mb-5"></div>
-        <div className="row justify-content-center round">
+        <div className="row justify-content-center round ">
           <div className="col-lg-10 col-md-12">
             <div className="card shadow-lg card-1">
               <div className="card-body inner-card">
