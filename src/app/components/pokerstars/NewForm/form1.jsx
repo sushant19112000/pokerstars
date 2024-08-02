@@ -5,7 +5,7 @@ import { countries } from "./countries.js";
 import { useNext } from "./useNext.jsx";
 import { useSaveMultipleData } from "./useSaveData.jsx";
 import Svg from "./svg.jsx";
-import "./form.css";
+
 const boldStyle = { fontWeight: "bold" };
 
 export const Form1 = () => {

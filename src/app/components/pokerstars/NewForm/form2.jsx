@@ -17,7 +17,7 @@ export const Form2 = () => {
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [postcode, setPostCode] = useState("");
-  
+
   const [sevendaylimit, setSevenDayLimit] = useState("");
   const [sevendayMinimumLimit, setSevendayMinimumLimit] = useState("");
   const [address, setAddress] = useState("");
@@ -64,7 +64,7 @@ export const Form2 = () => {
     const uploadSuccess = await handleUpload(dataOb);
     if (uploadSuccess) {
       console.log("Data uploaded successfully");
-      window.location.href = "https://martechavenue.com/";
+      window.location.href = "https://www.pokerstars.fr/signup?brand=4&redirectTo=/sports";
     } else {
       console.error("Data upload failed");
     }
@@ -110,20 +110,18 @@ export const Form2 = () => {
                           Où habitez-vous donc,?
                         </h5>
                         <div className="row justify-content-center justify-content-md-start">
-                          <div className="col-10 col-md-6">
+                          <div className="col-10 col-md-6 mb-3">
                             <label style={boldStyle} htmlFor="last-name">
                               Pays
                             </label>
-                            <input
-                              onChange={(e) => {
-                                setCity(e.target.value);
-                              }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
+                            <select
+                              className="form-select form-input-border"
                               required
-                            />
+                            >
+                              {countries.map((country, index) => (
+                                <option key={index}>{country}</option>
+                              ))}
+                            </select>
                           </div>
 
                           <div className="col-10 col-md-6">
@@ -142,13 +140,13 @@ export const Form2 = () => {
                             />
                           </div>
 
-                          <div className="col-md-6">
+                          <div className="col-md-6  mb-3">
                             <label style={boldStyle} htmlFor="email">
                               Département
                             </label>
                             <input
                               onChange={(e) => {
-                                setAddress(e.target.value);
+                                setState(e.target.value);
                               }}
                               type="text"
                               className="form-control"
@@ -164,7 +162,7 @@ export const Form2 = () => {
                             </label>
                             <input
                               onChange={(e) => {
-                                setLastName(e.target.value);
+                                setCity(e.target.value);
                               }}
                               type="text"
                               className="form-control"
@@ -180,7 +178,7 @@ export const Form2 = () => {
                             </label>
                             <input
                               onChange={(e) => {
-                                setAddress(e.target.value);
+                                setPostCode(e.target.value);
                               }}
                               type="text"
                               className="form-control"
@@ -210,7 +208,7 @@ export const Form2 = () => {
                             </label>
                             <input
                               onChange={(e) => {
-                                setCity(e.target.value);
+                                setSevenDayLimit(e.target.value);
                               }}
                               type="text"
                               className="form-control"
@@ -238,34 +236,48 @@ export const Form2 = () => {
                             <label style={boldStyle} htmlFor="last-name">
                               Limite de mise sur sept jours au poker
                             </label>
-                            <input
+                            <select
                               onChange={(e) => {
-                                setCity(e.target.value);
+                                setSevendayMinimumLimit(e.target.value);
                               }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
+                              className="form-select form-input-border"
                               required
-                            />
+                            >
+                              <option>1000</option>
+                              <option>2000</option>
+
+                              <option>3000</option>
+
+                              <option>4000</option>
+
+                              <option>5000</option>
+                            </select>
                           </div>
                           <div className="col-10 col-md-6">
                             <label style={boldStyle} htmlFor="last-name">
                               Limite de mises sur sept jours aux paris sportifs
                             </label>
-                            <input
+                            <select
                               onChange={(e) => {
-                                setCity(e.target.value);
+                                setSevendayMaxmimumLimit(e.target.value);
                               }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
+                              className="form-select form-input-border"
                               required
-                            />
+                            >
+                              <option>1000</option>
+                              <option>2000</option>
+
+                              <option>3000</option>
+
+                              <option>4000</option>
+
+                              <option>5000</option>
+                            </select>
                           </div>
                         </div>
                       </div>
+
+                   
 
                       <div className="mt-5">
                         <h5
@@ -274,38 +286,7 @@ export const Form2 = () => {
                             color: "#D70022",
                             fontWeight: "bolder",
                           }}
-                          className="mb-4"
-                        >
-                          Limite de temps hebdomadaire au poker
-                        </h5>
-                        <div className="row justify-content-center justify-content-md-start">
-                          <div className="col-10 col-md-6">
-                            <label
-                              style={boldStyle}
-                              htmlFor="last-name"
-                            ></label>
-                            <input
-                              onChange={(e) => {
-                                setCity(e.target.value);
-                              }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mt-5">
-                        <h5
-                          style={{
-                            fontSize: "25px",
-                            color: "#D70022",
-                            fontWeight: "bolder",
-                          }}
-                          className="mb-4"
+                          className=""
                         >
                           Fixer la limite de retrait automatique
                         </h5>
@@ -315,212 +296,24 @@ export const Form2 = () => {
                               style={boldStyle}
                               htmlFor="last-name"
                             ></label>
-                            <input
+                            <select
                               onChange={(e) => {
-                                setCity(e.target.value);
+                                setAutoMaticWithdrawalLimit(e.target.value);
                               }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
+                              className="form-select form-input-border"
                               required
-                            />
+                            >
+                              <option>1000</option>
+                              <option>2000</option>
+
+                              <option>3000</option>
+
+                              <option>4000</option>
+
+                              <option>5000</option>
+                            </select>
                           </div>
                         </div>
-                      </div>
-
-                      {/* <div className="">
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="time">
-                            Ville
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setLastName(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="time"
-                            placeholder=""
-                            required
-                          />
-                        </div>
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="skill">
-                            Limite de 7 jours
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setSevenDayLimit(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="skill"
-                            placeholder=""
-                            required
-                          />
-                        </div>
-
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="email">
-                            Fixer la limite de retrait automatique
-                          </label>
-                          <select
-                            className="form-select"
-                            onChange={(e) => {
-                              setAutoMaticWithdrawalLimit(e.target.value);
-                            }}
-                            required
-                          >
-                            <option>100</option>
-                            <option>200</option>
-                            <option>300</option>
-                          </select>
-                        </div>
-                      </div> */}
-
-                      <div className="col-lg-5 col-md-6 col-sm-12">
-                        {/*  <h5 style={{fontSize:"25px" ,color:"#D70022",fontWeight: "bolder"}}>Où habitez-vous donc, jack ?</h5>
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="last-name">
-                            Pays
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setCity(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="last-name"
-                            placeholder=""
-                            required
-                          />
-                        </div> */}
-
-                        {/* <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="email">
-                            Adresse
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setAddress(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="text"
-                            placeholder=""
-                            required
-                          />
-                        </div>
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="email">
-                            Département
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setAddress(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="text"
-                            placeholder=""
-                            required
-                          />
-                        </div>
-                        <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="email">
-                            Code postal
-                          </label>
-                          <input
-                            onChange={(e) => {
-                              setAddress(e.target.value);
-                            }}
-                            type="text"
-                            className="form-control"
-                            id="text"
-                            placeholder=""
-                            required
-                          />
-                        </div> */}
-                        {/* <div className="form-group mb-4">
-                        <label style={boldStyle} htmlFor="email">
-                          Sexe
-                        </label>
-                        <div className="d-flex mt-2 " style={{ gap: "10px" }}>
-                          <div className="d-flex align-items-center">
-                            <input
-                              onChange={(e) => {
-                                setGender(e.target.value);
-                              }}
-                              type="radio"
-                              value="Homme"
-                              required
-                              name="gender"
-                              style={{
-                                border: "1px solid black",
-                                height: "20px",
-                                width: "20px",
-                                marginRight: "8px",
-                              }}
-                            />
-                            <span style={boldStyle} htmlFor="skill">
-                              Homme
-                            </span>
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <input
-                              onChange={(e) => {
-                                setGender(e.target.value);
-                              }}
-                              type="radio"
-                              value="Femme"
-                              required
-                              name="gender"
-                              style={{
-                                border: "1px solid black",
-                                height: "20px",
-                                width: "20px",
-                                marginRight: "8px",
-                              }}
-                            />
-                            <span style={boldStyle} htmlFor="skill">
-                              Femme
-                            </span>
-                          </div>
-                        </div>
-                      </div> */}
-                        {/* <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="birth-country">
-                            Limite de mise sur sept jours au poker
-                          </label>
-                          <select
-                            className="form-select"
-                            onChange={(e) => {
-                              setSevendayMinimumLimit(e.target.value);
-                            }}
-                            required
-                          >
-                            <option>100</option>
-                            <option>200</option>
-                            <option>300</option>
-                          </select>
-                        </div> */}
-                        {/* <div className="form-group mb-4">
-                          <label style={boldStyle} htmlFor="birth-city">
-                            Limite de mises sur sept jours aux paris sportifs
-                          </label>
-                          <select
-                            className="form-select"
-                            onChange={(e) => {
-                              setSevendayMaxmimumLimit(e.target.value);
-                            }}
-                            required
-                          >
-                            <option>100</option>
-                            <option>200</option>
-                            <option>300</option>
-                          </select>
-                        </div> */}
                       </div>
                     </div>
 
