@@ -16,7 +16,7 @@ export default function Bonus100Page() {
           className="text-container"
           style={{
             backgroundColor: "transparent",
-            maxWidth: "700px",
+            maxWidth: "650px",
             color: "white",
           }}
         >
@@ -24,7 +24,7 @@ export default function Bonus100Page() {
             <div className="mb-3">
               <span
                 className="font-druk col-white"
-                style={{ fontSize: "40.6167px", fontWeight: 600 }}
+                style={{ fontSize: "30.6167px", fontWeight: 600 }}
               >
                 REJOIGNEZ POKERSTARS
               </span>
@@ -34,7 +34,7 @@ export default function Bonus100Page() {
                 className="font-druk"
                 style={{
                   color: "#D70022",
-                  fontSize: 60,
+                  fontSize: 40,
                   fontWeight: 700,
                   lineHeight: 1,
                 }}
@@ -51,14 +51,14 @@ export default function Bonus100Page() {
                   color: "white",
                 }}
               >
-                UTILISEZ LE CODE BONUS « STARS100 «
+                UTILISEZ LE CODE BONUS <span style={{fontSize:'25px',fontStyle:'bold'}}>  &lt;&lt;</span> STARS100 <span style={{fontSize:'25px',fontStyle:'blod'}}>  &gt;&gt;</span>
               </span>
             </div>
             <p
               className="terms-heading font-roboto"
               style={{
                 color: "rgb(197, 197, 197)",
-                fontSize: "22.2333px",
+                fontSize: "18.2333px",
                 fontWeight: 400,
               }}
             >
@@ -119,69 +119,98 @@ export default function Bonus100Page() {
           </span>
         </div>
         <div>
-          <div className="row">
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Inscrivez-vous"
-                  src="/cards-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "80px", width: "100px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold "
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  1. Inscrivez-vous
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Inscrivez-vous pour jouer à vos jeux préférés.
-                </p>
+          <div className="row justify-content-center">
+            <div className="col-md-4">
+              <div className="row justify-content-center">
+                <div className="col-md-3 mb-2 ">
+                  <img src="/pokerstars_media/1._Register.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-4">
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      1. INSCRIVEZ-VOUS
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500
+                      }}
+                    >
+                      Connectez-vous pour profiter de notre offre de bienvenue.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Déposez"
-                  src="/slots-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "80px", width: "100px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold"
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  2. Déposez
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Déposez jusqu’à 100 € avec le code « STARS100 ».
-                </p>
+            <div className="col-md-4">
+              <div className="row">
+                <div className="col-md-3 mb-2">
+                  <img src="/pokerstars_media/2._Free_bets.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-2 " style={{ fontSize: 20 }}>
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      2. Recevez jusqu'à 100 € en freebets
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500,
+                        textAlign: "justify"
+                      }}
+                    >
+                      Si votre premier pari sportif est perdant, nous égalons votre mise
+                      jusqu'à 100 € sous forme de freebets. Deux freebets auront la même
+                      valeur combinée que votre mise, jusqu'à 100 €.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Rejoignez l'action"
-                  src="/gift-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "150px", width: "150px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold"
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  3. Rejoignez l'action
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Jouez à vos jeux préférés contre des milliers de joueurs pour
-                  débloquer votre bonus de 100 %.
-                </p>
+            <div className="col-md-4">
+              <div className="row">
+                <div className="col-md-3 mb-2">
+                  <img src="/pokerstars_media/3._Tickets.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-2 " style={{ fontSize: 20 }}>
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      3. Profitez de nombreux marchés
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500
+                      }}
+                    >
+                      Utilisez vos freebets sur le sport de votre choix sous sept jours.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -191,112 +220,115 @@ export default function Bonus100Page() {
       {/* <Section3 /> */}
 
       <section
-        className="container pt-5 pb-3 font-druk"
+        className="py-5 font-druk"
         style={{ backgroundColor: "#f5f5f5" }}
       >
-        <div className=" pb-3">
-          <span
-            className="font-druk"
-            style={{ color: "black", fontWeight: 800, fontSize: 30 }}
-          >
-            REJOIGNEZ LE TEMPLE DU POKER EN LIGNE
-          </span>
-        </div>
-
-        <div className="row gy-3 gy-md-4 gy-lg-0 ">
-          <div className="col-12 col-lg-6">
-            <picture>
-              <img
-                className="img-fluid "
-                loading="lazy"
-                src="/pokerimages/acor.jpg"
-                alt="About 2"
-                style={{ height: "450px" }}
-              />
-            </picture>
+        <div className="container">
+          <div className=" pb-3">
+            <span
+              className="font-druk"
+              style={{ color: "black", fontWeight: 800, fontSize: 30 }}
+            >
+              REJOIGNEZ LE TEMPLE DU POKER EN LIGNE
+            </span>
           </div>
-          <div className="col-12 col-lg-6">
-            <div className="row">
-              <div className="col-12 col-xl-10">
-                <div
-                  className="accordion accordion-flush"
-                  id="accordionFlushExample"
-                >
-                  <div className="accordion-item bg-transparent">
-                    <h2 className="accordion-header " id="flush-headingOne">
-                      <button
-                        className="accordion-button collapsed bg-transparent"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseOne"
-                        style={{ fontWeight: "bolder" }}
+
+          <div className="row gy-3 gy-md-4 gy-lg-0 ">
+            <div className="col-12 col-lg-6">
+              <picture>
+                <img
+                  className="img-fluid w-100"
+                  loading="lazy"
+                  src="/pokerimages/acor.jpg"
+                  alt="About 2"
+
+                  style={{ height: "auto" }}
+                />
+              </picture>
+            </div>
+            <div className="col-12 col-lg-6">
+              <div className="row">
+                <div className="col-12 col-xl-10">
+                  <div
+                    className="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  >
+                    <div className="accordion-item bg-transparent">
+                      <h2 className="accordion-header " id="flush-headingOne">
+                        <button
+                          className="accordion-button collapsed bg-transparent"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                          style={{ fontWeight: "bolder" }}
+                        >
+                          Un environnement de jeu sûr et sécurisé
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        className="accordion-collapse collapse bg-transparent"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample"
                       >
-                        Un environnement de jeu sûr et sécurisé
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseOne"
-                      className="accordion-collapse collapse bg-transparent"
-                      aria-labelledby="flush-headingOne"
-                      data-bs-parent="#accordionFlushExample"
-                    >
-                      <div className="accordion-body ">
-                        Déposez, retirez et jouez, tout en sachant que nos
-                        systèmes de sécurité vous garantissent une protection
-                        optimale.
+                        <div className="accordion-body ">
+                          Déposez, retirez et jouez, tout en sachant que nos
+                          systèmes de sécurité vous garantissent une protection
+                          optimale.
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="accordion-item bg-transparent">
-                    <h2 className="accordion-header" id="flush-headingTwo">
-                      <button
-                        className="accordion-button collapsed bg-transparent"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseTwo"
-                        style={{ fontWeight: "bolder" }}
+                    <div className="accordion-item bg-transparent">
+                      <h2 className="accordion-header" id="flush-headingTwo">
+                        <button
+                          className="accordion-button collapsed bg-transparent"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseTwo"
+                          style={{ fontWeight: "bolder" }}
+                        >
+                          Retraits rapides
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseTwo"
+                        className="accordion-collapse collapse bg-transparent"
+                        aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample"
                       >
-                        Retraits rapides
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseTwo"
-                      className="accordion-collapse collapse bg-transparent"
-                      aria-labelledby="flush-headingTwo"
-                      data-bs-parent="#accordionFlushExample"
-                    >
-                      <div className="accordion-body">
-                        Accès facile à vos fonds à tout moment.
+                        <div className="accordion-body">
+                          Accès facile à vos fonds à tout moment.
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="accordion-item bg-transparent">
-                    <h2 className="accordion-header" id="flush-headingThree">
-                      <button
-                        className="accordion-button collapsed bg-transparent"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseThree"
-                        style={{ fontWeight: "bolder" }}
+                    <div className="accordion-item bg-transparent">
+                      <h2 className="accordion-header" id="flush-headingThree">
+                        <button
+                          className="accordion-button collapsed bg-transparent"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseThree"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseThree"
+                          style={{ fontWeight: "bolder" }}
+                        >
+                          Support client 24/7
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseThree"
+                        className="accordion-collapse collapse bg-transparent"
+                        aria-labelledby="flush-headingThree"
+                        data-bs-parent="#accordionFlushExample"
                       >
-                        Support client 24/7
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseThree"
-                      className="accordion-collapse collapse bg-transparent"
-                      aria-labelledby="flush-headingThree"
-                      data-bs-parent="#accordionFlushExample"
-                    >
-                      <div className="accordion-body">
-                        Vous avez besoin d'un peu d'aide ? Nous sommes là pour
-                        vous. Toute la journée. Tous les jours.
+                        <div className="accordion-body">
+                          Vous avez besoin d'un peu d'aide ? Nous sommes là pour
+                          vous. Toute la journée. Tous les jours.
+                        </div>
                       </div>
                     </div>
                   </div>

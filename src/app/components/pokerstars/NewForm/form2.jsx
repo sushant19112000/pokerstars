@@ -261,10 +261,6 @@ export const Form2 = () => {
                           </div>
                         </div>
                       </div>
-
-
-
-
                       <div className="">
                         <div className="form-group mb-4">
                           <label style={boldStyle} htmlFor="time">

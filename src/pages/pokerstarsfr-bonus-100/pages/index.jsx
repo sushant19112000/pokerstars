@@ -4,8 +4,8 @@ import { Main } from "@/app/components/pokerstars/NewForm/main";
 export default function Index() {
   return (
     <>
-      {/* <Bonus100Page /> */}
-      <Main/>
+      <Bonus100Page />
+      {/* <Main/> */}
     </>
   );
 }

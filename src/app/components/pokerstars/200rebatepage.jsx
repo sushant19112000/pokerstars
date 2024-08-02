@@ -112,71 +112,96 @@ export default function RebatePage() {
           </span>
         </div>
         <div>
-          <div className="row">
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Inscrivez-vous"
-                  src="/cards-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "220px", width: "250px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold "
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  Crea tu cuenta
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Instala nuestro galardonado software o aplicación. A
-                  continuación, sigue unos sencillos pasos para crear tu cuenta.
-                </p>
+          <div className="row justify-content-center">
+            <div className="col-md-4">
+              <div className="row justify-content-center">
+                <div className="col-md-3 mb-2 " style={{ margin: 0, padding: '0' }}>
+                  <img src="/pokerimages/cards-icon.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-3">
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      1.Crea tu cuenta
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500
+                      }}
+                    >
+                      Instala nuestro galardonado software o aplicación. A continuación, sigue unos sencillos pasos para crear tu cuenta..
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Déposez"
-                  src="/slots-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "180px", width: "210px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold"
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  Deposita
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Ve al Cajero y realiza un depósito de hasta 200 € con el
-                  código "STARS200".
-                </p>
+            <div className="col-md-4">
+              <div className="row">
+                <div className="col-md-3 mb-2" style={{ margin: 0, padding: '0' }}>
+                  <img src="/pokerimages/slots-icon.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-2 " style={{ fontSize: 20 }}>
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      2.Deposita
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500,
+                        textAlign: "justify"
+                      }}
+                    >
+                      Ve al Cajero y realiza un depósito de hasta 200 € con el código "STARS200".
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-4 d-flex align-items-center py-3">
-              <picture>
-                <img
-                  alt="Rejoignez l'action"
-                  src="/gift-icon.svg"
-                  className="img-fluid"
-                  style={{ height: "220px", width: "250px" }}
-                />
-              </picture>
-              <div className="px-3">
-                <h5
-                  className="pb-2 font-weight-bold"
-                  style={{ color: "#000000", fontWeight: "bolder" }}
-                >
-                  Juega
-                </h5>
-                <p style={{ color: "#000000", fontWeight: "600" }}>
-                  Ve a las mesas y disfruta de tus juegos favoritos para empezar
-                  a recibir tu reembolso del 100 %.
-                </p>
+            <div className="col-md-4">
+              <div className="row">
+                <div className="col-md-3 mb-2" style={{ margin: 0, padding: '0' }}>
+                  <img src="/pokerimages/gift-icon.svg" height={80} width={80} />
+                </div>
+                <div className="col-md-9">
+                  <div className="mb-2 " style={{ fontSize: 20 }}>
+                    <span
+                      className=" font-druk"
+                      style={{ fontSize: 17, color: "RGB(0, 0, 0)", fontWeight: 600 }}
+                    >
+                      3.Juega
+                    </span>
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily:
+                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                        fontSize: 14,
+                        color: "black",
+                        fontWeight: 500
+                      }}
+                    >
+                      Utilisez vos freebets sur le sport de votre choix sous sept jours.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -326,6 +351,8 @@ export default function RebatePage() {
               />
             </div>
           </div>
+
+
 
 
         </div>
