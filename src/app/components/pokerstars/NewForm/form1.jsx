@@ -57,25 +57,29 @@ export const Form1 = () => {
     next();
   };
   return (
-    <div className="container card-0 justify-content-center">
+    <div className=" card-0 justify-content-center">
+      <div className="py-4" style={{ backgroundColor: "black" }}>
+        <Svg />
+      </div>
       <div className="card-body px-sm-4 px-0">
-        <div className="row justify-content-center mb-5"></div>
         <div className="row justify-content-center round">
-          <div className="col-lg-10 col-md-12">
+          <div className="col-lg-10 col-md-12 mt-3">
             <div className="card shadow-lg card-1">
-              <div className="card-body inner-card">
+              <div className=" inner-card">
                 <div
                   style={{
-                    backgroundColor: "black",
+                    backgroundColor: "#190A05",
+                    background:
+                      "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                    background: "linear-gradient(to bottom, #FF0000, #190a05)",
                     color: "white",
                     fontWeight: "bolder",
                   }}
-                  className="text-center mb-5 py-2 rounded"
+                  className="text-center mb-5 py-4"
                 >
-                  <div>
-                    <Svg />
-                  </div>
-                  <h2>Informations de compte</h2>
+                  <h3 style={{ fontWeight: "bolder" }}>
+                    Informations de compte
+                  </h3>
                 </div>
 
                 <form onSubmit={handleNext}>
@@ -280,16 +284,18 @@ export const Form1 = () => {
                       id="secondary-div-center"
                     >
                       <div>
-                        <h5
-                          style={{
-                            fontSize: "25px",
-                            color: "#D70022",
-                            fontWeight: "bolder",
-                          }}
-                          className="mb-4"
-                        >
-                          Où êtes-vous né(e) ?
-                        </h5>
+                       <h5
+  style={{
+    fontSize: "25px",
+    fontWeight: "bolder",
+    background: "linear-gradient(to right, #D70022, #190A05)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  }}
+  className="mb-4"
+>
+  Où êtes-vous né(e) ?
+</h5>
                         <div className="row justify-content-center justify-content-md-start">
                           <div className="col-10 col-md-6 mb-3">
                             <label style={boldStyle} htmlFor="birth-country">
@@ -354,7 +360,7 @@ export const Form1 = () => {
                           maxWidth: "186px",
                           color: "white",
                           fontWeight: "700",
-                          backgroundColor: "#D70022",
+                          backgroundColor: "#000000",
                         }}
                       >
                         <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
@@ -369,7 +375,9 @@ export const Form1 = () => {
                           maxWidth: "186px",
                           color: "white",
                           fontWeight: "700",
-                          backgroundColor: "#02bd9c",
+                          background:
+                          "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                        background: "linear-gradient(to bottom, #FF0000, #190a05)",
                         }}
                       >
                         Continuer{" "}

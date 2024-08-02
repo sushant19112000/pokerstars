@@ -5,8 +5,8 @@ export default function Svg() {
           viewBox="0 0 788 133"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          width={230}
-          height={50}
+          width={200}
+          height={45}
           className="_a2cccc4 _7bdb1af"
         >
           <defs>
