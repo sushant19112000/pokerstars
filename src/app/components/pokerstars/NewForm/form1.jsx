@@ -2,12 +2,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ResponsiveLayout.css";
 import Svg from "./svg";
+import Circle from "./circle";
 import React, { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { countries } from "./countries.js";
+import Divider from "./divder";
 import { useNext } from "./useNext.jsx";
+import './divider.css'
 import { useSaveMultipleData } from "./useSaveData.jsx";
+
 const boldStyle = { fontWeight: "bold", color: '#05D6AE' };
 const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white', outline: 'transparent' }
 export const Form1 = () => {
@@ -70,7 +74,6 @@ export const Form1 = () => {
 
         <div className="row">
           <div className="col-md-4 left-column d-flex flex-column ">
-
             <img
               src="/pokerimages/istockphoto-1437726104-612x612.jpg"
               className="w-100  mt-md-5"
@@ -87,20 +90,36 @@ export const Form1 = () => {
 
                     <form onSubmit={handleNext} className="" style={{ backgroundColor: "black" }}>
                       <div className="row justify-content-center ">
-                        <div className="col-10">
-                          <div className="col-12 col-md-9 col-lg-7 pb-4">
-                            <div
-                              style={{
-                                backgroundColor: "black",
-                                color: "white",
-                                fontWeight: "bolder",
-                                paddingTop: '50px'
-                              }}
-                              className=" text-start mb-2"
-                            >
-                              <h3 className="" style={{ fontWeight: "900" }}>
-                                Informations de compte
-                              </h3>
+
+
+                        <div className="col-10 col-md-12 col-lg-10">
+                          <div className="col-12 col-md-12 col-lg-12 pb-4" style={{ paddingTop: '50px' }}>
+
+                            {/* Title  */}
+                            <div className="row">
+                              <div className="col-12 col-md-8 col-lg-7">
+                                <div
+                                  style={{
+                                    backgroundColor: "black",
+                                    color: "white",
+                                    fontWeight: "bolder",
+                                  }}
+                                  className=" text-start mb-2"
+                                >
+                                  <h3 className="" style={{ fontWeight: "900" }}>
+                                    Informations de compte
+                                  </h3>
+                                </div>
+
+                              </div>
+
+                              <div className="col-12 col-md-5 col-lg-5">
+                                <div className="justify-content-start" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                  <Circle number={1} />
+                                  <Divider />
+                                  <Circle number={2} />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
