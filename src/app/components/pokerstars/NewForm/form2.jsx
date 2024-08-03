@@ -11,6 +11,8 @@ import { useRecoilValue } from "recoil";
 import { PokerStarsData } from "@/app/atoms/pokerStarsData";
 import { countries } from "./countries";
 import { weeklyLimits } from "../weeklyLimits";
+import Circle from "./circle";
+import Divider from "./divder";
 const boldStyle = { fontWeight: "bold", color: "#05D6AE" };
 export const autoWithDrawLimits = [
   "",
@@ -24,7 +26,7 @@ export const autoWithDrawLimits = [
   "5,000 €",
   "10,000 €",
 ];
-
+const bgcolor = { backgroundColor: "red" };
 const inputStyle = {
   backgroundColor: "transparent",
   borderTop: "0",
@@ -117,243 +119,283 @@ export const Form2 = () => {
             style={{ backgroundColor: "black", color: "white" }}
           >
             <div className="row justify-content-center justify-content-md-center">
-              <div className="col-10">
-                <div className="col-12 col-md-9 col-lg-7 pb-4">
-                  <div
-                    style={{
-                      backgroundColor: "black",
-                      color: "white",
-                      fontWeight: "bolder",
-                      paddingTop: "50px",
-                    }}
-                    className=" text-start mb-2"
-                  >
-                    <h3 className="" style={{ fontWeight: "900" }}>
-                      Informations de compte
-                    </h3>
+              <div className="col-10 col-md-12 col-lg-10">
+                <div
+                  className="col-12 col-md-12 col-lg-12 pb-4"
+                  style={{ paddingTop: "50px" }}
+                >
+                  {/* Title  */}
+                  <div className="row">
+                    <div className="col-12 col-md-8 col-lg-7">
+                      <div
+                        style={{
+                          backgroundColor: "black",
+                          color: "white",
+                          fontWeight: "bolder",
+                        }}
+                        className=" text-start mb-2"
+                      >
+                        <h3 className="" style={{ fontWeight: "900" }}>
+                          Informations de compte
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-md-5 col-lg-5">
+                      <div
+                        className="justify-content-start"
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Circle number={1} checked={true} />
+                        <Divider />
+                        <Circle number={2} checked={false} />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div
-                className="col-lg-10 col-md-10 col-sm-10"
-                id="secondary-div-center"
-              >
-                <h5
-                  style={{
-                    fontSize: "25px",
-                    color: "#D70022",
-                    fontWeight: "bolder",
-                  }}
-                  className="mb-4"
+          
+                <div
+                  className="col-lg-10 col-md-10 col-sm-10"
+                  id="secondary-div-center"
                 >
-                  Où habitez-vous donc,?
-                </h5>
+              <form onSubmit={handleNext}>
 
-                <div className="row justify-content-center justify-content-md-start">
-                  <div className="col-10 col-md-6 mb-3">
-                    <label style={boldStyle} htmlFor="last-name">
-                      Pays
-                    </label>
-                    <select
-                      className="form-select form-input-border"
-                      required
-                      style={inputStyle}
-                    >
-                      {countries.map((country, index) => (
-                        <option key={index}>{country}</option>
-                      ))}
-                    </select>
+                  <h5
+                    style={{
+                      fontSize: "25px",
+                      fontWeight: "bolder",
+                      background: "linear-gradient(to right, #D70022, #190A05)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                    className="text-center text-md-start mb-4"
+                  >
+                    Où habitez-vous donc,?
+                  </h5>
+
+                  <div className="row justify-content-center justify-content-md-start">
+                    <div className="col-10 col-md-6 mb-3">
+                      <label style={boldStyle} htmlFor="last-name">
+                        Pays
+                      </label>
+                      <select
+                        className="form-select form-input-border"
+                        required
+                        style={inputStyle}
+                      >
+                        {countries.map((country, index) => (
+                          <option key={index}>{country}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="col-10 col-md-6">
+                      <label style={boldStyle} htmlFor="email">
+                        Adresse
+                      </label>
+                      <input
+                        onChange={(e) => {
+                          setAddress(e.target.value);
+                        }}
+                        type="text"
+                        className="form-control"
+                        id="text"
+                        placeholder=""
+                        required
+                        style={inputStyle}
+                      />
+                    </div>
+
+                    <div className="col-10 col-md-6">
+                      <label style={boldStyle} htmlFor="email">
+                        Département
+                      </label>
+                      <input
+                        onChange={(e) => {
+                          setState(e.target.value);
+                        }}
+                        type="text"
+                        className="form-control"
+                        id="text"
+                        placeholder=""
+                        required
+                        style={inputStyle}
+                      />
+                    </div>
+
+                    <div className="col-10 col-md-6">
+                      <label style={boldStyle} htmlFor="time">
+                        Ville
+                      </label>
+                      <input
+                        onChange={(e) => {
+                          setCity(e.target.value);
+                        }}
+                        type="text"
+                        className="form-control"
+                        id="time"
+                        placeholder=""
+                        required
+                        style={inputStyle}
+                      />
+                    </div>
+
+                    <div className="col-10 col-md-6">
+                      <label style={boldStyle} htmlFor="email">
+                        Code postal
+                      </label>
+                      <input
+                        onChange={(e) => {
+                          setPostCode(e.target.value);
+                        }}
+                        type="text"
+                        className="form-control"
+                        id="text"
+                        placeholder=""
+                        required
+                        style={inputStyle}
+                      />
+                    </div>
                   </div>
 
-                  <div className="col-10 col-md-6">
-                    <label style={boldStyle} htmlFor="email">
-                      Adresse
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        setAddress(e.target.value);
-                      }}
-                      type="text"
-                      className="form-control"
-                      id="text"
-                      placeholder=""
-                      required
-                      style={inputStyle}
-                    />
-                  </div>
+                  <div className="form-group mb-4">
+                    <div className="mt-5">
+                      <h5
+                        style={{
+                          fontSize: "25px",
+                          fontWeight: "bolder",
+                          background:
+                            "linear-gradient(to right, #D70022, #190A05)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                        className="text-center text-md-start mb-4"
+                      >
+                        Limite de dépôt{" "}
+                      </h5>
+                      <div className="row justify-content-center justify-content-md-start">
+                        <div className="col-10 col-md-6">
+                          <label style={boldStyle} htmlFor="last-name">
+                            Limite de 7 jours
+                          </label>
+                          <input
+                            onChange={(e) => {
+                              setSevenDayLimit(e.target.value);
+                            }}
+                            type="text"
+                            className="form-control"
+                            id="last-name"
+                            placeholder=""
+                            required
+                            style={inputStyle}
+                          />
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className="col-10 col-md-6">
-                    <label style={boldStyle} htmlFor="email">
-                      Département
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        setState(e.target.value);
-                      }}
-                      type="text"
-                      className="form-control"
-                      id="text"
-                      placeholder=""
-                      required
-                      style={inputStyle}
-                    />
-                  </div>
+                    <div className="mt-5">
+                      <h5
+                        style={{
+                          fontSize: "25px",
+                          fontWeight: "bolder",
+                          background:
+                            "linear-gradient(to right, #D70022, #190A05)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                        className="text-center text-md-start mb-4"
+                      >
+                        Limite cumulée
+                      </h5>
+                      <div className="row justify-content-center justify-content-md-start">
+                        <div className="col-10 col-md-6 mb-4">
+                          <label style={boldStyle} htmlFor="last-name">
+                            Limite de mise sur sept jours au poker
+                          </label>
+                          <select
+                            onChange={(e) => {
+                              setSevendayMinimumLimit(e.target.value);
+                            }}
+                            className="form-select form-input-border"
+                            required
+                            style={inputStyle}
+                          >
+                            <option></option>
+                            {weeklyLimits.map((limit, index) => (
+                              <option key={index}>{limit}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-10 col-md-6">
+                          <label style={boldStyle} htmlFor="last-name">
+                            Limite de mises sur sept jours aux paris
+                          </label>
+                          <select
+                            onChange={(e) => {
+                              setSevendayMaxmimumLimit(e.target.value);
+                            }}
+                            className="form-select form-input-border"
+                            required
+                            style={inputStyle}
+                          >
+                            <option></option>
+                            {weeklyLimits.map((limit, index) => (
+                              <option key={index}>{limit}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className="col-10 col-md-6">
-                    <label style={boldStyle} htmlFor="time">
-                      Ville
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        setCity(e.target.value);
-                      }}
-                      type="text"
-                      className="form-control"
-                      id="time"
-                      placeholder=""
-                      required
-                      style={inputStyle}
-                    />
-                  </div>
-
-                  <div className="col-10 col-md-6">
-                    <label style={boldStyle} htmlFor="email">
-                      Code postal
-                    </label>
-                    <input
-                      onChange={(e) => {
-                        setPostCode(e.target.value);
-                      }}
-                      type="text"
-                      className="form-control"
-                      id="text"
-                      placeholder=""
-                      required
-                      style={inputStyle}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group mb-4">
-                  <div className="mt-5">
-                    <h5
-                      style={{
-                        fontSize: "25px",
-                        color: "#D70022",
-                        fontWeight: "bolder",
-                      }}
-                      className="mb-3"
-                    >
-                      Limite de dépôt{" "}
-                    </h5>
-                    <div className="row justify-content-center justify-content-md-start">
-                      <div className="col-10 col-md-6">
-                        <label style={boldStyle} htmlFor="last-name">
-                          Limite de 7 jours
-                        </label>
-                        <input
-                          onChange={(e) => {
-                            setSevenDayLimit(e.target.value);
-                          }}
-                          type="text"
-                          className="form-control"
-                          id="last-name"
-                          placeholder=""
-                          required
-                          style={inputStyle}
-                        />
+                    <div className="mt-5">
+                      <h5
+                        style={{
+                          fontSize: "25px",
+                          fontWeight: "bolder",
+                          background:
+                            "linear-gradient(to right, #D70022, #190A05)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                        className="text-center text-md-start"
+                      >
+                        Fixer la limite de retrait automatique
+                      </h5>
+                      <div className="row justify-content-center justify-content-md-start">
+                        <div className="col-10 col-md-6">
+                          <label style={boldStyle} htmlFor="last-name"></label>
+                          <select
+                            onChange={(e) => {
+                              setAutoMaticWithdrawalLimit(e.target.value);
+                            }}
+                            className="form-select form-input-border"
+                            required
+                            style={inputStyle}
+                          >
+                            {autoWithDrawLimits.map((limit, index) => (
+                              <option key={index} value={limit}>
+                                {limit}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-5">
-                    <h5
-                      style={{
-                        fontSize: "25px",
-                        color: "#D70022",
-                        fontWeight: "bolder",
-                      }}
-                      className="mb-4"
-                    >
-                      Limite cumulée
-                    </h5>
-                    <div className="row justify-content-center justify-content-md-start">
-                      <div className="col-10 col-md-6">
-                        <label style={boldStyle} htmlFor="last-name">
-                          Limite de mise sur sept jours au poker
-                        </label>
-                        <select
-                          onChange={(e) => {
-                            setSevendayMinimumLimit(e.target.value);
-                          }}
-                          className="form-select form-input-border"
-                          required
-                          style={inputStyle}
-                        >
-                          <option></option>
-                          {weeklyLimits.map((limit, index) => (
-                            <option key={index}>{limit}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="col-10 col-md-6">
-                        <label style={boldStyle} htmlFor="last-name">
-                          Limite de mises sur sept jours aux paris
-                        </label>
-                        <select
-                          onChange={(e) => {
-                            setSevendayMaxmimumLimit(e.target.value);
-                          }}
-                          className="form-select form-input-border"
-                          required
-                          style={inputStyle}
-                        >
-                          <option></option>
-                          {weeklyLimits.map((limit, index) => (
-                            <option key={index}>{limit}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="mt-5">
-                    <h5
-                      style={{
-                        fontSize: "25px",
-                        color: "#D70022",
-                        fontWeight: "bolder",
-                      }}
-                      className=""
-                    >
-                      Fixer la limite de retrait automatique
-                    </h5>
-                    <div className="row justify-content-center justify-content-md-start">
-                      <div className="col-10 col-md-6">
-                        <label style={boldStyle} htmlFor="last-name"></label>
-                        <select
-                          onChange={(e) => {
-                            setAutoMaticWithdrawalLimit(e.target.value);
-                          }}
-                          className="form-select form-input-border"
-                          required
-                          style={inputStyle}
-                        >
-                          {autoWithDrawLimits.map((limit, index) => (
-                            <option key={index} value={limit}>
-                              {limit}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="row justify-content-center py-5">
-                  <div className="col-10 d-flex justify-content-between flex-wrap">
-                    {/* <button
+
+
+
+                  <div className="row justify-content-center py-5">
+                    <div className="col-10 col-md-12 d-flex justify-content-between flex-wrap">
+                      {/* <button
                     className="btn mb-3 mb-md-0"
                     onClick={handlePrev}
                     style={{
@@ -395,105 +437,113 @@ export const Form2 = () => {
                       </>
                     )}
                   </button> */}
-                    <div className="button-box">
-                      <button
-                        className="btn custom-btn py-2 px-4 position-relative"
-                        onClick={handlePrev}
-                        style={{ borderRadius: "50px" }}
-                      >
-                        <span>
-                          {" "}
-                          <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
-                          Précédent{" "}
-                        </span>
-                      </button>
-                      <style jsx>{`
-                        .custom-btn {
-                          color: #05d6ae;
-                          border: 2px solid #05d6ae;
-                          text-transform: uppercase;
-                          overflow: hidden;
-                          transition: color 400ms;
-                        }
+                      <div className="button-box">
+                        <button
+                          className="btn custom-btn py-2 px-4 position-relative"
+                          onClick={handlePrev}
+                          style={{ borderRadius: "50px" }}
+                        >
+                          <span>
+                            {" "}
+                            <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
+                            Précédent{" "}
+                          </span>
+                        </button>
+                        <style jsx>{`
+                          .custom-btn {
+                            color: #05d6ae;
+                            border: 2px solid #05d6ae;
+                            text-transform: uppercase;
+                            overflow: hidden;
+                            transition: color 400ms;
+                          }
 
-                        .custom-btn::before {
-                          content: "";
-                          position: absolute;
-                          border-radius: 50%;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          background: #05d6ae;
-                          z-index: -1;
-                          transition: transform 400ms ease-out;
-                          transform: scaleX(0);
-                          transform-origin: left;
-                        }
+                          .custom-btn::before {
+                            content: "";
+                            position: absolute;
+                            border-radius: 50%;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: #05d6ae;
+                            z-index: -1;
+                            transition: transform 400ms ease-out;
+                            transform: scaleX(0);
+                            transform-origin: left;
+                          }
 
-                        .custom-btn:hover::before {
-                          transform: scaleX(1);
-                        }
+                          .custom-btn:hover::before {
+                            transform: scaleX(1);
+                          }
 
-                        .custom-btn:hover {
-                          color: #ffffff;
-                        }
-                      `}</style>
-                    </div>
-                    <div className="button-box">
-                      <button
-                        className="btn custom-btn py-2 px-4 position-relative"
-                        style={{ borderRadius: "50px" }}
-                      >
-                        <span>
-                          {loading && (
-                            <Spinner animation="border" variant="light" />
-                          )}
-                          {!loading && (
-                            <>
-                              Continuer{" "}
-                              <MdNavigateNext style={{ fontSize: "25px" }} />
-                            </>
-                          )}
-                        </span>
-                      </button>
+                          .custom-btn:hover {
+                            color: #ffffff;
+                          }
+                        `}</style>
+                      </div>
+                      <div className="button-box">
+                        <button
+                          className="btn custom-btn py-2 px-4 position-relative"
+                          style={{ borderRadius: "50px" }}
+                          type="submit"
+                        >
+                          <span>
+                            {loading && (
+                              <Spinner animation="border" variant="light" />
+                            )}
+                            {!loading && (
+                              <>
+                                Continuer{" "}
+                                <MdNavigateNext style={{ fontSize: "25px" }} />
+                              </>
+                            )}
+                          </span>
+                        </button>
 
-                      <style jsx>{`
-                        .custom-btn {
-                          color: #05d6ae;
-                          border: 2px solid #05d6ae;
-                          text-transform: uppercase;
-                          overflow: hidden;
-                          transition: color 400ms;
-                        }
+                        <style jsx>{`
+                          .custom-btn {
+                            color: #05d6ae;
+                            border: 2px solid #05d6ae;
+                            text-transform: uppercase;
+                            overflow: hidden;
+                            transition: color 400ms;
+                          }
 
-                        .custom-btn::before {
-                          content: "";
-                          position: absolute;
-                          border-radius: 50%;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          background: #05d6ae;
-                          z-index: -1;
-                          transition: transform 400ms ease-out;
-                          transform: scaleX(0);
-                          transform-origin: left;
-                        }
+                          .custom-btn::before {
+                            content: "";
+                            position: absolute;
+                            border-radius: 50%;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: #05d6ae;
+                            z-index: -1;
+                            transition: transform 400ms ease-out;
+                            transform: scaleX(0);
+                            transform-origin: left;
+                          }
 
-                        .custom-btn:hover::before {
-                          transform: scaleX(1);
-                        }
+                          .custom-btn:hover::before {
+                            transform: scaleX(1);
+                          }
 
-                        .custom-btn:hover {
-                          color: #ffffff;
-                        }
-                      `}</style>
+                          .custom-btn:hover {
+                            color: #ffffff;
+                          }
+                        `}</style>
+                      </div>
                     </div>
                   </div>
+
+</form>
+
+
+
+
                 </div>
-              </div>
+ 
             </div>
           </div>
         </div>
