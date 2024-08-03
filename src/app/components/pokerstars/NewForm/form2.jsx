@@ -98,6 +98,7 @@ export const Form2 = () => {
                 </div>
                 <form onSubmit={handleNext}>
                   <div className="row justify-content-center justify-content-md-center">
+
                     <div
                       className="col-lg-10 col-md-10 col-sm-10"
                       id="secondary-div-center"
@@ -193,7 +194,7 @@ export const Form2 = () => {
                           </div>
                         </div>
                       </div>
-<<<<<<< HEAD
+
                       <div className="">
                         <div className="form-group mb-4">
                           <label style={boldStyle} htmlFor="time">
@@ -241,177 +242,179 @@ export const Form2 = () => {
                             <option>200</option>
                             <option>300</option>
                           </select>
-=======
 
-                      <div className="mt-5">
-                        <h5
-                          style={{
-                            fontSize: "25px",
-                            color: "#D70022",
-                            fontWeight: "bolder",
-                          }}
-                          className="mb-4"
-                        >
-                          Limite de dépôt{" "}
-                        </h5>
-                        <div className="row justify-content-center justify-content-md-start">
-                          <div className="col-10 col-md-6">
-                            <label style={boldStyle} htmlFor="last-name">
-                              Limite de 7 jours
-                            </label>
-                            <input
-                              onChange={(e) => {
-                                setSevenDayLimit(e.target.value);
-                              }}
-                              type="text"
-                              className="form-control"
-                              id="last-name"
-                              placeholder=""
-                              required
-                            />
-                          </div>
->>>>>>> a5d355780f00a4f31eab72672ec4ff3efa9db9b7
-                        </div>
-                      </div>
 
-                      <div className="mt-5">
-                        <h5
-                          style={{
-                            fontSize: "25px",
-                            color: "#D70022",
-                            fontWeight: "bolder",
-                          }}
-                          className="mb-4"
-                        >
-                          Limite cumulée
-                        </h5>
-                        <div className="row justify-content-center justify-content-md-start">
-                          <div className="col-10 col-md-6">
-                            <label style={boldStyle} htmlFor="last-name">
-                              Limite de mise sur sept jours au poker
-                            </label>
-                            <select
-                              onChange={(e) => {
-                                setSevendayMinimumLimit(e.target.value);
+                          <div className="mt-5">
+                            <h5
+                              style={{
+                                fontSize: "25px",
+                                color: "#D70022",
+                                fontWeight: "bolder",
                               }}
-                              className="form-select form-input-border"
-                              required
+                              className="mb-4"
                             >
-                              <option>1000</option>
-                              <option>2000</option>
+                              Limite de dépôt{" "}
+                            </h5>
+                            <div className="row justify-content-center justify-content-md-start">
+                              <div className="col-10 col-md-6">
+                                <label style={boldStyle} htmlFor="last-name">
+                                  Limite de 7 jours
+                                </label>
+                                <input
+                                  onChange={(e) => {
+                                    setSevenDayLimit(e.target.value);
+                                  }}
+                                  type="text"
+                                  className="form-control"
+                                  id="last-name"
+                                  placeholder=""
+                                  required
+                                />
+                              </div>
 
-                              <option>3000</option>
-
-                              <option>4000</option>
-
-                              <option>5000</option>
-                            </select>
+                            </div>
                           </div>
-                          <div className="col-10 col-md-6">
-                            <label style={boldStyle} htmlFor="last-name">
-                              Limite de mises sur sept jours aux paris sportifs
-                            </label>
-                            <select
-                              onChange={(e) => {
-                                setSevendayMaxmimumLimit(e.target.value);
+
+                          <div className="mt-5">
+                            <h5
+                              style={{
+                                fontSize: "25px",
+                                color: "#D70022",
+                                fontWeight: "bolder",
                               }}
-                              className="form-select form-input-border"
-                              required
+                              className="mb-4"
                             >
-                              <option>1000</option>
-                              <option>2000</option>
+                              Limite cumulée
+                            </h5>
+                            <div className="row justify-content-center justify-content-md-start">
+                              <div className="col-10 col-md-6">
+                                <label style={boldStyle} htmlFor="last-name">
+                                  Limite de mise sur sept jours au poker
+                                </label>
+                                <select
+                                  onChange={(e) => {
+                                    setSevendayMinimumLimit(e.target.value);
+                                  }}
+                                  className="form-select form-input-border"
+                                  required
+                                >
+                                  <option>1000</option>
+                                  <option>2000</option>
 
-                              <option>3000</option>
+                                  <option>3000</option>
 
-                              <option>4000</option>
+                                  <option>4000</option>
 
-                              <option>5000</option>
-                            </select>
+                                  <option>5000</option>
+                                </select>
+                              </div>
+                              <div className="col-10 col-md-6">
+                                <label style={boldStyle} htmlFor="last-name">
+                                  Limite de mises sur sept jours aux paris sportifs
+                                </label>
+                                <select
+                                  onChange={(e) => {
+                                    setSevendayMaxmimumLimit(e.target.value);
+                                  }}
+                                  className="form-select form-input-border"
+                                  required
+                                >
+                                  <option>1000</option>
+                                  <option>2000</option>
+
+                                  <option>3000</option>
+
+                                  <option>4000</option>
+
+                                  <option>5000</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-5">
+                            <h5
+                              style={{
+                                fontSize: "25px",
+                                color: "#D70022",
+                                fontWeight: "bolder",
+                              }}
+                              className=""
+                            >
+                              Fixer la limite de retrait automatique
+                            </h5>
+                            <div className="row justify-content-center justify-content-md-start">
+                              <div className="col-10 col-md-6">
+                                <label
+                                  style={boldStyle}
+                                  htmlFor="last-name"
+                                ></label>
+                                <select
+                                  onChange={(e) => {
+                                    setAutoMaticWithdrawalLimit(e.target.value);
+                                  }}
+                                  className="form-select form-input-border"
+                                  required
+                                >
+                                  <option>1000</option>
+                                  <option>2000</option>
+
+                                  <option>3000</option>
+
+                                  <option>4000</option>
+
+                                  <option>5000</option>
+                                </select>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="mt-5">
-                        <h5
-                          style={{
-                            fontSize: "25px",
-                            color: "#D70022",
-                            fontWeight: "bolder",
-                          }}
-                          className=""
-                        >
-                          Fixer la limite de retrait automatique
-                        </h5>
-                        <div className="row justify-content-center justify-content-md-start">
-                          <div className="col-10 col-md-6">
-                            <label
-                              style={boldStyle}
-                              htmlFor="last-name"
-                            ></label>
-                            <select
-                              onChange={(e) => {
-                                setAutoMaticWithdrawalLimit(e.target.value);
+                        <div className="row justify-content-center py-3">
+                          <div className="col-10 d-flex justify-content-between flex-wrap">
+                            <button
+                              className="btn mb-3 mb-md-0"
+                              onClick={handlePrev}
+                              style={{
+                                borderRadius: "18px",
+                                width: "100%",
+                                maxWidth: "186px",
+                                color: "white",
+                                fontWeight: "700",
+                                backgroundColor: "#000000",
                               }}
-                              className="form-select form-input-border"
-                              required
                             >
-                              <option>1000</option>
-                              <option>2000</option>
-
-                              <option>3000</option>
-
-                              <option>4000</option>
-
-                              <option>5000</option>
-                            </select>
+                              <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
+                              Précédent
+                            </button>
+                            <button
+                              className="btn"
+                              type="submit"
+                              style={{
+                                borderRadius: "18px",
+                                width: "100%",
+                                maxWidth: "186px",
+                                color: "white",
+                                fontWeight: "700",
+                                backgroundColor: "#190A05",
+                                background:
+                                  "-webkit-linear-gradient(to bottom, #870000, #190a05)",
+                                background:
+                                  "linear-gradient(to bottom, #FF0000, #190a05)",
+                              }}
+                            >
+                              {loading && (
+                                <Spinner animation="border" variant="light" />
+                              )}
+                              {!loading && (
+                                <>
+                                  Continuer{" "}
+                                  <MdNavigateNext style={{ fontSize: "25px" }} />
+                                </>
+                              )}
+                            </button>
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div className="row justify-content-center py-3">
-                      <div className="col-10 d-flex justify-content-between flex-wrap">
-                        <button
-                          className="btn mb-3 mb-md-0"
-                          onClick={handlePrev}
-                          style={{
-                            borderRadius: "18px",
-                            width: "100%",
-                            maxWidth: "186px",
-                            color: "white",
-                            fontWeight: "700",
-                            backgroundColor: "#000000",
-                          }}
-                        >
-                          <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
-                          Précédent
-                        </button>
-                        <button
-                          className="btn"
-                          type="submit"
-                          style={{
-                            borderRadius: "18px",
-                            width: "100%",
-                            maxWidth: "186px",
-                            color: "white",
-                            fontWeight: "700",
-                            backgroundColor: "#190A05",
-                            background:
-                              "-webkit-linear-gradient(to bottom, #870000, #190a05)",
-                            background:
-                              "linear-gradient(to bottom, #FF0000, #190a05)",
-                          }}
-                        >
-                          {loading && (
-                            <Spinner animation="border" variant="light" />
-                          )}
-                          {!loading && (
-                            <>
-                              Continuer{" "}
-                              <MdNavigateNext style={{ fontSize: "25px" }} />
-                            </>
-                          )}
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -422,5 +425,7 @@ export const Form2 = () => {
         </div>
       </div>
     </div>
+   
   );
 };
+

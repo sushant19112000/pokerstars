@@ -1,0 +1,19 @@
+/* src/components/ResponsiveLayout.css */
+.left-column {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  .left-column img {
+    max-width: 100%;
+    height: auto;
+  }
+  .right-column {
+    padding: 20px;
+  }
+  @media (max-width: 768px) {
+    .img-left {
+      display: none;
+    }
+}
+  
