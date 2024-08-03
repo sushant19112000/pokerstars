@@ -71,11 +71,13 @@ export const Form1 = () => {
         <div className="row">
           <div className="col-md-4 left-column d-flex flex-column ">
 
-            <img
+       <picture>
+       <img
               src="/pokerimages/istockphoto-1437726104-612x612.jpg"
               className="w-100  mt-md-5"
               alt="Placeholder"
             />
+       </picture>
           </div>
           <div className="col-md-8 right-column " style={{ backgroundColor: "black", color: "white" }}>
             <div className="row justify-content-center round">
