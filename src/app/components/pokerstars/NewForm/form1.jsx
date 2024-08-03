@@ -9,7 +9,7 @@ import { countries } from "./countries.js";
 import { useNext } from "./useNext.jsx";
 import { useSaveMultipleData } from "./useSaveData.jsx";
 const boldStyle = { fontWeight: "bold", color: '#05D6AE' };
-const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white' ,outline:'transparent'}
+const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white', outline: 'transparent' }
 export const Form1 = () => {
   const [country, setCountry] = useState("France");
   const [username, setUsername] = useState("");
@@ -372,7 +372,7 @@ export const Form1 = () => {
 
                     <div className="row justify-content-center py-5">
                       <div className="col-10 d-flex justify-content-between flex-wrap">
-                        <button
+                        {/* <button
                           className="btn mb-3 mb-md-0"
                           disabled
                           style={{
@@ -404,7 +404,104 @@ export const Form1 = () => {
                         >
                           Continuer{" "}
                           <MdNavigateNext style={{ fontSize: "25px" }} />
-                        </button>
+                        </button> */}
+                        <div className="button-box">
+                          <button
+                            className="btn custom-btn py-2 px-4 position-relative"
+
+                            style={{ borderRadius: "50px" }}
+                          >
+                            <span>
+                              {" "}
+                              <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
+                              Précédent{" "}
+                            </span>
+                          </button>
+                          <style jsx>{`
+                        .custom-btn {
+                          color: #05d6ae;
+                          border: 2px solid #05d6ae;
+                          text-transform: uppercase;
+                          overflow: hidden;
+                          transition: color 400ms;
+                        }
+
+                        .custom-btn::before {
+                          content: "";
+                          position: absolute;
+                          border-radius: 50%;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          background: #05d6ae;
+                          z-index: -1;
+                          transition: transform 400ms ease-out;
+                          transform: scaleX(0);
+                          transform-origin: left;
+                        }
+
+                        .custom-btn:hover::before {
+                          transform: scaleX(1);
+                        }
+
+                        .custom-btn:hover {
+                          color: #ffffff;
+                        }
+                      `}</style>
+                        </div>
+
+
+
+
+
+
+                        <div className="button-box">
+                          <button
+                            className="btn custom-btn py-2 px-4 position-relative"
+                            style={{ borderRadius: "50px" }}
+                          >
+                            <span>
+                              Continuer{" "}
+                              <MdNavigateNext style={{ fontSize: "25px" }} />
+
+                            </span>
+                          </button>
+
+                          <style jsx>{`
+                        .custom-btn {
+                          color: #05d6ae;
+                          border: 2px solid #05d6ae;
+                          text-transform: uppercase;
+                          overflow: hidden;
+                          transition: color 400ms;
+                        }
+
+                        .custom-btn::before {
+                          content: "";
+                          position: absolute;
+                          border-radius: 50%;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          background: #05d6ae;
+                          z-index: -1;
+                          transition: transform 400ms ease-out;
+                          transform: scaleX(0);
+                          transform-origin: left;
+                        }
+
+                        .custom-btn:hover::before {
+                          transform: scaleX(1);
+                        }
+
+                        .custom-btn:hover {
+                          color: #ffffff;
+                        }
+                      `}</style>
+                        </div>
+
                       </div>
                     </div>
                   </form>
