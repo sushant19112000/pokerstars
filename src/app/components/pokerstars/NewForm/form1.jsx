@@ -9,11 +9,20 @@ import { GrFormPrevious } from "react-icons/gr";
 import { countries } from "./countries.js";
 import Divider from "./divder";
 import { useNext } from "./useNext.jsx";
-import './divider.css'
+import "./divider.css";
 import { useSaveMultipleData } from "./useSaveData.jsx";
 
-const boldStyle = { fontWeight: "bold", color: '#05D6AE' };
-const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white', outline: 'transparent' }
+const boldStyle = { fontWeight: "bold", color: "#05D6AE" };
+const inputStyle = {
+  backgroundColor: "transparent",
+  borderTop: "0",
+  borderBottom: "1px solid silver",
+  borderRight: "0",
+  borderLeft: "0",
+  borderRadius: "0px",
+  color: "white",
+  outline: "transparent",
+};
 export const Form1 = () => {
   const [country, setCountry] = useState("France");
   const [username, setUsername] = useState("");
@@ -64,44 +73,45 @@ export const Form1 = () => {
   };
   return (
     <>
-      <div style={{ backgroundColor: '   #1c1c1c' }}>
+      <div style={{ backgroundColor: "   #1c1c1c" }}>
         <nav className="navbar navbar-expand-lg navbar-dark ms-4 py-4">
           <Svg />
         </nav>
       </div>
 
       <div className="container-fluid">
-
         <div className="row">
           <div className="col-md-4 left-column d-flex flex-column ">
-<<<<<<< HEAD
-
-       <picture>
-       <img
-=======
-            <img
->>>>>>> 66b9b6c2837ba948c034e793ebbc7913bc120877
-              src="/pokerimages/istockphoto-1437726104-612x612.jpg"
-              className="w-100  mt-md-5"
-              alt="Placeholder"
-            />
-       </picture>
+            <picture>
+              <img
+                src="/pokerimages/istockphoto-1437726104-612x612.jpg"
+                className="w-100  mt-md-5"
+                alt="Placeholder"
+              />
+            </picture>
           </div>
-          <div className="col-md-8 right-column " style={{ backgroundColor: "black", color: "white" }}>
+          <div
+            className="col-md-8 right-column "
+            style={{ backgroundColor: "black", color: "white" }}
+          >
             <div className="row justify-content-center round">
               <div className="">
                 <div className="shadow-lg">
-                  <div className=" inner-card " style={{ backgroundColor: 'red' }}>
-
-
-
-                    <form onSubmit={handleNext} className="" style={{ backgroundColor: "black" }}>
+                  <div
+                    className=" inner-card "
+                    style={{ backgroundColor: "red" }}
+                  >
+                    <form
+                      onSubmit={handleNext}
+                      className=""
+                      style={{ backgroundColor: "black" }}
+                    >
                       <div className="row justify-content-center ">
-
-
                         <div className="col-10 col-md-12 col-lg-10">
-                          <div className="col-12 col-md-12 col-lg-12 pb-4" style={{ paddingTop: '50px' }}>
-
+                          <div
+                            className="col-12 col-md-12 col-lg-12 pb-4"
+                            style={{ paddingTop: "50px" }}
+                          >
                             {/* Title  */}
                             <div className="row">
                               <div className="col-12 col-md-8 col-lg-7">
@@ -113,15 +123,24 @@ export const Form1 = () => {
                                   }}
                                   className=" text-start mb-2"
                                 >
-                                  <h3 className="" style={{ fontWeight: "900" }}>
+                                  <h3
+                                    className=""
+                                    style={{ fontWeight: "900" }}
+                                  >
                                     Informations de compte
                                   </h3>
                                 </div>
-
                               </div>
 
                               <div className="col-12 col-md-5 col-lg-5">
-                                <div className="justify-content-start" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <div
+                                  className="justify-content-start"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                  }}
+                                >
                                   <Circle number={1} />
                                   <Divider />
                                   <Circle number={2} />
@@ -132,9 +151,8 @@ export const Form1 = () => {
                         </div>
 
                         <div className="col-10 col-md-6 col-lg-5">
-
                           <div className="form-group mb-4 ">
-                            <label style={boldStyle} htmlFor="inputEmail4" >
+                            <label style={boldStyle} htmlFor="inputEmail4">
                               Dans quel pays habitez-vous ?
                             </label>
                             <select
@@ -160,7 +178,6 @@ export const Form1 = () => {
                               className="form-control"
                               placeholder=""
                               required
-
                               style={inputStyle}
                             />
                             {password.length <= 8 && (
@@ -291,7 +308,10 @@ export const Form1 = () => {
                             <label style={boldStyle} htmlFor="email">
                               Sexe
                             </label>
-                            <div className="d-flex mt-2 " style={{ gap: "10px" }}>
+                            <div
+                              className="d-flex mt-2 "
+                              style={{ gap: "10px" }}
+                            >
                               <div className="d-flex align-items-center">
                                 <input
                                   onChange={(e) => {
@@ -304,7 +324,7 @@ export const Form1 = () => {
                                   style={{
                                     border: "1px solid black",
                                     height: "20px",
-                                    backgroundColor: '',
+                                    backgroundColor: "",
                                     width: "20px",
                                     marginRight: "8px",
                                   }}
@@ -337,8 +357,6 @@ export const Form1 = () => {
                           </div>
                         </div>
 
-
-
                         <div
                           className="col-12 col-md-12  col-lg-10 "
                           id="secondary-div-center"
@@ -359,7 +377,10 @@ export const Form1 = () => {
                             </h5>
                             <div className="row justify-content-center justify-content-md-start">
                               <div className="col-10 col-md-6 mb-3">
-                                <label style={boldStyle} htmlFor="birth-country">
+                                <label
+                                  style={boldStyle}
+                                  htmlFor="birth-country"
+                                >
                                   Pays de naissance
                                 </label>
                                 <select
@@ -377,7 +398,10 @@ export const Form1 = () => {
                               </div>
 
                               <div className="col-10 col-md-6 mb-2">
-                                <label style={boldStyle} htmlFor="Mobile-Number">
+                                <label
+                                  style={boldStyle}
+                                  htmlFor="Mobile-Number"
+                                >
                                   Département de naissance
                                 </label>
                                 <input
@@ -451,53 +475,49 @@ export const Form1 = () => {
                           <div className="button-box">
                             <button
                               className="btn custom-btn py-2 px-4 position-relative"
-
                               style={{ borderRadius: "50px" }}
                             >
                               <span>
                                 {" "}
-                                <GrFormPrevious style={{ fontSize: "25px" }} />{" "}
+                                <GrFormPrevious
+                                  style={{ fontSize: "25px" }}
+                                />{" "}
                                 Précédent{" "}
                               </span>
                             </button>
                             <style jsx>{`
-                        .custom-btn {
-                          color: #05d6ae;
-                          border: 2px solid #05d6ae;
-                          text-transform: uppercase;
-                          overflow: hidden;
-                          transition: color 400ms;
-                        }
+                              .custom-btn {
+                                color: #05d6ae;
+                                border: 2px solid #05d6ae;
+                                text-transform: uppercase;
+                                overflow: hidden;
+                                transition: color 400ms;
+                              }
 
-                        .custom-btn::before {
-                          content: "";
-                          position: absolute;
-                          border-radius: 50%;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          background: #05d6ae;
-                          z-index: -1;
-                          transition: transform 400ms ease-out;
-                          transform: scaleX(0);
-                          transform-origin: left;
-                        }
+                              .custom-btn::before {
+                                content: "";
+                                position: absolute;
+                                border-radius: 50%;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: #05d6ae;
+                                z-index: -1;
+                                transition: transform 400ms ease-out;
+                                transform: scaleX(0);
+                                transform-origin: left;
+                              }
 
-                        .custom-btn:hover::before {
-                          transform: scaleX(1);
-                        }
+                              .custom-btn:hover::before {
+                                transform: scaleX(1);
+                              }
 
-                        .custom-btn:hover {
-                          color: #ffffff;
-                        }
-                      `}</style>
+                              .custom-btn:hover {
+                                color: #ffffff;
+                              }
+                            `}</style>
                           </div>
-
-
-
-
-
 
                           <div className="button-box">
                             <button
@@ -507,44 +527,42 @@ export const Form1 = () => {
                               <span>
                                 Continuer{" "}
                                 <MdNavigateNext style={{ fontSize: "25px" }} />
-
                               </span>
                             </button>
 
                             <style jsx>{`
-                        .custom-btn {
-                          color: #05d6ae;
-                          border: 2px solid #05d6ae;
-                          text-transform: uppercase;
-                          overflow: hidden;
-                          transition: color 400ms;
-                        }
+                              .custom-btn {
+                                color: #05d6ae;
+                                border: 2px solid #05d6ae;
+                                text-transform: uppercase;
+                                overflow: hidden;
+                                transition: color 400ms;
+                              }
 
-                        .custom-btn::before {
-                          content: "";
-                          position: absolute;
-                          border-radius: 50%;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          background: #05d6ae;
-                          z-index: -1;
-                          transition: transform 400ms ease-out;
-                          transform: scaleX(0);
-                          transform-origin: left;
-                        }
+                              .custom-btn::before {
+                                content: "";
+                                position: absolute;
+                                border-radius: 50%;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: #05d6ae;
+                                z-index: -1;
+                                transition: transform 400ms ease-out;
+                                transform: scaleX(0);
+                                transform-origin: left;
+                              }
 
-                        .custom-btn:hover::before {
-                          transform: scaleX(1);
-                        }
+                              .custom-btn:hover::before {
+                                transform: scaleX(1);
+                              }
 
-                        .custom-btn:hover {
-                          color: #ffffff;
-                        }
-                      `}</style>
+                              .custom-btn:hover {
+                                color: #ffffff;
+                              }
+                            `}</style>
                           </div>
-
                         </div>
                       </div>
                     </form>
@@ -558,5 +576,3 @@ export const Form1 = () => {
     </>
   );
 };
-
-
