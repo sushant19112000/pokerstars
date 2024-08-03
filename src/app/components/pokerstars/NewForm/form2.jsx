@@ -12,6 +12,19 @@ import { PokerStarsData } from "@/app/atoms/pokerStarsData";
 import { countries } from "./countries";
 import { weeklyLimits } from "../weeklyLimits";
 const boldStyle = { fontWeight: "bold", color: '#05D6AE' };
+export const autoWithDrawLimits = [
+  "",
+  "10 €",
+  "20 €",
+  "50 €",
+  "100 €",
+  "250 €",
+  "500 €",
+  "1,000 €",
+  "5,000 €",
+  "10,000 €"
+];
+
 const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white', outline: 'none' }
 export const Form2 = () => {
   const [state, setState] = useState("");
@@ -114,7 +127,7 @@ export const Form2 = () => {
               </h5>
 
               <div className="row justify-content-center justify-content-md-start">
-                <div className="col-10 col-md-6 mb-3">
+                <div className="col-10 col-md-6 mb-3" >
                   <label style={boldStyle} htmlFor="last-name">
                     Pays
                   </label>
@@ -309,14 +322,12 @@ export const Form2 = () => {
                         required
                         style={inputStyle}
                       >
-                        <option>1000</option>
-                        <option>2000</option>
-
-                        <option>3000</option>
-
-                        <option>4000</option>
-
-                        <option>5000</option>
+                        
+                        {autoWithDrawLimits.map((limit, index) => (
+                          <option key={index} value={limit}>
+                            {limit}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>

@@ -9,6 +9,6 @@ export const autoWithDrawLimits = [
     "1,000 €",
     "5,000 €",
     "10,000 €"
-  ];
+];
 
   
