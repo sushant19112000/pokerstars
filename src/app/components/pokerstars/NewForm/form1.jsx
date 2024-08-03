@@ -8,9 +8,8 @@ import { GrFormPrevious } from "react-icons/gr";
 import { countries } from "./countries.js";
 import { useNext } from "./useNext.jsx";
 import { useSaveMultipleData } from "./useSaveData.jsx";
-
 const boldStyle = { fontWeight: "bold", color: '#05D6AE' };
-const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white' }
+const inputStyle = { backgroundColor: 'transparent', borderTop: '0', borderBottom: '1px solid silver', borderRight: '0', borderLeft: '0', borderRadius: '0px', color: 'white' ,outline:'transparent'}
 export const Form1 = () => {
   const [country, setCountry] = useState("France");
   const [username, setUsername] = useState("");
@@ -118,7 +117,7 @@ export const Form1 = () => {
                           <input
                             onChange={(e) => setPassword(e.target.value)}
                             type="text"
-                            className="form-control "
+                            className="form-control"
                             placeholder=""
                             required
 
