@@ -63,7 +63,7 @@ const ResponsiveLayout = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-4 left-column d-flex flex-column vh-100">
-          <nav className="navbar navbar-expand-lg navbar-dark">
+          <nav className="navbar navbar-expand-lg navbar-dark ms-4">
             <Svg />
           </nav>
 
@@ -85,7 +85,7 @@ const ResponsiveLayout = () => {
                       color: "white",
                       fontWeight: "bolder",
                     }}
-                    className="text-center mb-5 py-4"
+                    className="text-center mb-2 pt-4"
                   >
                     <h3 style={{ fontWeight: "bolder" }}>
                       Informations de compte
@@ -96,7 +96,7 @@ const ResponsiveLayout = () => {
                     <div className="row justify-content-center pt-3">
                       <div className="col-lg-5 col-md-6 col-sm-12">
                         <div className="form-group mb-4 ">
-                          <label style={boldStyle} htmlFor="inputEmail4">
+                          <label style={{color:'white'}} htmlFor="inputEmail4" >
                             Dans quel pays habitez-vous ?
                           </label>
                           <select
@@ -105,6 +105,7 @@ const ResponsiveLayout = () => {
                             }}
                             className="form-select form-input-border"
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px',outline:'none',color:'white'}}
                           >
                             {countries.map((country, index) => (
                               <option key={index}>{country}</option>
@@ -121,6 +122,7 @@ const ResponsiveLayout = () => {
                             className="form-control "
                             placeholder=""
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
                           {password.length <= 8 && (
                             <>
@@ -150,6 +152,7 @@ const ResponsiveLayout = () => {
                             id="time"
                             placeholder="dd/mm/yyyy"
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
                         </div>
                         <div className="form-group mb-4">
@@ -165,6 +168,7 @@ const ResponsiveLayout = () => {
                             id="time"
                             placeholder=""
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
                         </div>
                       </div>
@@ -181,6 +185,7 @@ const ResponsiveLayout = () => {
                             id="last-name"
                             placeholder=""
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
 
                           {username.length <= 4 && (
@@ -208,6 +213,7 @@ const ResponsiveLayout = () => {
                             id="email"
                             placeholder=""
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
 
                           {/* {error && (
@@ -238,6 +244,7 @@ const ResponsiveLayout = () => {
                             id="last-name"
                             placeholder=""
                             required
+                            style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                           />
                         </div>
 
@@ -258,6 +265,7 @@ const ResponsiveLayout = () => {
                                 style={{
                                   border: "1px solid black",
                                   height: "20px",
+                                  backgroundColor:'transparent',
                                   width: "20px",
                                   marginRight: "8px",
                                 }}
@@ -318,6 +326,7 @@ const ResponsiveLayout = () => {
                                 }}
                                 className="form-select"
                                 required
+                                style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                               >
                                 {countries.map((country, index) => (
                                   <option key={index}>{country}</option>
@@ -338,6 +347,7 @@ const ResponsiveLayout = () => {
                                 id="Mobile-Number"
                                 placeholder=""
                                 required
+                                style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                               />
                             </div>
                             <div className="col-10 col-md-6">
@@ -353,6 +363,7 @@ const ResponsiveLayout = () => {
                                 id="last-name"
                                 placeholder=""
                                 required
+                                style={{backgroundColor:'transparent',borderTop:'0',borderBottom:'1px solid silver',borderRight:'0',borderLeft:'0',borderRadius:'0px'}}
                               />
                             </div>
                           </div>
