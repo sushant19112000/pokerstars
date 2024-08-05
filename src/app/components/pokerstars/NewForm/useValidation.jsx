@@ -18,7 +18,7 @@ export const useValidate = () => {
 };
 
 const validateNames = (name) => {
-  const hasSpace = /\s/.test(name);
+  const hasSpace =name.includes(" ")
   const isLengthValid = name.length >= 2;
 
   if (hasSpace) {
@@ -51,7 +51,7 @@ const validatePassword = (password) => {
   const isTooShort = password.length < 8;
   const startsWithLetter = /^[A-Za-z]/.test(password);
   const hasDigit = /\d/.test(password);
-  const hasSpace = /\s/.test(password);
+  const hasSpace = password.includes(" ")
   if (!startsWithLetter) {
     return {
       response: false,
