@@ -12,6 +12,12 @@ import { useNext } from "./useNext.jsx";
 import "./divider.css";
 import { useSaveMultipleData } from "./useSaveData.jsx";
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // For smooth scrolling effect
+  });
+}
 const boldStyle = { fontWeight: "bold", color: "#05D6AE" };
 const inputStyle = {
   backgroundColor: "transparent",
@@ -51,7 +57,8 @@ export const Form1 = () => {
       setError("L'adresse e-mail n'est pas valide");
     }
   };
-  console.log(country, "selected country");
+
+
   const next = useNext();
   const saveData = useSaveMultipleData();
   const handleNext = (e) => {
@@ -70,6 +77,7 @@ export const Form1 = () => {
       cityofbirth: cityofbirth,
     });
     next();
+    scrollToTop()
   };
   return (
     <>
@@ -81,12 +89,15 @@ export const Form1 = () => {
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4 left-column d-flex flex-column ">
+          <div className="col-md-4  left-column d-flex flex-column">
             <picture>
               <img
-                src="/pokerimages/istockphoto-1437726104-612x612.jpg"
-                className="w-100  mt-md-5"
+                src="/pokerimages/poker-form-image.jpg"
+                className="w-100 img-left mt-md-5 ms-md-1 ms-lg-2  "
                 alt="Placeholder"
+                style={{ 
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5) !important, 0 0 15px rgba(0, 0, 0, 0.3) !important"
+                }}
               />
             </picture>
           </div>

@@ -107,8 +107,8 @@ export const Form2 = () => {
           <div className="col-md-4 left-column d-flex flex-column ">
             <picture>
               <img
-                src="/pokerimages/istockphoto-1437726104-612x612.jpg"
-                className="w-100  mt-md-5"
+                src="/pokerimages/poker-form-image.jpg"
+                className="w-100 ms- mt-md-5 img-left ms-md-1 ms-lg-2 "
                 alt="Placeholder"
               />
             </picture>
@@ -285,9 +285,9 @@ export const Form2 = () => {
                           </label>
                           <input
                             onChange={(e) => {
-                              setSevenDayLimit(e.target.value);
+                              setSevenDayLimit(e.target.value.toString());
                             }}
-                            type="text"
+                            type="number"
                             className="form-control"
                             id="last-name"
                             placeholder=""
