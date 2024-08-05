@@ -16,7 +16,7 @@ import { useValidate } from "./useValidation";
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // For smooth scrolling effect
+    behavior: "smooth", // For smooth scrolling effect
   });
 }
 const boldStyle = { fontWeight: "bold", color: "#05D6AE" };
@@ -42,105 +42,143 @@ export const Form1 = () => {
   const [firstname, setFirstName] = useState("");
   const [gender, setGender] = useState("");
   const [lastname, setLastName] = useState("");
-  const validate=useValidate()
+  const validate = useValidate();
   const [error, setError] = useState({
-    firstNameError:"",
-    lastNameError:"",
-    userNameError:"",
-    dobError:"",
-    passwordError:"",
-    stateError:"",
-    cityError:"",
+    firstNameError: "",
+    lastNameError: "",
+    userNameError: "",
+    dobError: "",
+    passwordError: "",
+    stateError: "",
+    cityError: "",
   });
-  const validateEmail = (email) => {
-    // Basic email regex pattern
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
-  const handleChange = (e) => {
-    const temp = e.target.value;
-    setEmail(temp);
-    if (validateEmail(email)) {
-      setError("");
+  // const validateEmail = (email) => {
+  //   // Basic email regex pattern
+  //   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailPattern.test(email);
+  // };
+  // const handleChange = (e) => {
+  //   const temp = e.target.value;
+  //   setEmail(temp);
+  //   if (validateEmail(email)) {
+  //     setError("");
+  //   } else {
+  //     setError("L'adresse e-mail n'est pas valide");
+  //   }
+  // };
+
+  const handleUsernameChange = (e) => {
+    const res = validate("username", e.target.value);
+
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        userNameError: res.error,
+      }));
     } else {
-      setError("L'adresse e-mail n'est pas valide");
+      setError((prevError) => ({
+        ...prevError,
+        userNameError: "",
+      }));
+      setUsername(e.target.value);
     }
   };
 
-
-  const handleUsernameChange=(e)=>{
-      const res=validate('username',e.target.value)
-      if (res.response==false){
-            let errors=error
-            errors.userNameError=res.error
-            setError(errors)
-      }
-  }
-
-  const handleFirstnameChange=(e)=>{
-    const res=validate('name',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.firstNameError=res.error
-          setError(errors)
+  const handleFirstnameChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        firstNameError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        firstNameError: "",
+      }));
+      setFirstName(e.target.value);
     }
-    
-  }
+  };
 
-
-  const handleLastNameChange=(e)=>{
-    const res=validate('name',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.lastNameError=res.error
-          setError(errors)
+  const handleLastNameChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        lastNameError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        lastNameError: "",
+      }));
+      setLastName(e.target.value);
     }
-  }
+  };
 
-
-  const handleStateChange=(e)=>{
-    const res=validate('name',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.stateError=res.error
-          setError(errors)
+  const handleStateChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        stateError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        stateError: "",
+      }));
+      setStateOfBirth(e.target.value);
     }
-  }
+  };
 
-  const handleCityChange=(e)=>{
-    const res=validate('name',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.cityError=res.error
-          setError(errors)
+  const handleCityChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        cityError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        cityError: "",
+      }));
+      setCityOfBirth(e.target.value);
     }
-  }
+  };
 
-  const handlePasswordChange=(e)=>{
-    const res=validate('password',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.passwordError=res.error
-          setError(errors)
+  const handlePasswordChange = (e) => {
+    const res = validate("password", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        passwordError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        passwordError: "",
+      }));
+      setPassword(e.target.value);
     }
-  }
-  
+  };
 
-  const handleDobChange=(e)=>{
-    const res=validate('dob',e.target.value)
-    if (res.response==false){
-          let errors=error
-          errors.dobError=res.error
-          setError(errors)
+  const handleDobChange = (e) => {
+    const res = validate("dob", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        dobError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        dobError: "",
+      }));
+      setDateOfBirth(e.target.value);
     }
-  }
-
-
-
-
-  
-
-
+  };
 
   const next = useNext();
   const saveData = useSaveMultipleData();
@@ -160,7 +198,7 @@ export const Form1 = () => {
       cityofbirth: cityofbirth,
     });
     next();
-    scrollToTop()
+    scrollToTop();
   };
   return (
     <>
@@ -178,8 +216,9 @@ export const Form1 = () => {
                 src="/pokerimages/poker-form-image.jpg"
                 className="w-100 img-left mt-md-5 ms-md-1 ms-lg-2  "
                 alt="Placeholder"
-                style={{ 
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5) !important, 0 0 15px rgba(0, 0, 0, 0.3) !important"
+                style={{
+                  boxShadow:
+                    "0 4px 8px rgba(0, 0, 0, 0.5) !important, 0 0 15px rgba(0, 0, 0, 0.3) !important",
                 }}
               />
             </picture>
@@ -241,9 +280,6 @@ export const Form1 = () => {
                                 </div>
                               </div>
                             </div>
-
-
-                            
                           </div>
                         </div>
 
@@ -270,14 +306,25 @@ export const Form1 = () => {
                               Mot de passe
                             </label>
                             <input
-                              onChange={(e) => setPassword(e.target.value)}
+                              onChange={handlePasswordChange}
                               type="text"
                               className="form-control"
                               placeholder=""
                               required
                               style={inputStyle}
                             />
-                            {password.length <= 8 && (
+                                    {error.passwordError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.passwordError}
+                              </span>
+                            )}
+                            {/* {password.length <= 8 && (
                               <>
                                 <span
                                   style={{
@@ -290,16 +337,14 @@ export const Form1 = () => {
                                 </span>
                                 <br />
                               </>
-                            )}
+                            )} */}
                           </div>
                           <div className="form-group mb-4">
                             <label style={boldStyle} htmlFor="time">
                               Date de naissance
                             </label>
                             <input
-                              onChange={(e) => {
-                                setDateOfBirth(e.target.value);
-                              }}
+                              onChange={handleDobChange}
                               type="date"
                               className="form-control"
                               id="time"
@@ -307,15 +352,24 @@ export const Form1 = () => {
                               required
                               style={inputStyle}
                             />
+                                    {error.dobError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                            {error.dobError}
+                              </span>
+                            )}
                           </div>
                           <div className="form-group mb-4">
                             <label style={boldStyle} htmlFor="time">
                               Nom de famille
                             </label>
                             <input
-                              onChange={(e) => {
-                                setLastName(e.target.value);
-                              }}
+                              onChange={handleLastNameChange}
                               type="text"
                               className="form-control"
                               id="time"
@@ -323,6 +377,17 @@ export const Form1 = () => {
                               required
                               style={inputStyle}
                             />
+                                    {error.lastNameError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                              lastname {error.lastNameError}
+                              </span>
+                            )}
                           </div>
                         </div>
 
@@ -332,7 +397,7 @@ export const Form1 = () => {
                               Nom d'utilisateur
                             </label>
                             <input
-                              onChange={(e) => setUsername(e.target.value)}
+                              onChange={handleUsernameChange}
                               type="text"
                               className="form-control"
                               id="last-name"
@@ -341,18 +406,16 @@ export const Form1 = () => {
                               style={inputStyle}
                             />
 
-                            {username.length <= 4 && (
-                              <>
-                                <span
-                                  style={{
-                                    color: "RGB(8, 155, 128)",
-                                    fontSize: "14px",
-                                    fontFamily: "Roboto",
-                                  }}
-                                >
-                                  4 caractères ou plus
-                                </span>
-                              </>
+                            {error.userNameError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.userNameError}
+                              </span>
                             )}
                           </div>
                           <div className="form-group mb-4">
@@ -382,6 +445,17 @@ export const Form1 = () => {
                             </span>
                           </>
                         )} */}
+                                {error.stateError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.stateError}
+                              </span>
+                            )}
                           </div>
 
                           <div className="form-group mb-4">
@@ -389,9 +463,7 @@ export const Form1 = () => {
                               Prénom
                             </label>
                             <input
-                              onChange={(e) => {
-                                setFirstName(e.target.value);
-                              }}
+                              onChange={handleFirstnameChange}
                               type="text"
                               className="form-control"
                               id="last-name"
@@ -399,6 +471,17 @@ export const Form1 = () => {
                               required
                               style={inputStyle}
                             />
+                                    {error.firstNameError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.firstNameError}
+                              </span>
+                            )}
                           </div>
 
                           <div className="form-group mb-4">
@@ -502,9 +585,7 @@ export const Form1 = () => {
                                   Département de naissance
                                 </label>
                                 <input
-                                  onChange={(e) => {
-                                    setStateOfBirth(e.target.value);
-                                  }}
+                                  onChange={handleStateChange}
                                   type="text"
                                   className="form-control"
                                   id="Mobile-Number"
@@ -512,15 +593,29 @@ export const Form1 = () => {
                                   required
                                   style={inputStyle}
                                 />
+                                  {error.stateError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.stateError}
+                              </span>
+                            )}
                               </div>
+
+
+
+
+
                               <div className="col-10 col-md-6">
                                 <label style={boldStyle} htmlFor="last-name">
                                   Ville de naissance
                                 </label>
                                 <input
-                                  onChange={(e) => {
-                                    setCityOfBirth(e.target.value);
-                                  }}
+                                  onChange={handleCityChange}
                                   type="text"
                                   className="form-control"
                                   id="last-name"
@@ -528,6 +623,17 @@ export const Form1 = () => {
                                   required
                                   style={inputStyle}
                                 />
+                                        {error.cityError && (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontSize: "14px",
+                                  fontFamily: "Roboto",
+                                }}
+                              >
+                                {error.cityError}
+                              </span>
+                            )}
                               </div>
                             </div>
                           </div>
