@@ -13,9 +13,7 @@ export const useValidate = () => {
             break;
     }
   }
-  return (
-    <div>useValidation</div>
-  )
+  return useValidate;
 }
 
 
@@ -43,15 +41,11 @@ const validateDob = (dob) => {
     const today = new Date();
     const age = today.getFullYear() - birthDate.getFullYear();
     const monthDifference = today.getMonth() - birthDate.getMonth();
-    // Adjust age if the birthdate has not occurred this year yet
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
     if (age < 17) {
-      setDobError('You must be at least 17 years old.');
-    } else {
-      setDobError('');
+      return { response: false, error: "You must be at least 17 years old." };
+    } 
+    else{
+        return { response: true, error: "" };
     }
   };
 

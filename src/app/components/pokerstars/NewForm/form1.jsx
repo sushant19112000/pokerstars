@@ -11,6 +11,7 @@ import Divider from "./divder";
 import { useNext } from "./useNext.jsx";
 import "./divider.css";
 import { useSaveMultipleData } from "./useSaveData.jsx";
+import { useValidate } from "./useValidation";
 
 function scrollToTop() {
   window.scrollTo({
@@ -41,8 +42,16 @@ export const Form1 = () => {
   const [firstname, setFirstName] = useState("");
   const [gender, setGender] = useState("");
   const [lastname, setLastName] = useState("");
-
-  const [error, setError] = useState("");
+  const validate=useValidate()
+  const [error, setError] = useState({
+    firstNameError:"",
+    lastNameError:"",
+    userNameError:"",
+    dobError:"",
+    passwordError:"",
+    stateError:"",
+    cityError:"",
+  });
   const validateEmail = (email) => {
     // Basic email regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -57,6 +66,80 @@ export const Form1 = () => {
       setError("L'adresse e-mail n'est pas valide");
     }
   };
+
+
+  const handleUsernameChange=(e)=>{
+      const res=validate('username',e.target.value)
+      if (res.response==false){
+            let errors=error
+            errors.userNameError=res.error
+            setError(errors)
+      }
+  }
+
+  const handleFirstnameChange=(e)=>{
+    const res=validate('name',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.firstNameError=res.error
+          setError(errors)
+    }
+    
+  }
+
+
+  const handleLastNameChange=(e)=>{
+    const res=validate('name',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.lastNameError=res.error
+          setError(errors)
+    }
+  }
+
+
+  const handleStateChange=(e)=>{
+    const res=validate('name',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.stateError=res.error
+          setError(errors)
+    }
+  }
+
+  const handleCityChange=(e)=>{
+    const res=validate('name',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.cityError=res.error
+          setError(errors)
+    }
+  }
+
+  const handlePasswordChange=(e)=>{
+    const res=validate('password',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.passwordError=res.error
+          setError(errors)
+    }
+  }
+  
+
+  const handleDobChange=(e)=>{
+    const res=validate('dob',e.target.value)
+    if (res.response==false){
+          let errors=error
+          errors.dobError=res.error
+          setError(errors)
+    }
+  }
+
+
+
+
+  
+
 
 
   const next = useNext();
