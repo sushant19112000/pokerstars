@@ -445,17 +445,7 @@ export const Form1 = () => {
                             </span>
                           </>
                         )} */}
-                                {error.stateError && (
-                              <span
-                                style={{
-                                  color: "red",
-                                  fontSize: "14px",
-                                  fontFamily: "Roboto",
-                                }}
-                              >
-                                {error.stateError}
-                              </span>
-                            )}
+                          
                           </div>
 
                           <div className="form-group mb-4">

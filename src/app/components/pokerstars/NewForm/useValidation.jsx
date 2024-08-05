@@ -53,10 +53,18 @@ const validatePassword = (password) => {
   const hasDigit = /\d/.test(password);
   const hasSpace = /\s/.test(password);
   if (!startsWithLetter) {
-    return { response: false, error: "Le mot de passe doit commencer par une lettre" };
-  }  if (hasSpace) {
-    return { response: false, error: "Le mot de passe ne doit pas contenir d'espaces." };
-  }  if (!hasDigit) {
+    return {
+      response: false,
+      error: "Le mot de passe doit commencer par une lettre",
+    };
+  }
+  if (hasSpace) {
+    return {
+      response: false,
+      error: "Le mot de passe ne doit pas contenir d'espaces.",
+    };
+  }
+  if (!hasDigit) {
     return {
       response: false,
       error: "Le mot de passe ne doit pas contenir d'espaces",
@@ -69,9 +77,6 @@ const validatePassword = (password) => {
     };
   }
 
-
-
-
   return { response: true, error: null };
 };
 
@@ -79,7 +84,7 @@ const validateUsername = (username) => {
   const onlyLowercase = /^[a-z]*$/.test(username);
   const atLeastFourLetters = username.length >= 4;
   const startsWithLowercase = /^[a-z]/.test(username);
-const containSpace = username.includes(" ");
+  const containSpace = username.includes(" ");
 
   if (!startsWithLowercase) {
     return {
@@ -87,11 +92,11 @@ const containSpace = username.includes(" ");
       error: "Le nom d'utilisateur doit commencer par une lettre minuscule.",
     };
   }
-  if(containSpace){
-    return{
-      response:false,
-      error:"Le nom d'utilisateur ne doit pas contenir d'espace."
-    }
+  if (containSpace) {
+    return {
+      response: false,
+      error: "Le nom d'utilisateur ne doit pas contenir d'espace.",
+    };
   }
   if (!atLeastFourLetters) {
     return { response: false, error: "4 caractères ou plus" };

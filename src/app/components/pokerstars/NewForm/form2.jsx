@@ -13,6 +13,7 @@ import { countries } from "./countries";
 import { weeklyLimits } from "../weeklyLimits";
 import Circle from "./circle";
 import Divider from "./divder";
+import { useValidate } from "./useValidation";
 const boldStyle = { fontWeight: "bold", color: "#05D6AE" };
 export const autoWithDrawLimits = [
   "",
@@ -51,6 +52,59 @@ export const Form2 = () => {
   const upload = useUpload();
   const prev = usePrevious();
   const saveData = useSaveMultipleData();
+  const validate = useValidate();
+  const [error, setError] = useState({
+    stateError: "",
+    cityError: "",
+    codePostalError: "",
+  });
+
+  const handleStateChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        stateError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        stateError: "",
+      }));
+      setState(e.target.value);
+    }
+  };
+  const handleCityChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        cityError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        cityError: "",
+      }));
+      setCity(e.target.value);
+    }
+  };
+  const handleCodePostalChange = (e) => {
+    const res = validate("name", e.target.value);
+    if (!res.response) {
+      setError((prevError) => ({
+        ...prevError,
+        codePostalError: res.error,
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        codePostalError: "",
+      }));
+      setPostCode(e.target.value);
+    }
+  };
+
   const handlePrev = () => {
     prev();
   };
@@ -158,13 +212,12 @@ export const Form2 = () => {
                   </div>
                 </div>
               </div>
-          
-                <div
-                  className="col-lg-10 col-md-10 col-sm-10"
-                  id="secondary-div-center"
-                >
-              <form onSubmit={handleNext}>
 
+              <div
+                className="col-lg-10 col-md-10 col-sm-10"
+                id="secondary-div-center"
+              >
+                <form onSubmit={handleNext}>
                   <h5
                     style={{
                       fontSize: "25px",
@@ -216,9 +269,7 @@ export const Form2 = () => {
                         Département
                       </label>
                       <input
-                        onChange={(e) => {
-                          setState(e.target.value);
-                        }}
+                        onChange={handleStateChange}
                         type="text"
                         className="form-control"
                         id="text"
@@ -226,6 +277,18 @@ export const Form2 = () => {
                         required
                         style={inputStyle}
                       />
+
+                      {error.stateError && (
+                        <span
+                          style={{
+                            color: "red",
+                            fontSize: "14px",
+                            fontFamily: "Roboto",
+                          }}
+                        >
+                          {error.stateError}
+                        </span>
+                      )}
                     </div>
 
                     <div className="col-10 col-md-6">
@@ -233,9 +296,7 @@ export const Form2 = () => {
                         Ville
                       </label>
                       <input
-                        onChange={(e) => {
-                          setCity(e.target.value);
-                        }}
+                        onChange={handleCityChange}
                         type="text"
                         className="form-control"
                         id="time"
@@ -243,6 +304,17 @@ export const Form2 = () => {
                         required
                         style={inputStyle}
                       />
+                      {error.cityError && (
+                        <span
+                          style={{
+                            color: "red",
+                            fontSize: "14px",
+                            fontFamily: "Roboto",
+                          }}
+                        >
+                          {error.cityError}
+                        </span>
+                      )}
                     </div>
 
                     <div className="col-10 col-md-6">
@@ -250,9 +322,7 @@ export const Form2 = () => {
                         Code postal
                       </label>
                       <input
-                        onChange={(e) => {
-                          setPostCode(e.target.value);
-                        }}
+                        onChange={handleCodePostalChange}
                         type="text"
                         className="form-control"
                         id="text"
@@ -260,6 +330,17 @@ export const Form2 = () => {
                         required
                         style={inputStyle}
                       />
+                      {error.codePostalError && (
+                        <span
+                          style={{
+                            color: "red",
+                            fontSize: "14px",
+                            fontFamily: "Roboto",
+                          }}
+                        >
+                          {error.codePostalError}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -387,11 +468,6 @@ export const Form2 = () => {
                       </div>
                     </div>
                   </div>
-
-
-
-
-
 
                   <div className="row justify-content-center py-5">
                     <div className="col-10 col-md-12 d-flex justify-content-between flex-wrap">
@@ -536,14 +612,8 @@ export const Form2 = () => {
                       </div>
                     </div>
                   </div>
-
-</form>
-
-
-
-
-                </div>
- 
+                </form>
+              </div>
             </div>
           </div>
         </div>
